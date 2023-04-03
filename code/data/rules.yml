@@ -1,0 +1,35 @@
+version: "3.1"
+
+rules:
+  - rule: dire bonjour à chaque fois que le bot me dit bonjour
+    steps:
+      - intent: salutation
+      - action: utter_salutation
+  - rule: répondre à l'affirmation de l'utilisateur après qu'il est répondu notre salutation
+    steps:
+      - intent: affirmation
+      - action: utter_affrimation
+  - rule: dire aurevoir à chaque fois que l'utilisateur nous dit aurevoir
+    steps:
+      - intent: aurevoir
+      - action: utter_aurevoir
+
+  - rule: dire que je suis un robot à chaque fois que l'utilisateur me le demande
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+  
+  - rule: lister tous les restaurants lorsque l'utilisateur le demande
+    steps:
+      - intent: lister_restaurants
+      - action: action_lister_restaurants
+  
+  - rule: donner les noms des restaurants d'un pays lorsque l'utilisateur le demande
+    steps:
+      - intent: lister_restaurants_pays
+      - action: action_lister_restaurants_pays
+  
+  - rule: donner les tranches de prix des restaurants dans un pays lorsque l'utilisateur le demande
+    steps:
+      - intent: lister_restaurants_tranche_prix
+      - action: action_lister_restaurants_tranche_prix

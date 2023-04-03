@@ -1,0 +1,60 @@
+version: "3.1"
+
+intents:
+  - salutation
+  - aurevoir
+  - affirmation
+  - bot_challenge
+  - lister_restaurants
+  - lister_restaurants_pays:
+      use_entities: true
+  - lister_restaurants_tranche_prix:
+      use_entities: true
+
+responses:
+  utter_salutation:
+    - text: "Hello comment vas-tu ?"
+
+  utter_aurevoir:
+    - text: "aurevoir :)"
+
+  utter_iamabot:
+    - text: "Je suis un bot construis avec la framework rasa open source"
+  
+  utter_affrimation:
+    - text: "Cool, pose moi des questions"
+
+
+actions:
+  - action_lister_restaurants
+  - action_lister_restaurants_pays
+  - action_lister_restaurants_tranche_prix
+
+entities:
+  - restaurant
+  - nom_pays
+  - tranche_prix
+
+slots:
+  restaurant:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: restaurant
+  nom_pays:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: nom_pays
+  tranche_prix:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: tranche_prix
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

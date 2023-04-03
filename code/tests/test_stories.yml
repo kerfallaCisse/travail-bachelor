@@ -1,0 +1,23 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: lister les tranches de prix des restaurants dans un pays
+  steps:
+  - user: |
+      bonjour
+    intent: salutation
+  - action: utter_salutation
+  - user: |
+      cool je vais bien
+    intent: affirmation
+  - action: utter_affrimation
+  - user: |
+      donne moi les restaurants qui sont en suisse
+    intent: lister_restaurants_pays
+  - action: action_lister_restaurants_pays
+  - user:
+      donne moi les restaurants qui ont un prix moyen
+    intent: lister_restaurants_tranche_prix
+  - action: action_lister_restaurants_tranche_prix
+
