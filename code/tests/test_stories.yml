@@ -2,7 +2,7 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: lister les tranches de prix des restaurants dans un pays
+- story: lister les restaurants dans un pays en l'occurence en  Suisse
   steps:
   - user: |
       bonjour
@@ -14,10 +14,24 @@ stories:
   - action: utter_affrimation
   - user: |
       donne moi les restaurants qui sont en suisse
-    intent: lister_restaurants_pays
-  - action: action_lister_restaurants_pays
-  - user:
-      donne moi les restaurants qui ont un prix moyen
-    intent: lister_restaurants_tranche_prix
-  - action: action_lister_restaurants_tranche_prix
+    intent: lister_restaurants
+  - action: action_lister_restaurants
 
+- story: renvoyer le restaurant correspondant quand l'utilisateur fait une mention
+  steps:
+  - user: |
+      bonjour
+    intent: salutation
+  - action: utter_salutation
+  - user: |
+      cool je vais bien
+    intent: affirmation
+  - action: utter_affrimation
+  - user: |
+      donne moi les restaurants qui sont en suisse
+    intent: lister_restaurants
+  - action: action_lister_restaurants
+  - user: |
+      donne moi les informations que tu possèdes sur le premier restaurant
+    intent: mention_restaurant
+  - action: action_resolve_mention

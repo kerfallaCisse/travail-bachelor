@@ -15,27 +15,11 @@ stories:
       - intent: affirmation
       - action: utter_affrimation
       - intent: lister_restaurants
+        entities:
+          - nom_pays
       - action: action_lister_restaurants
-      - intent: lister_restaurants_pays
-        entities:
-          - nom_pays: "suisse"
-      - action: action_lister_restaurants_pays
   
-  - story: lister les tranches des restaurants qui se trouvent dans un pays
-    steps: 
-      - intent: salutation
-      - action: utter_salutation
-      - intent: affirmation
-      - action: utter_affrimation
-      - intent: lister_restaurants_pays
-        entities:
-          - nom_pays
-      - action: action_lister_restaurants_pays
-      - intent: lister_restaurants_tranche_prix
-        entities:
-          - nom_pays
-          - tranche_prix
-      - action: action_lister_restaurants_tranche_prix
+
 
 
 

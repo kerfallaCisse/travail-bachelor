@@ -5,7 +5,7 @@ rules:
     steps:
       - intent: salutation
       - action: utter_salutation
-  - rule: répondre à l'affirmation de l'utilisateur après qu'il est répondu notre salutation
+  - rule: répondre à l'affirmation de l'utilisateur après qu'il est répondu à notre salutation
     steps:
       - intent: affirmation
       - action: utter_affrimation
@@ -18,18 +18,13 @@ rules:
     steps:
       - intent: bot_challenge
       - action: utter_iamabot
-  
-  - rule: lister tous les restaurants lorsque l'utilisateur le demande
+
+  - rule: lister les restaurants dans un pays lorsque l'utilisateur le demande (en l'occurence la suisse)
     steps:
       - intent: lister_restaurants
       - action: action_lister_restaurants
   
-  - rule: donner les noms des restaurants d'un pays lorsque l'utilisateur le demande
+  - rule: résoudre la memtion 
     steps:
-      - intent: lister_restaurants_pays
-      - action: action_lister_restaurants_pays
-  
-  - rule: donner les tranches de prix des restaurants dans un pays lorsque l'utilisateur le demande
-    steps:
-      - intent: lister_restaurants_tranche_prix
-      - action: action_lister_restaurants_tranche_prix
+      - intent: mention_restaurant
+      - action: action_resolve_mention

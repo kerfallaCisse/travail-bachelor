@@ -37,4 +37,4 @@ policies: null
 #     max_history: 5
 #     epochs: 100
 #     constrain_similarities: true
-assistant_id: 20230405-011930-crabby-motorway
+assistant_id: 20230405-075248-rowdy-recurrence

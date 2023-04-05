@@ -5,10 +5,9 @@ intents:
   - aurevoir
   - affirmation
   - bot_challenge
-  - lister_restaurants
-  - lister_restaurants_pays:
+  - lister_restaurants:
       use_entities: true
-  - lister_restaurants_tranche_prix:
+  - mention_restaurant:
       use_entities: true
 
 responses:
@@ -20,40 +19,37 @@ responses:
 
   utter_iamabot:
     - text: "Je suis un bot construis avec la framework rasa open source"
-  
+
   utter_affrimation:
     - text: "Cool, pose moi des questions"
 
-
 actions:
   - action_lister_restaurants
-  - action_lister_restaurants_pays
-  - action_lister_restaurants_tranche_prix
+  - action_resolve_mention
 
 entities:
-  - restaurant
   - nom_pays
-  - tranche_prix
+  - mention
 
 slots:
-  restaurant:
-    type: text
-    influence_conversation: false
-    mappings:
-      - type: from_entity
-        entity: restaurant
   nom_pays:
     type: text
     influence_conversation: false
     mappings:
       - type: from_entity
         entity: nom_pays
-  tranche_prix:
+  mention:
     type: text
     influence_conversation: false
     mappings:
       - type: from_entity
-        entity: tranche_prix
+        entity: mention
+  mention_list:
+    type: list
+    influence_conversation: false
+    mappings:
+      - type: custom
+        action: action_resolve_mention
 
 session_config:
   session_expiration_time: 60

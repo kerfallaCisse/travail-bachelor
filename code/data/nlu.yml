@@ -31,44 +31,77 @@ nlu:
 
   - intent: bot_challenge
     examples: |
-      - est-ce que tu ea un bon ou un humain?
+      - est-ce que tu es un bon ou un humain?
       - es-tu un humain?
       - est-ce que je parle à un robot?
       - est-ce que je parle à un humain?
 
+  
   - intent: lister_restaurants
     examples: |
-      - donne moi la liste des [restaurants]{"entity": "restaurant"} ?
-      - quelles sont les [restaurants]{"entity": "restaurant"} que tu peux me recommander ?
-      - donne moi tous les [restaurants]{"entity": "restaurant"}
-  
-  - intent: lister_restaurants_pays
+      - donne moi tous les restaurants qui se trouvent en [suisse]{"entity": "nom_pays"}
+      - donne moi la liste des restaurants en [Suisse]{"entity": "nom_pays"}
+      - quelles sont les restaurants en [suisse]{"entity": "nom_pays"}
+      - les restaurants en [suisse]{"entity": "nom_pays"}
+      - restaurants [suisse]{"entity": "nom_pays"}  
+      - restaurants en [Suisse]{"entity": "nom_pays"}
+      - donne moi toutes informations que tu possèdes sur le [premier]{"entity": "mention"} restaurant
+      - [premier](mention) restaurant
+      - que possèdes-tu sur le [premier](mention) restaurant
+      - toutes les infos du [premier](mention) restaurant
+      - toutes les informations du [premier](mention) restaurant
+      - donne moi toutes informations que tu possèdes sur le [second]{"entity": "mention"} restaurant
+      - [second](mention) restaurant
+      - que possèdes-tu sur le [second](mention) restaurant
+      - toutes les infos du [second](mention) restaurant
+      - toutes les informations du [second](mention) restaurant
+      - donne moi les infos du [troisième](mention) restaurant
+      - le [troisième](mention) restaurant
+      - [troisième](mention)
+
+
+  - intent: mention_restaurant
     examples: |
-      - donne moi tous les [restaurants]{"entity": "restaurant"} qui se trouvent en [suisse]{"entity": "nom_pays"}
-      - donne moi tous les [allemagne]{"entity": "restaurant"} qui se trouvent en [suisse]{"entity": "nom_pays"}
-      - quelles sont les [restaurants]{"entity": "restaurant"} en [suisse]{"entity": "nom_pays"}
-      - quelles sont les [restaurants]{"entity": "restaurant"} en [allemagne]{"entity": "nom_pays"}
-      - les [restaurants]{"entity": "restaurant"} en [suisse]{"entity": "nom_pays"}
-      - les [restaurants]{"entity": "restaurant"} en [allemagne]{"entity": "nom_pays"}
-      - quelles sont les restaurants qui se trouvent en [allemagne]{"entity": "nom_pays"}
-  
-  - intent: lister_restaurants_tranche_prix
+      - donne moi toutes informations que tu possèdes sur le [premier]{"entity": "mention"} restaurant
+      - donne moi les infos que tu as sur le [troisième] restaurant
+      - donne moi les infos que tu possèdes sur le [troisième] restaurant
+      - les infos du [quatrième](mention)
+      - [premier](mention) restaurant
+      - que possèdes-tu sur le [premier](mention) restaurant
+      - toutes les infos du [premier](mention) restaurant
+      - toutes les informations du [premier](mention) restaurant
+      - donne moi toutes informations que tu possèdes sur le [second]{"entity": "mention"} restaurant
+      - [second](mention) restaurant
+      - que possèdes-tu sur le [second](mention) restaurant
+      - toutes les infos du [second](mention) restaurant
+      - toutes les informations du [second](mention) restaurant
+      - donne moi les infos du [troisième](mention) restaurant
+      - le [troisième](mention) restaurant
+      - [troisième](mention)
+
+  - lookup: mention
     examples: |
-      - donne moi les restaurants qui ne sont [pas cher]{"entity": "tranche_prix"}
-      - quels sont les restaurants qui ne sont [pas cher]{"entity":"tranche_prix"}
-      - donne moi les restaurants qui sont [cher]{"entity": "tranche_prix"}
-      - quels sont les restaurants qui sont [cher]{"entity":"tranche_prix"}
-      - donne moi les restaurants qui ont un prix [moyen]{"entity": "tranche_prix"}
-      - quels sont les restaurants qui ont un prix [moyen]{"entity":"tranche_prix"}
-      
+      - premier
+      - 1er
+      - deuxième
+      - 2ème
+      - troisième
+      - 3ème
+      - quatrième
+      - 4ème
+      - cinquième
+      - 5ème
+      - sixième
+      - 6ème
+      - septième
+      - 7ème
+      - huitième
+      - 8ème
+      - ...
+  
+
 
   
-  - lookup: nom_pays
-    examples: |
-      - suisse
-      - allemagne
-      - belgique
-      - france
 
   
 
