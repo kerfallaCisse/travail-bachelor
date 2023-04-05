@@ -1,0 +1,33 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+
+<div class="d-flex flex-column justify-content-start" style="text-align: left">
+
+    <h1>Chatbot connecté à un graphe de connaissance.</h1>
+    <h2>Bot construit avec la framework Rasa open source</h2>
+    <p>
+        Le but du chatbot est de renseigner les utilisateurs sur divers restaurants en suisse.<br>
+    </p>
+
+</div> <br>
+<div>
+    Si vous avez des questions n'hésitez pas à me contacter à l'adresse suivante:
+    <a href="mailto: Kerfalla.Cisse@etu.unige.ch">Kerfalla.Cisse@etu.unige.ch</a>
+</div>
+
+
+
+<div data-default-open="true" data-avatar-url="../static/chatbot_avatar.png" data-avatar-background="#c59e9e"
+    data-height=500 data-width=600 data-font="Verdana, Geneva, Tahoma, sans-serif" data-primary="#F09780"
+    data-primary-highlight="#dd9696" data-root-element-id="storybook-preview-wrapper" id="rasa-chat-widget"
+    data-initial-payload="Hello" data-websocket-url="http://localhost:5005">
+
+</div>
+<script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
+
+
+
+
+
+{% endblock content %}

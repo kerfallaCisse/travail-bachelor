@@ -1,0 +1,5 @@
+activer l'environnement virtuel
+SET FLASK_APP=app.py
+SET FLASK_RUN_PORT=8080
+SET FLASK_DEBUG=1
+flask run

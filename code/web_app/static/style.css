@@ -1,0 +1,18 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: 	#FFF5EE;
+}
+
+p {
+    font-size: 20px;
+}
+
+.email {
+    color: wheat;
+    font-style: italic;
+}
+
+a {
+    color: rgb(18,115,207);
+}
+
