@@ -1,0 +1,1113 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns0: <http://www.geonames.org/ontology#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+
+<https://sws.geonames.org/10228345/>
+  a <http://www.geonames.org/ontology#Feature> ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10228345/about.rdf> ;
+  ns0:name "Piz Gloria" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.5573" ;
+  geo:long "7.8353" ;
+  geo:alt "2970" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10228345/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10228345/piz-gloria.html> ;
+  ns0:wikipediaArticle <https://en.wikipedia.org/wiki/Piz_Gloria> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Piz_Gloria> .
+
+<https://sws.geonames.org/2658666/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/2658666/about.rdf> ;
+  ns0:name "Schwendikaltbad" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.89756" ;
+  geo:long "8.12937" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/2658666/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/2658666/schwendikaltbad.html> .
+
+<https://sws.geonames.org/12005337/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/12005337/about.rdf> ;
+  ns0:name "Restaurant Grüene Aff" ;
+  ns0:alternateName "Restaurant Grüene Aff"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.13925" ;
+  geo:long "8.79212" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/12005337/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/12005337/restaurant-grueene-aff.html> .
+
+<https://sws.geonames.org/10391805/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10391805/about.rdf> ;
+  ns0:name "Kräiligen, Restaurant Brücke" ;
+  ns0:alternateName "Kräiligen, Restaurant Brücke"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.14982" ;
+  geo:long "7.53313" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10391805/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10391805/kraeiligen-restaurant-bruecke.html> .
+
+<https://sws.geonames.org/12005335/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/12005335/about.rdf> ;
+  ns0:name "Restaurant Le Carrefour" ;
+  ns0:alternateName "Restaurant Le Carrefour"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.10191" ;
+  geo:long "7.24198" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/12005335/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/12005335/restaurant-le-carrefour.html> .
+
+<https://sws.geonames.org/12005336/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/12005336/about.rdf> ;
+  ns0:name "Restaurant Hole in One" ;
+  ns0:alternateName "Restaurant Hole in One"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.08545" ;
+  geo:long "7.78123" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/12005336/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/12005336/restaurant-hole-in-one.html> .
+
+<https://sws.geonames.org/6930728/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6930728/about.rdf> ;
+  ns0:name "Restaurant Anker" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.45727" ;
+  geo:long "7.4427" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6930728/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6930728/restaurant-anker.html> .
+
+<https://sws.geonames.org/6930731/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6930731/about.rdf> ;
+  ns0:name "Restaurant Anker" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.54691" ;
+  geo:long "7.91609" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6930731/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6930731/restaurant-anker.html> .
+
+<https://sws.geonames.org/6696022/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6696022/about.rdf> ;
+  ns0:name "Restaurant Gennersbrunnerhof" ;
+  ns0:shortName "Gausi"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.71214" ;
+  geo:long "8.68809" ;
+  geo:alt "455" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6696022/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6696022/restaurant-gennersbrunnerhof.html> .
+
+<https://sws.geonames.org/6619376/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6619376/about.rdf> ;
+  ns0:name "Kirchenfeld Restaurant" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.94366" ;
+  geo:long "7.45052" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6619376/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6619376/kirchenfeld-restaurant.html> .
+
+<https://sws.geonames.org/6545323/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6545323/about.rdf> ;
+  ns0:name "Restaurant Oldegg" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.3517" ;
+  geo:long "7.23834" ;
+  geo:alt "1911" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6545323/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6545323/restaurant-oldegg.html> .
+
+<https://sws.geonames.org/12003334/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/12003334/about.rdf> ;
+  ns0:name "Restaurant Stazersee" ;
+  ns0:alternateName "Restaurant Stazersee"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.4972" ;
+  geo:long "9.8713" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/12003334/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/12003334/restaurant-stazersee.html> .
+
+<https://sws.geonames.org/12003335/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/12003335/about.rdf> ;
+  ns0:name "Restaurant Hahnensee" ;
+  ns0:alternateName "Restaurant Hahnensee"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.4685" ;
+  geo:long "9.82827" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/12003335/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/12003335/restaurant-hahnensee.html> .
+
+<https://sws.geonames.org/12003336/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/12003336/about.rdf> ;
+  ns0:name "Restaurant du Lac Lioson" ;
+  ns0:alternateName "Restaurant du Lac Lioson"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.38767" ;
+  geo:long "7.12768" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/12003336/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/12003336/restaurant-du-lac-lioson.html> .
+
+<https://sws.geonames.org/12003337/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/12003337/about.rdf> ;
+  ns0:name "Restaurant Cavloccio" ;
+  ns0:alternateName "Restaurant Cavloccio"@it ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.37933" ;
+  geo:long "9.70715" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/12003337/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/12003337/restaurant-cavloccio.html> .
+
+<https://sws.geonames.org/10399064/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10399064/about.rdf> ;
+  ns0:name "Iselisberg,Restaurant Aussicht" ;
+  ns0:alternateName "Iselisberg,Restaurant Aussicht"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.58647" ;
+  geo:long "8.82679" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10399064/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10399064/iselisberg-restaurant-aussicht.html> .
+
+<https://sws.geonames.org/10391566/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10391566/about.rdf> ;
+  ns0:name "Les Cerniers, restaurant" ;
+  ns0:alternateName "Les Cerniers, restaurant"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.22258" ;
+  geo:long "6.95899" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10391566/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10391566/les-cerniers-restaurant.html> .
+
+<https://sws.geonames.org/10378908/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10378908/about.rdf> ;
+  ns0:name "Jaunpass, Restaurant" ;
+  ns0:alternateName "Jaunpass, Restaurant"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.59144" ;
+  geo:long "7.33752" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10378908/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10378908/jaunpass-restaurant.html> .
+
+<https://sws.geonames.org/11786148/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/11786148/about.rdf> ;
+  ns0:name "Restaurant Unter Bächen" ;
+  ns0:alternateName "Restaurant Unter Bächen"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.24509" ;
+  geo:long "9.10276" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/11786148/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/11786148/restaurant-unter-baechen.html> .
+
+<https://sws.geonames.org/6940964/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6940964/about.rdf> ;
+  ns0:name "Restaurant Rütihof" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.54392" ;
+  geo:long "8.06654" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6940964/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6940964/restaurant-ruetihof.html> .
+
+<https://sws.geonames.org/10385416/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10385416/about.rdf> ;
+  ns0:name "Lütisburg, Restaurant Bahnhof" ;
+  ns0:alternateName "Lütisburg, Restaurant Bahnhof"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.38308" ;
+  geo:long "9.07233" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10385416/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10385416/luetisburg-restaurant-bahnhof.html> .
+
+<https://sws.geonames.org/6521481/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6521481/about.rdf> ;
+  ns0:name "Kreuz Sachseln Hotel Restaurant" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.8688" ;
+  geo:long "8.2388" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6521481/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6521481/kreuz-sachseln-hotel-restaurant.html> .
+
+<https://sws.geonames.org/6524075/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6524075/about.rdf> ;
+  ns0:name "Hotel Restaurant Schuetzen" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.595" ;
+  geo:long "7.9074" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6524075/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6524075/hotel-restaurant-schuetzen.html> .
+
+<https://sws.geonames.org/6492133/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6492133/about.rdf> ;
+  ns0:name "Hotel Restaurant Chartreuse" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.7456" ;
+  geo:long "7.6442" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6492133/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6492133/hotel-restaurant-chartreuse.html> .
+
+<https://sws.geonames.org/10300046/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10300046/about.rdf> ;
+  ns0:name "Hotel Restaurant Holiday" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.72057" ;
+  geo:long "7.62307" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10300046/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10300046/hotel-restaurant-holiday.html> .
+
+<https://sws.geonames.org/6930729/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6930729/about.rdf> ;
+  ns0:name "Restaurant Fuschena" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.62933" ;
+  geo:long "9.74543" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6930729/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6930729/restaurant-fuschena.html> .
+
+<https://sws.geonames.org/12005334/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/12005334/about.rdf> ;
+  ns0:name "Restaurant Talhaus im Tal" ;
+  ns0:alternateName "Restaurant Talhaus im Tal"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.45065" ;
+  geo:long "7.74963" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/12005334/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/12005334/restaurant-talhaus-im-tal.html> .
+
+<https://sws.geonames.org/11804468/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/11804468/about.rdf> ;
+  ns0:name "Restaurant Wolzenalp" ;
+  ns0:alternateName "Restaurant Wolzenalp"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.22575" ;
+  geo:long "9.15545" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/11804468/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/11804468/restaurant-wolzenalp.html> .
+
+<https://sws.geonames.org/6946004/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6946004/about.rdf> ;
+  ns0:name "Restaurant Talhof" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.33261" ;
+  geo:long "8.81629" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6946004/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6946004/restaurant-talhof.html> .
+
+<https://sws.geonames.org/6946005/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6946005/about.rdf> ;
+  ns0:name "Restaurant Ochsen" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.33292" ;
+  geo:long "8.81207" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6946005/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6946005/restaurant-ochsen.html> .
+
+<https://sws.geonames.org/6946006/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6946006/about.rdf> ;
+  ns0:name "Restaurant Metzg" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.33263" ;
+  geo:long "8.81135" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6946006/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6946006/restaurant-metzg.html> .
+
+<https://sws.geonames.org/6946007/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6946007/about.rdf> ;
+  ns0:name "Restaurant Terrasse" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.33236" ;
+  geo:long "8.81061" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6946007/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6946007/restaurant-terrasse.html> .
+
+<https://sws.geonames.org/6946008/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6946008/about.rdf> ;
+  ns0:name "Restaurant Primo" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.32564" ;
+  geo:long "8.79826" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6946008/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6946008/restaurant-primo.html> .
+
+<https://sws.geonames.org/6940963/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6940963/about.rdf> ;
+  ns0:name "Restaurant Fischergut" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.55045" ;
+  geo:long "8.0895" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6940963/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6940963/restaurant-fischergut.html> .
+
+<https://sws.geonames.org/10384889/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10384889/about.rdf> ;
+  ns0:name "Krummenau, Restaurant Adler" ;
+  ns0:alternateName "Krummenau, Restaurant Adler"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.24704" ;
+  geo:long "9.17236" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10384889/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10384889/krummenau-restaurant-adler.html> .
+
+<https://sws.geonames.org/10387084/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10387084/about.rdf> ;
+  ns0:name "Gigerwald, Restaurant" ;
+  ns0:alternateName "Gigerwald, Restaurant"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.91365" ;
+  geo:long "9.40075" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10387084/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10387084/gigerwald-restaurant.html> .
+
+<https://sws.geonames.org/10397614/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10397614/about.rdf> ;
+  ns0:name "Berg FR, Restaurant" ;
+  ns0:alternateName "Berg FR, Restaurant"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.84643" ;
+  geo:long "7.23293" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10397614/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10397614/berg-fr-restaurant.html> .
+
+<https://sws.geonames.org/10378778/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10378778/about.rdf> ;
+  ns0:name "Les Pontins, restaurant" ;
+  ns0:alternateName "Les Pontins, restaurant"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.13175" ;
+  geo:long "6.99721" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10378778/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10378778/les-pontins-restaurant.html> .
+
+<https://sws.geonames.org/10379845/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10379845/about.rdf> ;
+  ns0:name "Arnegg, Restaurant Ilge" ;
+  ns0:alternateName "Arnegg, Restaurant Ilge"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.44243" ;
+  geo:long "9.25538" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10379845/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10379845/arnegg-restaurant-ilge.html> .
+
+<https://sws.geonames.org/11786248/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/11786248/about.rdf> ;
+  ns0:name "Restaurant Schäfler" ;
+  ns0:alternateName "Restaurant Schäfler"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.27612" ;
+  geo:long "9.39133" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/11786248/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/11786248/restaurant-schaefler.html> .
+
+<https://sws.geonames.org/10384661/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10384661/about.rdf> ;
+  ns0:name "Dietfurt, Restaurant Rössli" ;
+  ns0:alternateName "Dietfurt, Restaurant Rössli"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.34592" ;
+  geo:long "9.08042" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10384661/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10384661/dietfurt-restaurant-roessli.html> .
+
+<https://sws.geonames.org/6293887/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6293887/about.rdf> ;
+  ns0:name "Golfhaus, Restaurant" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HSE> ;
+  ns0:countryCode "CH" ;
+  ns0:population "2" ;
+  geo:lat "47.36036" ;
+  geo:long "8.84249" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6293887/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6293887/golfhaus-restaurant.html> .
+
+<https://sws.geonames.org/6523904/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6523904/about.rdf> ;
+  ns0:name "Hotel Restaurant Weinhof" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.0565" ;
+  geo:long "8.3125" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6523904/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6523904/hotel-restaurant-weinhof.html> .
+
+<https://sws.geonames.org/6524745/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6524745/about.rdf> ;
+  ns0:name "Hotel Restaurant Schiff" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.0556" ;
+  geo:long "8.3096" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6524745/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6524745/hotel-restaurant-schiff.html> .
+
+<https://sws.geonames.org/6519846/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6519846/about.rdf> ;
+  ns0:name "Hotel Restaurant Hannigalp" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.1833" ;
+  geo:long "7.8333" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6519846/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6519846/hotel-restaurant-hannigalp.html> .
+
+<https://sws.geonames.org/6524974/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6524974/about.rdf> ;
+  ns0:name "Ochsen Restaurant Hotel" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.3333" ;
+  geo:long "8.7" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6524974/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6524974/ochsen-restaurant-hotel.html> .
+
+<https://sws.geonames.org/10343047/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10343047/about.rdf> ;
+  ns0:name "Hotel Restaurant Derby" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.02257" ;
+  geo:long "7.7473" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10343047/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10343047/hotel-restaurant-derby.html> .
+
+<https://sws.geonames.org/10300042/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10300042/about.rdf> ;
+  ns0:name "Hotel Restaurant Bellevue" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.83584" ;
+  geo:long "9.28314" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10300042/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10300042/hotel-restaurant-bellevue.html> .
+
+<https://sws.geonames.org/9857985/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/9857985/about.rdf> ;
+  ns0:name "City West Hotel AND Restaurant" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.84708" ;
+  geo:long "9.51014" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/9857985/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/9857985/city-west-hotel-%26-restaurant.html> .
+
+<https://sws.geonames.org/10281757/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10281757/about.rdf> ;
+  ns0:name "Design Hotel Plattenhof and Restaurant Sento" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.37536" ;
+  geo:long "8.54197" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10281757/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10281757/design-hotel-plattenhof-and-restaurant-sento.html> .
+
+<https://sws.geonames.org/12005338/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/12005338/about.rdf> ;
+  ns0:name "Restaurant de Tariche" ;
+  ns0:alternateName "Restaurant de Tariche"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.33423" ;
+  geo:long "7.14048" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/12005338/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/12005338/restaurant-de-tariche.html> .
+
+<https://sws.geonames.org/11787914/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/11787914/about.rdf> ;
+  ns0:name "Restaurant Vieux-Moulin du Theusseret" ;
+  ns0:alternateName "Restaurant Vieux-Moulin du Theusseret"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BLDG> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.24249" ;
+  geo:long "6.955" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/11787914/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/11787914/restaurant-vieux-moulin-du-theusseret.html> .
+
+<https://sws.geonames.org/10398526/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10398526/about.rdf> ;
+  ns0:name "Les Enfers, restaurant" ;
+  ns0:alternateName "Les Enfers, restaurant"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.28987" ;
+  geo:long "7.04876" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10398526/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10398526/les-enfers-restaurant.html> .
+
+<https://sws.geonames.org/10380984/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10380984/about.rdf> ;
+  ns0:name "Bémont NE, restaurant" ;
+  ns0:alternateName "Bémont NE, restaurant"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.96201" ;
+  geo:long "6.55048" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10380984/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10380984/bemont-ne-restaurant.html> .
+
+<https://sws.geonames.org/10390925/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10390925/about.rdf> ;
+  ns0:name "Les Taillères, restaurant" ;
+  ns0:alternateName "Les Taillères, restaurant"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.96984" ;
+  geo:long "6.57113" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10390925/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10390925/les-tailleres-restaurant.html> .
+
+<https://sws.geonames.org/10390937/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10390937/about.rdf> ;
+  ns0:name "Les Joux-Derrière, restaurant" ;
+  ns0:alternateName "Les Joux-Derrière, restaurant"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.12192" ;
+  geo:long "6.80893" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10390937/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10390937/les-joux-derriere-restaurant.html> .
+
+<https://sws.geonames.org/9256859/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/9256859/about.rdf> ;
+  ns0:name "Rheinfelderhof Hotel Restaurant" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.56242" ;
+  geo:long "7.59687" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/9256859/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/9256859/rheinfelderhof-hotel-restaurant.html> .
+
+<https://sws.geonames.org/10300095/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10300095/about.rdf> ;
+  ns0:name "Hotel Restaurant Resslirytti" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.HTL> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.56" ;
+  geo:long "7.6" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10300095/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10300095/hotel-restaurant-resslirytti.html> .
+
+<https://sws.geonames.org/10380935/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10380935/about.rdf> ;
+  ns0:name "Le Cernil NE, restaurant" ;
+  ns0:alternateName "Le Cernil NE, restaurant"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.93408" ;
+  geo:long "6.5255" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10380935/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10380935/le-cernil-ne-restaurant.html> .
+
+<https://sws.geonames.org/6618751/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6618751/about.rdf> ;
+  ns0:name "Morgenthal" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.21495" ;
+  geo:long "8.61097" ;
+  geo:alt "675" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6618751/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6618751/morgenthal.html> .
+
+<https://sws.geonames.org/7911303/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/7911303/about.rdf> ;
+  ns0:name "Sonchaux" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "46.41589" ;
+  geo:long "6.94834" ;
+  geo:alt "1258" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/7911303/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/7911303/sonchaux.html> .
+
+<https://sws.geonames.org/8261098/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/8261098/about.rdf> ;
+  ns0:name "La Buvette" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.09252" ;
+  geo:long "7.13054" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/8261098/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/8261098/la-buvette.html> .
+
+<https://sws.geonames.org/11568110/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/11568110/about.rdf> ;
+  ns0:name "Bad Osterfingen" ;
+  ns0:alternateName "Bad Osterfingen"@de ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.65663" ;
+  geo:long "8.48348" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/11568110/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/11568110/bad-osterfingen.html> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Bad_Osterfingen> .
+
+<https://sws.geonames.org/6618753/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6618753/about.rdf> ;
+  ns0:name "Alpbeiz Furggelen" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.04338" ;
+  geo:long "8.73422" ;
+  geo:alt "1526" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6618753/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6618753/alpbeiz-furggelen.html> .
+
+<https://sws.geonames.org/10227508/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10227508/about.rdf> ;
+  ns0:name "Hohe Buche" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.39017" ;
+  geo:long "9.44845" ;
+  geo:alt "958" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10227508/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10227508/hohe-buche.html> .
+
+<https://sws.geonames.org/10227512/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10227512/about.rdf> ;
+  ns0:name "Dreilinden" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.42308" ;
+  geo:long "9.38957" ;
+  geo:alt "778" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10227512/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10227512/dreilinden.html> .
+
+<https://sws.geonames.org/6930724/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6930724/about.rdf> ;
+  ns0:name "La Torre" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.52811" ;
+  geo:long "7.59019" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6930724/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6930724/la-torre.html> .
+
+<https://sws.geonames.org/6930725/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6930725/about.rdf> ;
+  ns0:name "Cantina Don Camillo" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.55804" ;
+  geo:long "7.6011" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6930725/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6930725/cantina-don-camillo.html> .
+
+<https://sws.geonames.org/6930726/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6930726/about.rdf> ;
+  ns0:name "Pizzeria Resslirytti" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.55895" ;
+  geo:long "7.59908" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6930726/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6930726/pizzeria-resslirytti.html> .
+
+<https://sws.geonames.org/6930727/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/6930727/about.rdf> ;
+  ns0:name "Lily's Stomach Supply" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.56112" ;
+  geo:long "7.59393" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/6930727/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/6930727/lily-s-stomach-supply.html> .
+
+<https://sws.geonames.org/11395363/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/11395363/about.rdf> ;
+  ns0:name "Grotto Bundi" ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.REST> ;
+  ns0:countryCode "CH" ;
+  geo:lat "45.87928" ;
+  geo:long "8.98688" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/11395363/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/11395363/grotto-bundi.html> .
+
+<https://sws.geonames.org/10392484/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10392484/about.rdf> ;
+  ns0:name "Mont-Crosin, restaurants" ;
+  ns0:alternateName "Mont-Crosin, restaurants"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.18379" ;
+  geo:long "7.03647" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10392484/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10392484/mont-crosin-restaurants.html> .
+
+<https://sws.geonames.org/10388063/>
+  a ns0:Feature ;
+  rdfs:isDefinedBy <https://sws.geonames.org/10388063/about.rdf> ;
+  ns0:name "Muriaux, restaurants" ;
+  ns0:alternateName "Muriaux, restaurants"@fr ;
+  ns0:featureClass <https://www.geonames.org/ontology#S> ;
+  ns0:featureCode <https://www.geonames.org/ontology#S.BUSTP> ;
+  ns0:countryCode "CH" ;
+  geo:lat "47.24715" ;
+  geo:long "6.9791" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  ns0:nearbyFeatures <https://sws.geonames.org/10388063/nearby.rdf> ;
+  ns0:locationMap <https://www.geonames.org/10388063/muriaux-restaurants.html> .
+
+dbpedia:Grynau_Castle
+  ns0:name "Château de Grynau"@fr ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Grynau_Castle> .
+
+dbpedia:Rapperswil_Castle
+  ns0:name "Château de Rapperswil"@fr ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Rapperswil_Castle> .
+
+dbpedia:Hotel_Storchen_Zürich
+  ns0:name "Hotel Storchen Zürich"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Hotel_Storchen_Zürich> .
+
+dbpedia:LEntrecôte
+  ns0:name "L'Entrecôte"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/L'Entrecôte> .
+
+dbpedia:Gasthaus_Sonne_Winterthur
+  ns0:name "Gasthaus Sonne (Winterthur)"@en;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Gasthaus_Sonne_(Winterthur)> .
+
+dbpedia:Gasthof_Sternen	
+  ns0:name "Gasthof Sternen"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Gasthof_Sternen> .
+
+dbpedia:Gasthof_zum_Bären
+  ns0:name "Gasthof zum Bären"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Gasthof_zum_Bären> .
+
+dbpedia:Gasthof_zum_Goldenen_Sternen
+  ns0:name "Gasthof zum Goldenen Sternen"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Gasthof_zum_Goldenen_Sternen> .
+
+dbpedia:Croix_Dor_et_Poste
+  ns0:name "Croix D'or et Poste"@en;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Croix_D'or_et_Poste> .
+
+dbpedia:Hotel_Adler	
+  ns0:name "Hotel Adler"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Hotel_Adler> .
+
+dbpedia:Hotel_Interlaken
+  ns0:name "Hotel Interlaken"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Hotel_Interlaken> .
+
+dbpedia:Hotel_Krone_Solothurn
+  ns0:name "Hotel Krone, Solothurn"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Hotel_Krone,_Solothurn> .
+
+dbpedia:Landgasthof_Löwen
+  ns0:name "Landgasthof Löwen"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Landgasthof_Löwen> .
+
+dbpedia:Park_im_Grüene
+  ns0:name "Park im Grüene"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Park_im_Grüene> .
+
+dbpedia:Jucker_Farm
+  ns0:name "Jucker Farm"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Jucker_Farm> .
+
+dbpedia:Kindli_hotel
+  ns0:name "Kindli (hotel)"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Kindli_(hotel)> .
+ 
+dbpedia:Herzbaracke	
+  ns0:name "Herzbaracke"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Herzbaracke> .
+
+dbpedia:Bären_Twann
+  ns0:name "Bären Twann"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Bären_Twann> .
+
+dbpedia:Rapperswil_Castle
+  ns0:name "Rapperswil Castle"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Rapperswil_Castle> .
+
+dbpedia:Wörth_Castle
+  ns0:name "Wörth Castle"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Wörth_Castle> .
+
+dbpedia:Rother_Ochsen
+  ns0:name "Rother Ochsen"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Rother_Ochsen> .
+
+dbpedia:Restaurant_Talvo
+  ns0:name "Restaurant Talvo"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Restaurant_Talvo> .
+
+dbpedia:Wynhus_zum_Bären
+  ns0:name "Wynhus zum Bären"@en ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Wynhus_zum_Bären> .
