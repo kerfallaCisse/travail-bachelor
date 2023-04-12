@@ -998,116 +998,116 @@
   ns0:locationMap <https://www.geonames.org/10388063/muriaux-restaurants.html> .
 
 dbpedia:Grynau_Castle
-  ns0:name "Château de Grynau"@fr ;
+  ns0:name "Château de Grynau" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Grynau_Castle> .
 
 dbpedia:Rapperswil_Castle
-  ns0:name "Château de Rapperswil"@fr ;
+  ns0:name "Château de Rapperswil" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Rapperswil_Castle> .
 
 dbpedia:Hotel_Storchen_Zürich
-  ns0:name "Hotel Storchen Zürich"@en ;
+  ns0:name "Hotel Storchen Zürich" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Hotel_Storchen_Zürich> .
 
 dbpedia:LEntrecôte
-  ns0:name "L'Entrecôte"@en ;
+  ns0:name "L'Entrecôte" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/L'Entrecôte> .
 
 dbpedia:Gasthaus_Sonne_Winterthur
-  ns0:name "Gasthaus Sonne (Winterthur)"@en;
+  ns0:name "Gasthaus Sonne (Winterthur)";
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Gasthaus_Sonne_(Winterthur)> .
 
 dbpedia:Gasthof_Sternen	
-  ns0:name "Gasthof Sternen"@en ;
+  ns0:name "Gasthof Sternen" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Gasthof_Sternen> .
 
 dbpedia:Gasthof_zum_Bären
-  ns0:name "Gasthof zum Bären"@en ;
+  ns0:name "Gasthof zum Bären" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Gasthof_zum_Bären> .
 
 dbpedia:Gasthof_zum_Goldenen_Sternen
-  ns0:name "Gasthof zum Goldenen Sternen"@en ;
+  ns0:name "Gasthof zum Goldenen Sternen" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Gasthof_zum_Goldenen_Sternen> .
 
 dbpedia:Croix_Dor_et_Poste
-  ns0:name "Croix D'or et Poste"@en;
+  ns0:name "Croix D'or et Poste";
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Croix_D'or_et_Poste> .
 
 dbpedia:Hotel_Adler	
-  ns0:name "Hotel Adler"@en ;
+  ns0:name "Hotel Adler" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Hotel_Adler> .
 
 dbpedia:Hotel_Interlaken
-  ns0:name "Hotel Interlaken"@en ;
+  ns0:name "Hotel Interlaken" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Hotel_Interlaken> .
 
 dbpedia:Hotel_Krone_Solothurn
-  ns0:name "Hotel Krone, Solothurn"@en ;
+  ns0:name "Hotel Krone, Solothurn" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Hotel_Krone,_Solothurn> .
 
 dbpedia:Landgasthof_Löwen
-  ns0:name "Landgasthof Löwen"@en ;
+  ns0:name "Landgasthof Löwen" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Landgasthof_Löwen> .
 
 dbpedia:Park_im_Grüene
-  ns0:name "Park im Grüene"@en ;
+  ns0:name "Park im Grüene" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Park_im_Grüene> .
 
 dbpedia:Jucker_Farm
-  ns0:name "Jucker Farm"@en ;
+  ns0:name "Jucker Farm" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Jucker_Farm> .
 
 dbpedia:Kindli_hotel
-  ns0:name "Kindli (hotel)"@en ;
+  ns0:name "Kindli (hotel)" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Kindli_(hotel)> .
  
 dbpedia:Herzbaracke	
-  ns0:name "Herzbaracke"@en ;
+  ns0:name "Herzbaracke" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Herzbaracke> .
 
 dbpedia:Bären_Twann
-  ns0:name "Bären Twann"@en ;
+  ns0:name "Bären Twann" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Bären_Twann> .
 
 dbpedia:Rapperswil_Castle
-  ns0:name "Rapperswil Castle"@en ;
+  ns0:name "Rapperswil Castle" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Rapperswil_Castle> .
 
 dbpedia:Wörth_Castle
-  ns0:name "Wörth Castle"@en ;
+  ns0:name "Wörth Castle" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Wörth_Castle> .
 
 dbpedia:Rother_Ochsen
-  ns0:name "Rother Ochsen"@en ;
+  ns0:name "Rother Ochsen" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Rother_Ochsen> .
 
 dbpedia:Restaurant_Talvo
-  ns0:name "Restaurant Talvo"@en ;
+  ns0:name "Restaurant Talvo" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Restaurant_Talvo> .
 
 dbpedia:Wynhus_zum_Bären
-  ns0:name "Wynhus zum Bären"@en ;
+  ns0:name "Wynhus zum Bären" ;
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   rdfs:seeAlso <http://dbpedia.org/resource/Wynhus_zum_Bären> .
