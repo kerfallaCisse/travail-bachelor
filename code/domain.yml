@@ -5,6 +5,7 @@ intents:
   - aurevoir
   - affirmation
   - bot_challenge
+  - nlu_fallback
   - lister_restaurants:
       use_entities: true
   - mention_restaurant:
@@ -22,6 +23,9 @@ responses:
 
   utter_affrimation:
     - text: "Cool, pose moi des questions"
+
+  utter_please_rephrase:
+    - text: "Désolé je n'ai pas compris ta question, est-ce que tu peux reformuler ?\n\nTu peux consulter la [documention](http://127.0.0.1:8080/documentation) pour voir les types de questions."
 
 actions:
   - action_lister_restaurants

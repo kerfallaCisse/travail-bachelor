@@ -18,8 +18,19 @@ stories:
         entities:
           - nom_pays
       - action: action_lister_restaurants
-  
 
-
-
+  - story: donner les informations concernant un restaurant lorsque l'utilisateur le mention
+    steps:
+      - intent: salutation
+      - action: utter_salutation
+      - intent: affirmation
+      - action: utter_affrimation
+      - intent: lister_restaurants
+        entities:
+          - nom_pays
+      - action: action_lister_restaurants
+      - intent: mention_restaurant
+        entities:
+          - mention
+      - action: action_resolve_mention
 

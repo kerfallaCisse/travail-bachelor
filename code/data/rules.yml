@@ -28,3 +28,8 @@ rules:
     steps:
       - intent: mention_restaurant
       - action: action_resolve_mention
+  
+  - rule: demander à l'utilisateur de reformuler lorsque le bot ne comprend pas son intention
+    steps:
+      - intent: nlu_fallback
+      - action: utter_please_rephrase

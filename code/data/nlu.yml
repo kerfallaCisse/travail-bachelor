@@ -45,20 +45,6 @@ nlu:
       - les restaurants en [suisse]{"entity": "nom_pays"}
       - restaurants [suisse]{"entity": "nom_pays"}  
       - restaurants en [Suisse]{"entity": "nom_pays"}
-      - donne moi toutes informations que tu possèdes sur le [premier]{"entity": "mention"} restaurant
-      - [premier](mention) restaurant
-      - que possèdes-tu sur le [premier](mention) restaurant
-      - toutes les infos du [premier](mention) restaurant
-      - toutes les informations du [premier](mention) restaurant
-      - donne moi toutes informations que tu possèdes sur le [second]{"entity": "mention"} restaurant
-      - [second](mention) restaurant
-      - que possèdes-tu sur le [second](mention) restaurant
-      - toutes les infos du [second](mention) restaurant
-      - toutes les informations du [second](mention) restaurant
-      - donne moi les infos du [troisième](mention) restaurant
-      - le [troisième](mention) restaurant
-      - [troisième](mention)
-
 
   - intent: mention_restaurant
     examples: |

@@ -16,16 +16,39 @@
     <a href="mailto: Kerfalla.Cisse@etu.unige.ch">Kerfalla.Cisse@etu.unige.ch</a>
 </div>
 
+<style>
+    .rw-conversation-container .rw-header {
+        background-color: black;
+    }
 
+    .rw-launcher{
+        background-color: black;
+    }
+    .rw-conversation-container .rw-messages-container .rw-snippet .rw-link {
+        color: rgb(18,115,207);
+    }
+</style>
 
-<div data-default-open="true" data-avatar-url="../static/chatbot_avatar.png" data-avatar-background="#c59e9e"
-    data-height=500 data-width=600 data-font="Verdana, Geneva, Tahoma, sans-serif" data-primary="#F09780"
-    data-primary-highlight="#dd9696" data-root-element-id="storybook-preview-wrapper" id="rasa-chat-widget"
-    data-initial-payload="Hello" data-websocket-url="http://localhost:5005">
-
-</div>
-<script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
-
+<script>!(function () {
+    let e = document.createElement("script"),
+      t = document.head || document.getElementsByTagName("head")[0];
+    (e.src =
+      "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+      (e.async = !0),
+      (e.onload = () => {
+        window.WebChat.default(
+          {
+            initPayload: "/utter_salutation",
+            customData: { language: "fr" },
+            socketUrl: "http://localhost:5005",
+            title: "Rasa restaurant bot"
+          },
+          null
+        );
+      }),
+      t.insertBefore(e, t.firstChild);
+  })();
+  </script>
 
 
 
