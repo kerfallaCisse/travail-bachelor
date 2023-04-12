@@ -32,4 +32,10 @@ rules:
   - rule: demander à l'utilisateur de reformuler lorsque le bot ne comprend pas son intention
     steps:
       - intent: nlu_fallback
-      - action: utter_please_rephrase
+      - action: action_fallback
+  
+  - rule: exécute le le fallback action lorsque l'utilisateur pose des questions qui sont hors sujet
+    steps:
+      - intent: out_of_scope
+      - action: action_fallback
+

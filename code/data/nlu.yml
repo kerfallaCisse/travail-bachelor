@@ -36,6 +36,19 @@ nlu:
       - est-ce que je parle à un robot?
       - est-ce que je parle à un humain?
 
+  - intent: out_of_scope
+    examples: |
+      - qu'elles sont les hôtels en suisse
+      - donne moi les hôtels
+      - hôtels
+      - dsadsad jsdjsads
+      - blabla
+      - okdijaskdljsad dsadsadirkwe
+      - ski
+      - football
+      - wow
+      - musique
+
   
   - intent: lister_restaurants
     examples: |
@@ -84,6 +97,8 @@ nlu:
       - huitième
       - 8ème
       - ...
+  
+
   
 
 

@@ -6,6 +6,7 @@ intents:
   - affirmation
   - bot_challenge
   - nlu_fallback
+  - out_of_scope
   - lister_restaurants:
       use_entities: true
   - mention_restaurant:
@@ -25,11 +26,12 @@ responses:
     - text: "Cool, pose moi des questions"
 
   utter_please_rephrase:
-    - text: "Désolé je n'ai pas compris ta question, est-ce que tu peux reformuler ?\n\nTu peux consulter la [documention](http://127.0.0.1:8080/documentation) pour voir les types de questions."
+    - text: "Désolé je n'ai pas compris ta question, est-ce que tu peux reformuler ?\n\nTu peux consulter la documentation pour voir les types de questions: [ ]{link}"
 
 actions:
   - action_lister_restaurants
   - action_resolve_mention
+  - action_fallback
 
 entities:
   - nom_pays

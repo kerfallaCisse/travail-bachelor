@@ -35,3 +35,18 @@ stories:
       donne moi les informations que tu possèdes sur le premier restaurant
     intent: mention_restaurant
   - action: action_resolve_mention
+
+- story: reformuler lorsque le chatbot n'a pas compris la question de l'utilisateur
+  steps:
+  - user: |
+      bonjour
+    intent: salutation
+  - action: utter_salutation
+  - user: |
+      cool je vais bien
+    intent: affirmation
+  - action: utter_affrimation
+  - user: |
+      donne moi les hôtels en suisse
+    intent: out_of_scope
+  - action: action_fallback
