@@ -59,7 +59,7 @@ nlu:
       - restaurants [suisse]{"entity": "nom_pays"}  
       - restaurants en [Suisse]{"entity": "nom_pays"}
 
-  - intent: mention_restaurant
+  - intent: mention_restaurant # cette entité est lié à toutes les informations que l'on possède sur un restaurant
     examples: |
       - donne moi toutes informations que tu possèdes sur le [premier]{"entity": "mention"} restaurant
       - donne moi les infos que tu as sur le [troisième] restaurant
@@ -96,7 +96,10 @@ nlu:
       - 7ème
       - huitième
       - 8ème
-      - ...
+      - neuvième
+      - 9ème
+      - dixième
+      - 10ème
   
 
   
