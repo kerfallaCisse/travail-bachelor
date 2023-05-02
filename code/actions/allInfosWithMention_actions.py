@@ -83,7 +83,6 @@ class ResolveMention(Action):
                         }}
                         """)
 
-        response_to_return = ""
         lat = ""
         long = ""
         more_infos = ""
@@ -97,7 +96,7 @@ class ResolveMention(Action):
         response = local_endpoint.query().bindings
         if len(response) == 0:
             dispatcher.utter_message(
-                text="Désolé nous n'avons aucune information concernant les restaurants dans ce pays")
+                text="Désolé nous n'avons aucune information concernant ce restaurant")
 
         else:
             for result in response:
@@ -168,9 +167,15 @@ class ResolveMention(Action):
             for i in range(len(nearBy_placeList)):
                 nearBy_placeAndMap += "- " + nearBy_placeList[i] + "--> "  + locationMap_nearby_place[i] + "\n"
                        
-
-            response_to_return += f"""{more_infos}\n\nSa latitude est de {lat} et sa longitude est de {long}. Lieu (voir le lien suivant): {location_map}\n\n"""
-            dispatcher.utter_message(text=response_to_return)
-            dispatcher.utter_message(text=f"Le restaurant {restaurant} est proche des lieux suivants:\n\n{nearBy_placeAndMap}")
+            # On vérifie qu'on possède les données
+            if len(more_infos) != 0:
+                dispatcher.utter_message(text=more_infos)
+            if len(lat) != 0 and len(long) != 0:
+                text = f"""Sa latitude est de {lat} et sa longitude est de {long}."""
+                dispatcher.utter_message(text=text)
+            if len(location_map) != 0:
+                dispatcher.utter_message(text=f"Visualisation du restaurant {restaurant} sur une carte: {location_map}")
+            if len(nearBy_placeAndMap) != 0:
+                dispatcher.utter_message(text=f"Le restaurant {restaurant} est proche des lieux suivants:\n\n{nearBy_placeAndMap}")
 
         return []

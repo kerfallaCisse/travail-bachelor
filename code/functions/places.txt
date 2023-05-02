@@ -1,0 +1,43 @@
+schilthorn,schilthorn
+genève,geneva
+geneva,geneva
+zurich,zürich
+champfer,champfèr
+munsingen,münsingen
+schwytzoise,schwyz
+schwyz,schwyz
+saint-gall,st. gallen
+berne,bern
+bern,bern
+bale,basel
+bâle,basel
+fribourg,fribourg
+wettingen abbey,wettingen abbey
+munster,münster
+interlaken,interlaken 
+solothurn,solothurn
+heimiswil,heimiswil
+ruschlikon,rüschlikon
+seegraben,seegräben
+lindenhof,lindenhof
+twann,twann
+rapperswil,rapperswil
+schaffhouse,schaffhausen
+neuhausen am rheinfall,neuhausen am rheinfall
+lucerne,lucerne
+luzerne,lucerne
+uri,uri
+obwald,obwalden
+nidwald,nidwalden
+glaris,glarus
+zug,zug
+zoug,zug
+appenzell rhodes-extérieures,appenzell ausserrhoden
+appenzell rhodes-intérieures,appenzell innerrhoden
+grisons,grisons
+argovie,aargau
+thurgovie,thurgau
+tessin,ticino
+vaud,vaud
+valais,valais
+jura,jura

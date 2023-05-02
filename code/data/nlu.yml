@@ -62,6 +62,8 @@ nlu:
   - intent: mention_restaurant # cette entité est lié à toutes les informations que l'on possède sur un restaurant
     examples: |
       - donne moi toutes informations que tu possèdes sur le [premier]{"entity": "mention"} restaurant
+      - donne moi les informations que tu possèdes sur le [premier](mention)
+      - donne moi les informations que tu possèdes sur le [troisième](mention)
       - donne moi les infos que tu as sur le [troisième] restaurant
       - donne moi les infos que tu possèdes sur le [troisième] restaurant
       - les infos du [quatrième](mention)
@@ -77,6 +79,74 @@ nlu:
       - donne moi les infos du [troisième](mention) restaurant
       - le [troisième](mention) restaurant
       - [troisième](mention)
+
+  - intent: restaurants_endroits
+    examples: |
+      - quels sont les restaurants à [berne](place)
+      - donne moi la liste des restaurants à [genève](place)
+      - donne moi les restaurants à [berne](place)
+      - donne moi les restaurants que tu possèdes à [bern](place)
+      - les restaurants à [berne](place)
+      - restaurants à [zürick](place)
+      - donne moi les restaurants à [zürich](place)
+      - restaurants à [neuchâtel](place)
+      - donne moi les restaurants à [neuchâtel](place)
+      - les restaurants à [stein am rhein](place)
+      - donne moi la liste des restaurants à [champfèr](place)
+      - les restaurants à [schwyz](place)
+      - donne moi les restaurants qui se trouvent dans le canton de [zürich](place)
+      - les restaurants [genève](place)
+      - les restaurants à [lucerne](place)
+      - les restaurants au [valais](place)
+      - quels sont les restaurants qui sont à [schilthorn](place)
+      - [berne](place)
+      - à [berne](place)
+      - resto à quels sont les restaurants qui sont à [schilthorn](place)
+      - restaurants à quels sont les restaurants qui sont à [schilthorn](place)
+
+
+  - lookup: place
+    examples: |
+      - genève
+      - geneva
+      - schilthorn
+      - schwyz
+      - schwytzoise
+      - saint-gall
+      - munsingen
+      - berne
+      - bern
+      - lucerne
+      - luzerne
+      - bâle
+      - bale
+      - fribourg
+      - wettingen abbey
+      - interlaken
+      - solothurn
+      - heimiswil
+      - ruschlikon
+      - seegraben
+      - lindenhof
+      - twann
+      - rapperswil
+      - schaffhouse
+      - neuhausen am rheinfall
+      - uri
+      - obwald
+      - nidwald
+      - glaris
+      - zug
+      - zoug
+      - appenzell rhodes-extérieures
+      - appenzell rhodes-intérieures
+      - grisons
+      - argovie
+      - thurgovie
+      - tessin
+      - vaud
+      - valais
+      - jura
 
   - lookup: mention
     examples: |

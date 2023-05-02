@@ -11,6 +11,8 @@ intents:
       use_entities: true
   - mention_restaurant:
       use_entities: true
+  - restaurants_endroits:
+      use_entities: true
 
 responses:
   utter_salutation:
@@ -32,10 +34,12 @@ actions:
   - action_lister_restaurants
   - action_resolve_mention
   - action_fallback
+  - action_restaurants_endroit
 
 entities:
   - nom_pays
   - mention
+  - place
 
 slots:
   nom_pays:
@@ -56,6 +60,13 @@ slots:
     mappings:
       - type: custom
         action: action_resolve_mention
+  place:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: place
+        action: action_restaurants_endroit
 
 session_config:
   session_expiration_time: 60

@@ -33,3 +33,15 @@ stories:
         entities:
           - mention
       - action: action_resolve_mention
+
+  - story: donner la liste des restaurants qui se trouvent dans un endroit
+    steps:
+      - intent: salutation
+      - action: utter_salutation
+      - intent: affirmation
+      - action: utter_affrimation
+      - intent: restaurants_endroits
+        entities:
+          - place
+      - action: action_restaurants_endroit
+  
