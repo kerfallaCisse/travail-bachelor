@@ -7,12 +7,15 @@ intents:
   - bot_challenge
   - nlu_fallback
   - out_of_scope
+  - restaurant_curiosity:
+      use_entities: true
   - lister_restaurants:
       use_entities: true
   - mention_restaurant:
       use_entities: true
-  - restaurants_endroits:
+  - restaurants_city:
       use_entities: true
+  
 
 responses:
   utter_salutation:
@@ -34,12 +37,14 @@ actions:
   - action_lister_restaurants
   - action_resolve_mention
   - action_fallback
-  - action_restaurants_endroit
+  - action_restaurants_city
+  - action_resolve_curiosity
 
 entities:
   - nom_pays
   - mention
-  - place
+  - city
+  - rest_name
 
 slots:
   nom_pays:
@@ -60,13 +65,26 @@ slots:
     mappings:
       - type: custom
         action: action_resolve_mention
-  place:
+  city:
     type: text
     influence_conversation: false
     mappings:
       - type: from_entity
-        entity: place
-        action: action_restaurants_endroit
+        entity: city
+        action: action_restaurants_city
+  curiosity:
+    type: list
+    influence_conversation: false
+    mappings: 
+      - type: custom
+        action: action_resolve_curiosity
+  rest_name:
+    type: text
+    influence_conversation: false
+    mappings: 
+      - type: from_entity
+        entity: rest_name
+
 
 session_config:
   session_expiration_time: 60

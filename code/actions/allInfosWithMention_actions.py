@@ -64,7 +64,17 @@ class ResolveMention(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        mention_list = list()
+        try:
+            mention_list = tracker.get_slot('mention_list')
+            if mention_list == None:
+                return []
+        except Exception:
+            return []
+        
         mention_list = tracker.get_slot('mention_list')
+        if len(mention_list) == 0:
+            return []
         mention = tracker.get_slot('mention')
         index = mapping(mention)
         restaurant = mention_list[index]
@@ -177,5 +187,6 @@ class ResolveMention(Action):
                 dispatcher.utter_message(text=f"Visualisation du restaurant {restaurant} sur une carte: {location_map}")
             if len(nearBy_placeAndMap) != 0:
                 dispatcher.utter_message(text=f"Le restaurant {restaurant} est proche des lieux suivants:\n\n{nearBy_placeAndMap}")
+                
 
         return []

@@ -39,7 +39,12 @@ rules:
       - intent: out_of_scope
       - action: action_fallback
 
-  - rule: donner les restaurants qui se trouvent dans un endroit à chaque fois que l'utilisateur le demande
+  - rule: donner les restaurants qui se trouvent dans une ville à chaque fois que l'utilisateur le demande
     steps:
-      - intent: restaurants_endroits
-      - action: action_restaurants_endroit
+      - intent: restaurants_city
+      - action: action_restaurants_city
+
+  - rule: donner les curiosités ou activités qui sont autour d'un restaurant
+    steps:
+      - intent: restaurant_curiosity
+      - action: action_resolve_curiosity

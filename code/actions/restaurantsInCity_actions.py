@@ -3,77 +3,77 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from SPARQLWrapper import SPARQLWrapper2
-import sys
-from functions.resolve_place import resolve_place
-from functions.graph import getGraph
-from rdflib import Graph
-from .allInfosWithMention_actions import local_endpoint, sparql_dbpedia
-from rdflib.plugins.sparql import prepareQuery
-sys.path.insert(0, "/code/functions")
 
+osmap_endpoint = SPARQLWrapper2("https://sophox.org/sparql") # Open street map endpoint
 
 class RestaurantsInCity(Action):
-    
-    ##### Préférable d'utiliser Open street map ici, pour trouver les restaurants dans une ville suisse ####
-    ##### Traduction des villes en anglais #####
-    ##### Donne moi des informations sur ce restaurant
-    
 
     def name(self) -> Text:
-        return "action_restaurants_endroit"
+        return "action_restaurants_city"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        place = tracker.get_slot("place").lower()
+        city = tracker.get_slot("city")
+        print(city)
+        
+        with open("data/city.txt", "r", encoding="utf-8") as f:
+            lines = f.readlines()
+            lines_clean = [line.strip() for line in lines]
+            if city not in lines_clean:
+                dispatcher.utter_message(text="Désolé nous n'avons trouvé aucun restaurant dans cette ville\n\nIl se peut que la ville mentionnée ne soit pas une ville suisse")
+                return []
+            else:
+                restaurants = list()
+                
+                # amenity permet de décire des équipements utiles pour les visiteurs et résidents
+                osmap_endpoint.setQuery(f"""
+                                        SELECT ?osmn ?type ?loc ?name ?street ?cuisine ?hours
+                                        WHERE{{
+                                            VALUES ?type {{"bar" "restaurant" "pub" "cafe" "food_court" "biergarten" "fast_food"}}
+                                            ?osmn osmt:addr:city "{city}";
+                                                osmt:amenity ?type;
+                                                osmm:loc ?loc ;
+                                                osmt:name ?name ;
+                                                osmt:addr:street ?street .
+                                            # FILTER(lcase(str(?city))="{city}"), prend plus de temps
+                                            OPTIONAL {{
+                                                ?osmn osmt:cuisine ?cuisine ;
+                                                osmt:opening_hours ?hours .   
+                                            }}    
+                                        }}
+                                        """)
+                results = osmap_endpoint.query().bindings
+                if len(results) == 0:
+                    dispatcher.utter_message(text="Désolé nous n'avons trouvé aucun restaurant dans cette ville")
+                    return []
+                limit = 0
+                for result in results:
+                    if limit == 10:
+                        break
+                    
+                    rest_name = result['name'].value
+                    rest_street = result["street"].value
+                    rest_loc = result["loc"].value
+                    rest_slots = f"{rest_name} {rest_loc}"
+                    restaurants.append(rest_slots)
+                    dispatcher.utter_message(text=f"Nom du restaurant: {rest_name}\n- Adresse: {rest_street}")
+                    try:
+                        rest_cuisine = result["cuisine"].value
+                        rest_hours = result["hours"].value
+                        if rest_cuisine is not None:
+                            dispatcher.utter_message(text=f"- Type de cuisine: {rest_cuisine}")
+                        if rest_hours is not None:
+                            dispatcher.utter_message(text=f"- Horaires: {rest_hours}")
+                    except KeyError:
+                        pass
+                    
+                    dispatcher.utter_message(text=">>>>>>>>")
+                    limit += 1
+                dispatcher.utter_message(text="Peux tu préciser ta recherche")
+                return [SlotSet("curiosity", restaurants)]
+
+
     
-        place = resolve_place(place)
-        if place == "no key":
-            dispatcher.utter_message(text="Désolé nous n'avons trouvé aucun restaurant dans cet endroit")
-            return []
-
-        # On parcours les restaurants dans un endroit #
-        local_endpoint.setQuery("""
-                             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-                             SELECT ?dbpedia
-                             WHERE {
-                                 ?r rdfs:seeAlso ?dbpedia
-                             }
-                             """)
-        response = local_endpoint.query().bindings
-        all_restaurants_dbpedia = list()
-        for r in response:
-            ressource = r['dbpedia'].value
-            if ressource.find("dbpedia") != -1 and ressource not in all_restaurants_dbpedia:
-                all_restaurants_dbpedia.append(ressource)
-        
-        restaurantsIn_place = set()
-        
-        for rest in all_restaurants_dbpedia:
-            sparql_dbpedia.setQuery(f"""
-                                    SELECT ?rn 
-                                    WHERE {{
-                                        <{rest}> dbo:abstract ?abs .
-                                        FILTER(lang(?abs)="en") .
-                                        FILTER CONTAINS(lcase(str(?abs)), "{place}")
-                                        # on récupère éventuellement le nom du restaurant
-                                        <{rest}> rdfs:label ?rn .
-                                        FILTER(lang(?rn)="en")
-                                    }}
-                                    """)
-        
-            resp_js = sparql_dbpedia.query().bindings    
-            if len(resp_js) != 0:
-                #### Alors dans ce cas, c'est un restaurant qui se trouve dans cet endroit ####
-                for r in resp_js:
-                    rn = r['rn'].value
-                    restaurantsIn_place.add(rn)
-        
-        response_to_return = ""
-        restaurants_place = list(restaurantsIn_place)
-        for i in range(len(restaurants_place)):
-            response_to_return += str(i+1) + "- " + restaurants_place[i] + "\n\n"
-        dispatcher.utter_message(text=response_to_return)
-
-        return [SlotSet("mention_list", restaurants_place)]
+    

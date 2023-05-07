@@ -19,7 +19,7 @@ stories:
           - nom_pays
       - action: action_lister_restaurants
 
-  - story: donner les informations concernant un restaurant lorsque l'utilisateur le mention
+  - story: donner les informations concernant un restaurant lorsque l'utilisateur le mentionne avec une mention
     steps:
       - intent: salutation
       - action: utter_salutation
@@ -34,14 +34,26 @@ stories:
           - mention
       - action: action_resolve_mention
 
-  - story: donner la liste des restaurants qui se trouvent dans un endroit
+  - story: donner la liste des restaurants qui se trouvent dans une ville
     steps:
       - intent: salutation
       - action: utter_salutation
       - intent: affirmation
       - action: utter_affrimation
-      - intent: restaurants_endroits
+      - intent: restaurants_city
         entities:
-          - place
-      - action: action_restaurants_endroit
-  
+          - city
+      - action: action_restaurants_city
+
+  - story: donner les activités ou curiosités qui sont proches d'un restaurant
+    steps:
+      - intent: salutation
+      - action: utter_salutation
+      - intent: affirmation
+      - action: utter_affrimation
+      - intent: restaurants_city
+        entities:
+          - city
+      - action: action_restaurants_city
+      - intent: restaurant_curiosity
+      - action: action_resolve_curiosity

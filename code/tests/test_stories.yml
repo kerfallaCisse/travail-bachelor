@@ -50,3 +50,58 @@ stories:
       donne moi les hôtels en suisse
     intent: out_of_scope
   - action: action_fallback
+
+- story: donner les restaurants qui se trouvent dans une ville
+  steps:
+  - user: |
+      bonjour
+    intent: salutation
+  - action: utter_salutation
+  - user: |
+      cool je vais bien
+    intent: affirmation
+  - action: utter_affrimation
+  - user: |
+      donne moi les restaurants à [Zürich]{"entity": "city"}
+    intent: restaurants
+  - action: action_restaurants_city
+
+- story: donner les restaurants qui se trouvent dans une ville en passant par la liste des restaurants
+  steps:
+  - user: |
+      bonjour
+    intent: salutation
+  - action: utter_salutation
+  - user: |
+      cool je vais bien
+    intent: affirmation
+  - action: utter_affrimation
+  - user: |
+      donne moi la liste des restaurants en Suisse
+    intent: lister_restaurants
+  - action: action_lister_restaurants       	
+  - user: |
+      donne moi les restaurants à [Zürich]{"entity": "city"}
+  - intent: restaurants_city
+  - action: action_restaurants_city
+
+- story: donner les curiosités ou activités qui sont autour d'un resturant
+  steps:
+  - user: |
+      bonjour
+    intent: salutation
+  - action: utter_salutation
+  - user: |
+      cool je vais bien
+    intent: affirmation
+  - action: utter_affrimation     	
+  - user: |
+      donne moi les restaurants à [Zürich]{"entity": "city"}
+  - intent: restaurants_city
+  - action: action_restaurants_city
+  - user: |
+      quelles sont les activités ou curiosités qui sont autour du restaurant
+    intent: restaurant_curiosity
+  - action: action_resolve_curiosity
+
+
