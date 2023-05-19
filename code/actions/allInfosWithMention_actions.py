@@ -51,7 +51,7 @@ class ListerRestaurants(Action):
 
         response_to_return += "..\n\ntu peux spécifier ta recherche, car il y a beaucoup de restaurants"
         dispatcher.utter_message(text=response_to_return)
-
+        
         return [SlotSet("mention_list", restaurants)]
 
 

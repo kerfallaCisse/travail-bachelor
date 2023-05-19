@@ -16,8 +16,7 @@ class RestaurantsInCity(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         city = tracker.get_slot("city")
-        print(city)
-        
+                
         with open("data/city.txt", "r", encoding="utf-8") as f:
             lines = f.readlines()
             lines_clean = [line.strip() for line in lines]
@@ -45,6 +44,7 @@ class RestaurantsInCity(Action):
                                         }}
                                         """)
                 results = osmap_endpoint.query().bindings
+                restaurant_names = list()
                 if len(results) == 0:
                     dispatcher.utter_message(text="Désolé nous n'avons trouvé aucun restaurant dans cette ville")
                     return []
@@ -54,6 +54,13 @@ class RestaurantsInCity(Action):
                         break
                     
                     rest_name = result['name'].value
+                    with open("data/rest_name.txt","a+",encoding="utf-8") as f:
+                        lines = f.readlines()
+                        lines_clean = [l.strip() for l in lines]
+                        if rest_name not in lines_clean:
+                            f.write(rest_name+"\n")
+                            restaurant_names.append(rest_name)
+                        
                     rest_street = result["street"].value
                     rest_loc = result["loc"].value
                     rest_slots = f"{rest_name} {rest_loc}"
@@ -71,7 +78,9 @@ class RestaurantsInCity(Action):
                     
                     dispatcher.utter_message(text=">>>>>>>>")
                     limit += 1
-                dispatcher.utter_message(text="Peux tu préciser ta recherche")
+                
+                dispatcher.utter_message(text="Peux tu préciser ta recherche ?")
+
                 return [SlotSet("curiosity", restaurants)]
 
 

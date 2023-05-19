@@ -157,10 +157,24 @@ nlu:
       - quelles sont les curiosités autour du restaurant [Montbrillant](rest_name)
       - quelles sont les activitées autour du restaurant [Johnny the Ripper](rest_name)
       - quelles sont les activités ou curiosités aux alentours du restaurant [Johnny the Ripper](rest_name)
-  
-  - regex: rest_name
+
+  - lookup: rest_name
     examples: |
-      - .+
+      - Piz Gloria
+      - Johnny the Ripper
+      - McDonald's
+      - Lily's Stomach Supply
+      - Arnegg, Restaurant Ilge
+      - Restaurant de Tariche
+      - Hotel Restaurant Derby
+      - Restaurant Metzg
+      - Hotel Restaurant Holiday
+      - Restaurant Hole in One
+
+  
+  # - regex: rest_name
+  #   examples: |
+  #     - .+
     
       
   
