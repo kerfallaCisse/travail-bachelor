@@ -2,6 +2,7 @@
 @prefix ns0: <http://www.geonames.org/ontology#> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix dbpedia: <http://dbpedia.org/resource/> .
+# @prefix opensmp: <https://www.openstreetmap.org/node/> .
 
 <https://sws.geonames.org/10228345/>
   a <http://www.geonames.org/ontology#Feature> ;
@@ -1111,3 +1112,5 @@ dbpedia:Wörth_Castle
   ns0:parentCountry <https://sws.geonames.org/2658434/> ;
   ns0:nearbyFeatures <https://sws.geonames.org/10388063/nearby.rdf> ;
   ns0:locationMap <https://www.geonames.org/10388063/muriaux-restaurants.html> .
+
+

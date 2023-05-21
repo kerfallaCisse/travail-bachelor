@@ -79,6 +79,18 @@ nlu:
       - donne moi les infos du [troisième](mention) restaurant
       - le [troisième](mention) restaurant
       - [troisième](mention)
+      - donne moi toutes informations que tu possèdes sur le restaurant [Piz Gloria](rest_name)
+      - donne moi les informations que tu possèdes sur [Piz Gloria](rest_name)
+      - donne moi les informations que tu possèdes sur ce restaurant [Lily's Stomach Supplye](rest_name)
+      - donne moi les infos que tu as sur [Lily's Stomach Supplye](rest_name)
+      - donne moi les infos que tu possèdes sur [Montbrillant](rest_name)
+      - les infos sur [Montbrillant](rest_name)
+      - sur [Montbrillant](rest_name)
+      - sur le restaurant [Arnegg, Restaurant Ilge](rest_name)
+      - que possèdes-tu sur le restaurant [Arnegg, Restaurant Ilge](rest_name)
+      - que possèdes-tu sur [McDonald's](rest_name)
+      - toutes les infos sur [Hotel Restaurant Holiday](rest_name)
+      - toutes les informations sur [Johnny the Ripper](rest_name)
 
   - lookup: mention
     examples: |
