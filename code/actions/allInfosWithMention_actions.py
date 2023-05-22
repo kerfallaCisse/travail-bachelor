@@ -125,7 +125,7 @@ class ResolveMention(Action):
                     resp = sparql_dbpedia.query().bindings
                     if len(resp) != 0:
                         for r in resp:
-                            more_infos += r['abstract'].value + "(Anglais)."
+                            more_infos += r['abstract'].value + " (Anglais)."
                 else:
                     value_object = value_object.lower()
                     
@@ -188,5 +188,4 @@ class ResolveMention(Action):
             if len(nearBy_placeAndMap) != 0:
                 dispatcher.utter_message(text=f"Le restaurant {restaurant} est proche des lieux suivants:\n\n{nearBy_placeAndMap}")
                 
-
         return []
