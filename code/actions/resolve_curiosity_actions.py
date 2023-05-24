@@ -13,9 +13,20 @@ class ResolveCuriosity(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
+
         rest_name = tracker.get_slot("rest_name")
-        dispatcher.utter_message(text=f"Tu veux les curiosités du restaurant : {rest_name}")
-        
-        
+        dispatcher.utter_message(
+            text=f"Tu veux les curiosités du restaurant : {rest_name}")
+
         return []
+
+
+class CuriosityLimit(Action):
+    def name(self) -> Text:
+        return "action_nbr_curiosity"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="Combien de curiosités/activités (mentionnez un nombre) ?")
+        return [SlotSet("limit_curiosity", True)]

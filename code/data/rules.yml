@@ -5,10 +5,12 @@ rules:
     steps:
       - intent: salutation
       - action: utter_salutation
+
   - rule: répondre à l'affirmation de l'utilisateur après qu'il est répondu à notre salutation
     steps:
       - intent: affirmation
       - action: utter_affrimation
+
   - rule: dire aurevoir à chaque fois que l'utilisateur nous dit aurevoir
     steps:
       - intent: aurevoir
@@ -19,12 +21,17 @@ rules:
       - intent: bot_challenge
       - action: utter_iamabot
 
-  - rule: lister les restaurants dans un pays lorsque l'utilisateur le demande (en l'occurence la suisse)
+  - rule: demander à l'utilisateur de spécfier le nombre de restaurant qu'il souhaite afficher pour un pays (en l'occurence la Suisse)
     steps:
       - intent: lister_restaurants
-      - action: action_lister_restaurants
+      - action: action_restaurants_limitation
+
+  - rule: demander à l'utilisateur de spécfier le nombre de restaurant qu'il souhaite afficher pour une ville
+    steps:
+      - intent: restaurants_city
+      - action: action_restaurants_limitation_ville
   
-  - rule: résoudre la memtion 
+  - rule: résoudre la mention 
     steps:
       - intent: mention_restaurant
       - action: action_resolve_mention
@@ -34,17 +41,18 @@ rules:
       - intent: nlu_fallback
       - action: action_fallback
   
-  - rule: exécute le le fallback action lorsque l'utilisateur pose des questions qui sont hors sujet
+  - rule: exécute le fallback action lorsque l'utilisateur pose des questions qui sont hors sujet
     steps:
       - intent: out_of_scope
       - action: action_fallback
 
-  - rule: donner les restaurants qui se trouvent dans une ville à chaque fois que l'utilisateur le demande
-    steps:
-      - intent: restaurants_city
-      - action: action_restaurants_city
-
-  - rule: donner les curiosités ou activités qui sont autour d'un restaurant
+  - rule: demander à l'utilisateur de spécifier le nombre de curiosité qu'il cherche autour d'un restaurant
     steps:
       - intent: restaurant_curiosity
-      - action: action_resolve_curiosity
+      - action: action_nbr_curiosity
+  
+  - rule: mettre à jour la limite d'affichage pour le nombre de restaurant
+    steps:
+      - intent: query_limitation
+      - action: action_set_rest_limit
+

@@ -14,7 +14,8 @@ sys.path.insert(0, "/code/functions")
 g = getGraph()
 sparql_dbpedia = SPARQLWrapper2(
     "https://dbpedia.org/sparql")  # DBpedia endpoint
-local_endpoint = SPARQLWrapper2("http://localhost:7200/repositories/POC-1") # my local graphDB endpoint
+local_endpoint = SPARQLWrapper2(
+    "http://localhost:7200/repositories/POC-1")  # my local graphDB endpoint
 
 
 class ListerRestaurants(Action):
@@ -25,6 +26,9 @@ class ListerRestaurants(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        limitation = tracker.get_slot("query_limit")
+        print(limitation)
 
         query = prepareQuery("""
                              prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
@@ -51,7 +55,7 @@ class ListerRestaurants(Action):
 
         response_to_return += "..\n\ntu peux spécifier ta recherche, car il y a beaucoup de restaurants"
         dispatcher.utter_message(text=response_to_return)
-        
+
         return [SlotSet("mention_list", restaurants)]
 
 
@@ -71,7 +75,7 @@ class ResolveMention(Action):
                 return []
         except Exception:
             return []
-        
+
         mention_list = tracker.get_slot('mention_list')
         if len(mention_list) == 0:
             return []
@@ -100,8 +104,8 @@ class ResolveMention(Action):
         locationMap_nearby_place = list()
         dbpedia = ""
         nearBy_placeList = list()
-        nearBy_placeAndMap = "" # pour stocker les endroits proche d'un restaurant et la ressource vers la carte pour le lieu correspondant
-        
+        # pour stocker les endroits proche d'un restaurant et la ressource vers la carte pour le lieu correspondant
+        nearBy_placeAndMap = ""
 
         response = local_endpoint.query().bindings
         if len(response) == 0:
@@ -121,14 +125,14 @@ class ResolveMention(Action):
                                                 FILTER(lang(?abstract)="en") 
                                             }}
                                             """)
-                    
+
                     resp = sparql_dbpedia.query().bindings
                     if len(resp) != 0:
                         for r in resp:
                             more_infos += r['abstract'].value + " (Anglais)."
                 else:
                     value_object = value_object.lower()
-                    
+
                 value_predicate = (result['p'].value).lower()
 
                 if value_predicate.find("lat") != -1:
@@ -165,18 +169,20 @@ class ResolveMention(Action):
                                 placeMap = v['value']
                                 if placeMap not in locationMap_nearby_place:
                                     locationMap_nearby_place.append(placeMap)
-                                
+
                             if k == "o" and v['type'] == "literal":
                                 # On récupère le nom des endroits qui sont proche du restaurant. Attention, ces endroits ne sont pas des restaurant
                                 # Ils font partie d'une autre classe
                                 nearby_place_name = v['value']
                                 if nearby_place_name not in nearBy_placeList:
                                     nearBy_placeList.append(nearby_place_name)
-                     
+
             # Les deux listes auront toujours la même taille, car les données sont récupérés du résultats de la requête précédente
             for i in range(len(nearBy_placeList)):
-                nearBy_placeAndMap += "- " + nearBy_placeList[i] + "--> "  + locationMap_nearby_place[i] + "\n"
-                       
+                nearBy_placeAndMap += "- " + \
+                    nearBy_placeList[i] + "--> " + \
+                    locationMap_nearby_place[i] + "\n"
+
             # On vérifie qu'on possède les données
             if len(more_infos) != 0:
                 dispatcher.utter_message(text=more_infos)
@@ -184,8 +190,21 @@ class ResolveMention(Action):
                 text = f"""Sa latitude est de {lat} et sa longitude est de {long}."""
                 dispatcher.utter_message(text=text)
             if len(location_map) != 0:
-                dispatcher.utter_message(text=f"Visualisation du restaurant {restaurant} sur une carte: {location_map}")
+                dispatcher.utter_message(
+                    text=f"Visualisation du restaurant {restaurant} sur une carte: {location_map}")
             if len(nearBy_placeAndMap) != 0:
-                dispatcher.utter_message(text=f"Le restaurant {restaurant} est proche des lieux suivants:\n\n{nearBy_placeAndMap}")
-                
+                dispatcher.utter_message(
+                    text=f"Le restaurant {restaurant} est proche des lieux suivants:\n\n{nearBy_placeAndMap}")
+
         return []
+
+class RestaurantsSlotLimitation(Action):
+    def name(self) -> Text:
+        return "action_restaurants_limitation"
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(
+            text="Combien de restaurant souhaitez vous lister (mentionnez un nombre) ?")
+        return [SlotSet("rest_ville", False)]
+

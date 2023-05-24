@@ -82,3 +82,13 @@ def process_file(file_path: str) -> list():
     with open(file_path,"r",encoding="utf-8") as f:
         lines = f.readlines()
         return [l.strip() for l in lines]
+
+class RestaurantsVilleLimitation(Action):
+    def name(self) -> Text:
+        return "action_restaurants_limitation_ville"
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(
+            text="Combien de restaurant souhaitez vous lister pour cette ville (mentionnez un nombre) ?")
+        return [SlotSet("rest_ville", True)]

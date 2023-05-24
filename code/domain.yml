@@ -7,6 +7,8 @@ intents:
   - bot_challenge
   - nlu_fallback
   - out_of_scope
+  - query_limitation
+  - nombre_kilometer
   - restaurant_curiosity:
       use_entities: true
   - lister_restaurants:
@@ -32,6 +34,12 @@ responses:
 
   utter_please_rephrase:
     - text: "Désolé je n'ai pas compris ta question, est-ce que tu peux reformuler ?\n\nTu peux consulter la documentation pour voir les types de questions: [ ]{link}"
+  
+  utter_nbr_kilometer:
+    - text: "A combien de kilomètre du restaurant ?"
+
+  utter_mention_curiosity_limit: 
+    - text: "Vous n'avez pas mentionné la limite pour le nombre de curiosité. Veuillez mentionner."  
 
 actions:
   - action_lister_restaurants
@@ -39,12 +47,19 @@ actions:
   - action_fallback
   - action_restaurants_city
   - action_resolve_curiosity
+  - action_restaurants_limitation
+  - action_restaurants_limitation_ville
+  - action_nbr_curiosity
+  # - action_set_rest_limit
+
 
 entities:
   - nom_pays
   - mention
   - city
   - rest_name
+  - query_limit
+  - nbr_kilometer
 
 slots:
   nom_pays:
@@ -53,6 +68,7 @@ slots:
     mappings:
       - type: from_entity
         entity: nom_pays
+        action: utter_nbr_restaurant
   mention:
     type: text
     influence_conversation: false
@@ -65,26 +81,54 @@ slots:
     mappings:
       - type: custom
         action: action_resolve_mention
+  limit_nbr_rest:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+        # action: action_set_rest_limit
   city:
     type: text
     influence_conversation: false
     mappings:
       - type: from_entity
         entity: city
-        action: action_restaurants_city
+        action: utter_nbr_restaurant
   curiosity:
     type: list
     influence_conversation: false
     mappings: 
       - type: custom
-        action: action_resolve_curiosity
+        action: action_resolve_curiosity # à vérifier
   rest_name:
     type: text
     influence_conversation: false
     mappings: 
       - type: from_entity
         entity: rest_name
-
+  query_limit:
+    type: text
+    influence_conversation: false
+    mappings: 
+      - type: from_entity
+        entity: query_limit
+  nbr_kilometer:
+    type: text
+    influence_conversation: false
+    mappings: 
+      - type: from_entity
+        entity: nbr_kilometer
+  rest_ville:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: custom
+  limit_curiosity:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: custom    
+  
 
 session_config:
   session_expiration_time: 60
