@@ -57,11 +57,6 @@ rules:
       - slot_was_set:
         - limit_curiosity: true   
 
-  - rule: exécuter l'action sur les curiosités lorsque l'utilisateur à mentionner le nombre de curiosité
-    steps:
-      - intent: nombre_kilometer
-      - action: action_resolve_curiosity
-
   - rule: après que l'utilisateur ait mentionner la limite pour le nombre de restaurant
     condition:
     - slot_was_set:
@@ -78,12 +73,10 @@ rules:
     - intent: query_limitation
     - action: action_restaurants_city 
 
-  - rule: après que l'utilisateur ait mentionner la limite pour le nombre de restaurant dans une ville
+  - rule: après que l'utilisateur ait mentionner la limite pour le nombre de curiosité autour d'un restaurant
     condition:
     - slot_was_set:
       - limit_curiosity: true
     steps:
     - intent: query_limitation
-    - action: utter_nbr_kilometer 
-
-
+    - action: action_resolve_curiosity 

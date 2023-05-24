@@ -199,13 +199,3 @@ class ResolveMention(Action):
 
         return []
 
-# class RestaurantsSlotLimitation(Action):
-#     def name(self) -> Text:
-#         return "action_restaurants_limitation"
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#         dispatcher.utter_message(
-#             text="Combien de restaurant souhaitez vous lister (mentionnez un nombre) ?")
-#         return [SlotSet("rest_ville", False)]
-

@@ -14,8 +14,6 @@ class FallBackAction(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         """On exécute le fallback action et on revient l'état précédent de la conversation"""
         linkOfdocumentation = "http://127.0.0.1:8080/documentation"
-        # dispatcher.utter_template(
-        #     "utter_please_rephrase", tracker, link=linkOfdocumentation)
         dispatcher.utter_message(
             response="utter_please_rephrase", link=linkOfdocumentation)
         return [UserUtteranceReverted()]
@@ -28,30 +26,19 @@ class SetQueryLimitationIntent(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        dispatcher.utter_message(
-            text="Combien ?")
+        
+        question_rest = "Combien de restaurant ?"
+        question_curiosity = "Combien de curiosité/activité ?"
 
         intent = tracker.get_intent_of_latest_message()
         if intent == "lister_restaurants":
+            dispatcher.utter_message(text=question_rest)
             return [SlotSet("rest_ville", False)]
         elif intent == "restaurants_city":
+            dispatcher.utter_message(text=question_rest)
             return [SlotSet("rest_ville", True)]
         elif intent == "restaurant_curiosity":
+            dispatcher.utter_message(text=question_curiosity)
             return [SlotSet("limit_curiosity", True)]
 
         return []
-
-
-class SetQueryLimitation(Action):
-    def name(self) -> Text:
-        return "action_set_nbr_rest"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        limit = tracker.get_slot("query_limit")
-        if not limit:
-            return []
-        return [SlotSet("limit_nbr_rest", limit)]

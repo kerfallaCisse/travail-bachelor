@@ -98,9 +98,5 @@ stories:
         - limit_curiosity: true
       - intent: query_limitation
         entities:
-          - query_limit
-      - action: utter_nbr_kilometer     
-      - intent: nombre_kilometer
-        entities: 
-          - nbr_kilometer    
+          - query_limit   
       - action: action_resolve_curiosity
