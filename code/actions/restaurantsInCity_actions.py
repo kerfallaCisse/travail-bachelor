@@ -18,6 +18,7 @@ class RestaurantsInCity(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         city = tracker.get_slot("city")
+        limit = tracker.get_slot("query_limit")
         cities = process_file("data/city.txt") # pour la liste des villes
         rest_names = process_file("data/rest_name.txt") # pour la liste des restaurants
         
@@ -25,6 +26,7 @@ class RestaurantsInCity(Action):
             dispatcher.utter_message(text="Désolé nous n'avons trouvé aucun restaurant dans cette ville\n\nIl se peut que la ville mentionnée ne soit pas une ville suisse")
             return []
         
+        dispatcher.utter_message(text=f"limit pour restaurants dans une ville: {limit}")
         restaurants = list()
         osmap_endpoint.setQuery(f"""
                                 SELECT ?osmn ?type ?loc ?name ?street ?cuisine ?hours
@@ -83,12 +85,12 @@ def process_file(file_path: str) -> list():
         lines = f.readlines()
         return [l.strip() for l in lines]
 
-class RestaurantsVilleLimitation(Action):
-    def name(self) -> Text:
-        return "action_restaurants_limitation_ville"
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(
-            text="Combien de restaurant souhaitez vous lister pour cette ville (mentionnez un nombre) ?")
-        return [SlotSet("rest_ville", True)]
+# class RestaurantsVilleLimitation(Action):
+#     def name(self) -> Text:
+#         return "action_restaurants_limitation_ville"
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#         dispatcher.utter_message(
+#             text="Combien de restaurant souhaitez vous lister pour cette ville (mentionnez un nombre) ?")
+#         return [SlotSet("rest_ville", True)]

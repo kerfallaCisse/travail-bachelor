@@ -7,8 +7,10 @@ intents:
   - bot_challenge
   - nlu_fallback
   - out_of_scope
-  - query_limitation
-  - nombre_kilometer
+  - query_limitation:
+      use_entities: true
+  - nombre_kilometer:
+      use_entities: true
   - restaurant_curiosity:
       use_entities: true
   - lister_restaurants:
@@ -38,19 +40,14 @@ responses:
   utter_nbr_kilometer:
     - text: "A combien de kilomètre du restaurant ?"
 
-  utter_mention_curiosity_limit: 
-    - text: "Vous n'avez pas mentionné la limite pour le nombre de curiosité. Veuillez mentionner."  
-
 actions:
   - action_lister_restaurants
   - action_resolve_mention
   - action_fallback
   - action_restaurants_city
   - action_resolve_curiosity
-  - action_restaurants_limitation
-  - action_restaurants_limitation_ville
-  - action_nbr_curiosity
-  # - action_set_rest_limit
+  - action_set_nbr_rest
+  - action_set_limit_intent
 
 
 entities:
@@ -81,12 +78,12 @@ slots:
     mappings:
       - type: custom
         action: action_resolve_mention
-  limit_nbr_rest:
-    type: text
-    influence_conversation: false
-    mappings:
-      - type: custom
-        # action: action_set_rest_limit
+  # limit_nbr_rest:
+  #   type: float
+  #   influence_conversation: false
+  #   mappings:
+  #     - type: custom
+  #       action: action_set_nbr_rest # peut être à enlever
   city:
     type: text
     influence_conversation: false
@@ -107,29 +104,36 @@ slots:
       - type: from_entity
         entity: rest_name
   query_limit:
-    type: text
+    type: float
+    min_value: 1
+    max_value: 20
+    initial_value: 10
     influence_conversation: false
     mappings: 
       - type: from_entity
         entity: query_limit
+        action: action_set_nbr_rest
   nbr_kilometer:
-    type: text
+    type: float
     influence_conversation: false
     mappings: 
       - type: from_entity
         entity: nbr_kilometer
   rest_ville:
     type: bool
+    initial_value: true
     influence_conversation: true
     mappings:
       - type: custom
+        action: action_set_limit_intent
   limit_curiosity:
     type: bool
+    initial_value: false
     influence_conversation: true
     mappings:
-      - type: custom    
+      - type: custom
+        action: action_set_limit_intent    
   
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

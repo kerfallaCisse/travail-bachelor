@@ -24,12 +24,16 @@ rules:
   - rule: demander à l'utilisateur de spécfier le nombre de restaurant qu'il souhaite afficher pour un pays (en l'occurence la Suisse)
     steps:
       - intent: lister_restaurants
-      - action: action_restaurants_limitation
+      - action: action_set_limit_intent
+      - slot_was_set:
+        - rest_ville: false  
 
   - rule: demander à l'utilisateur de spécfier le nombre de restaurant qu'il souhaite afficher pour une ville
     steps:
       - intent: restaurants_city
-      - action: action_restaurants_limitation_ville
+      - action: action_set_limit_intent
+      - slot_was_set:
+        - rest_ville: true    
   
   - rule: résoudre la mention 
     steps:
@@ -49,10 +53,37 @@ rules:
   - rule: demander à l'utilisateur de spécifier le nombre de curiosité qu'il cherche autour d'un restaurant
     steps:
       - intent: restaurant_curiosity
-      - action: action_nbr_curiosity
-  
-  - rule: mettre à jour la limite d'affichage pour le nombre de restaurant
+      - action: action_set_limit_intent
+      - slot_was_set:
+        - limit_curiosity: true   
+
+  - rule: exécuter l'action sur les curiosités lorsque l'utilisateur à mentionner le nombre de curiosité
     steps:
-      - intent: query_limitation
-      - action: action_set_rest_limit
+      - intent: nombre_kilometer
+      - action: action_resolve_curiosity
+
+  - rule: après que l'utilisateur ait mentionner la limite pour le nombre de restaurant
+    condition:
+    - slot_was_set:
+      - rest_ville: false
+    steps:  
+    - intent: query_limitation
+    - action: action_lister_restaurants 
+
+  - rule: après que l'utilisateur ait mentionner la limite pour le nombre de restaurant dans une ville
+    condition:
+    - slot_was_set:
+      - rest_ville: true
+    steps:
+    - intent: query_limitation
+    - action: action_restaurants_city 
+
+  - rule: après que l'utilisateur ait mentionner la limite pour le nombre de restaurant dans une ville
+    condition:
+    - slot_was_set:
+      - limit_curiosity: true
+    steps:
+    - intent: query_limitation
+    - action: utter_nbr_kilometer 
+
 

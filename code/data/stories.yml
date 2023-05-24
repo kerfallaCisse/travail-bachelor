@@ -17,14 +17,13 @@ stories:
       - intent: lister_restaurants
         entities:
           - nom_pays
-      - action: action_restaurants_limitation
-      - intent: query_limitation
-        entities:
-          - query_limit
-      # - action: action_set_rest_limit 
+      - action: action_set_limit_intent
       - slot_was_set:
-        - rest_ville: false   
-      - action: action_lister_restaurants
+        - rest_ville: false
+      - intent: query_limitation
+        entities: 
+          - query_limit 
+      - action: action_lister_restaurants  
 
   - story: donner la liste des restaurants qui se trouvent dans une ville
     steps:
@@ -35,13 +34,12 @@ stories:
       - intent: restaurants_city
         entities:
           - city
-      - action: action_restaurants_limitation_ville
+      - action: action_set_limit_intent
+      - slot_was_set:
+        - rest_ville: true
       - intent: query_limitation
         entities:
-          - query_limit
-      # - action: action_set_rest_limit 
-      - slot_was_set:
-        - rest_ville: true      
+          - query_limit      
       - action: action_restaurants_city
 
   - story: donner les informations concernant un restaurant lorsque l'utilisateur le mentionne avec une mention
@@ -53,20 +51,38 @@ stories:
       - intent: lister_restaurants
         entities:
           - nom_pays
-      - action: action_restaurants_limitation
-      - intent: query_limitation
-        entities:
-          - query_limit
-      # - action: action_set_rest_limit 
+      - action: action_set_limit_intent
       - slot_was_set:
-        - rest_ville: false   
-      - action: action_lister_restaurants
+        - rest_ville: false
+      - intent: query_limitation
+        entities: 
+          - query_limit 
+      - action: action_lister_restaurants 
       - intent: mention_restaurant
         entities:
           - mention
       - action: action_resolve_mention
 
-
+  - story: donner les informations concernant un restaurant lorsque l'utilisateur le mentionne avec une mention mais en passant par les restaurants d'une ville
+    steps:
+      - intent: salutation
+      - action: utter_salutation
+      - intent: affirmation
+      - action: utter_affrimation
+      - intent: restaurants_city
+        entities:
+          - city
+      - action: action_set_limit_intent
+      - slot_was_set:
+        - rest_ville: true
+      - intent: query_limitation
+        entities: 
+          - query_limit 
+      - action: action_restaurants_city 
+      - intent: mention_restaurant
+        entities:
+          - mention
+      - action: action_resolve_mention
 
   - story: donner les activités ou curiosités qui sont proches d'un restaurant
     steps:
@@ -77,33 +93,14 @@ stories:
       - intent: restaurant_curiosity
         entities:
           - rest_name
-      - action: action_nbr_curiosity
+      - action: action_set_limit_intent
+      - slot_was_set:
+        - limit_curiosity: true
       - intent: query_limitation
         entities:
           - query_limit
-      # - action: action_set_rest_limit 
-      - slot_was_set:
-        - limit_curiosity: true  
-
+      - action: utter_nbr_kilometer     
       - intent: nombre_kilometer
         entities: 
           - nbr_kilometer    
       - action: action_resolve_curiosity
-
-  - story: résolution du cas où l'utilisateur ne mentionne pas la limite pour les curiosités/activités
-    steps:
-      - intent: salutation
-      - action: utter_salutation
-      - intent: affirmation
-      - action: utter_affrimation
-      - intent: restaurant_curiosity
-        entities:
-          - rest_name
-      - action: action_nbr_curiosity
-      - intent: query_limitation
-        entities:
-          - query_limit
-      # - action: action_set_rest_limit    
-      - slot_was_set:
-        - limit_curiosity: false  
-      - action: utter_mention_curiosity_limit

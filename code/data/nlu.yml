@@ -80,19 +80,6 @@ nlu:
     examples: |
       - \d+   
   
-  # - intent: query_limitation_curiosity
-  #   examples: | 
-  #     - j'aimerai [10](query_limit_curi) curiosités ou activités
-  #     - [10](query_limit_curi) curiostés
-  #     - [10](query_limit_curi) activités
-  #     - donne moi [11](query_limit_curi) curiosités ou activités
-  #     - donne moi [11](query_limit_curi) activités
-  #     - donne moi [14](query_limit_curi) curiosités
-  
-  # - regex: query_limit_curi
-  #   examples: |
-  #     - \d+
-  
   - intent: mention_restaurant # cette entité est lié à toutes les informations que l'on possède sur un restaurant
     examples: |
       - donne moi toutes informations que tu possèdes sur le [premier]{"entity": "mention"} restaurant
@@ -126,7 +113,7 @@ nlu:
       - toutes les infos sur [Hotel Restaurant Holiday](rest_name)
       - toutes les informations sur [Johnny the Ripper](rest_name)
 
-  - lookup: mention
+  - lookup: mention # A compléter jusqu'à 20.
     examples: |
       - premier
       - 1er

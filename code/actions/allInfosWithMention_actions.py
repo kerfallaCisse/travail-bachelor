@@ -28,7 +28,7 @@ class ListerRestaurants(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         limitation = tracker.get_slot("query_limit")
-        print(limitation)
+        
 
         query = prepareQuery("""
                              prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
@@ -55,6 +55,7 @@ class ListerRestaurants(Action):
 
         response_to_return += "..\n\ntu peux spécifier ta recherche, car il y a beaucoup de restaurants"
         dispatcher.utter_message(text=response_to_return)
+        dispatcher.utter_message(text=f"{limitation}")
 
         return [SlotSet("mention_list", restaurants)]
 
@@ -198,13 +199,13 @@ class ResolveMention(Action):
 
         return []
 
-class RestaurantsSlotLimitation(Action):
-    def name(self) -> Text:
-        return "action_restaurants_limitation"
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(
-            text="Combien de restaurant souhaitez vous lister (mentionnez un nombre) ?")
-        return [SlotSet("rest_ville", False)]
+# class RestaurantsSlotLimitation(Action):
+#     def name(self) -> Text:
+#         return "action_restaurants_limitation"
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#         dispatcher.utter_message(
+#             text="Combien de restaurant souhaitez vous lister (mentionnez un nombre) ?")
+#         return [SlotSet("rest_ville", False)]
 
