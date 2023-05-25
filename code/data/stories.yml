@@ -6,7 +6,7 @@ stories:
       - intent: salutation
       - action: utter_salutation
       - intent: affirmation
-      - action: utter_affrimation
+      - action: utter_affrimation    
 
   - story: les restaunts qui sont dans un pays en l'occurence la Suisse
     steps:

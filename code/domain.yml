@@ -20,7 +20,7 @@ intents:
 
 responses:
   utter_salutation:
-    - text: "Hello comment vas-tu ?"
+    - text: "Hello comment vas-tu ?\nJe suis un chatbot spécialiser dans le domaine des restaurants en Suisse"
 
   utter_aurevoir:
     - text: "aurevoir :)"
@@ -30,6 +30,9 @@ responses:
 
   utter_affrimation:
     - text: "Cool, pose moi des questions"
+  
+  utter_limit:
+    - text: "OUPS, désolé, le nombre est trop grand. Il doit être compris entre 1 et 20."
 
   utter_please_rephrase:
     - text: "Désolé je n'ai pas compris ta question, est-ce que tu peux reformuler ?\n\nTu peux consulter la documentation pour voir les types de questions: [ ]{link}"
