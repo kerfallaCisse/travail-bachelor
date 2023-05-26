@@ -17,6 +17,8 @@ intents:
       use_entities: true
   - restaurants_city:
       use_entities: true
+  - infos_rest_name:
+      use_entities: true
 
 responses:
   utter_salutation:
@@ -44,6 +46,7 @@ actions:
   - action_restaurants_city
   - action_resolve_curiosity
   - action_set_limit_intent
+  - action_infos_rest_name
 
 
 entities:

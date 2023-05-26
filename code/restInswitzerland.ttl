@@ -1,6 +1,7 @@
 @prefix dbpedia: <http://dbpedia.org/resource/> .
 @prefix geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix ns0: <http://www.geonames.org/ontology#> .
+@prefix r: <http://restaurant#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 dbpedia:Croix_Dor_et_Poste ns0:name "Croix D'or et Poste" ;
@@ -944,29 +945,128 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "46.84708" ;
     geo1:long "9.51014" .
 
-<https://www.openstreetmap.org/node/8621312506> a <https://www.openstreetmap.org/node/> ;
-    ns0:name "T'as vu le bitcoin xD" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> .
+<https://www.openstreetmap.org/node/1454894922> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue des Etuves" ;
+    ns0:name "Black Sheep" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2063362" ;
+    geo1:long "6.1435471" .
 
-<https://www.openstreetmap.org/node/8818883495> a <https://www.openstreetmap.org/node/> ;
-    ns0:name "Johnny the Ripper" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> .
+<https://www.openstreetmap.org/node/1637895109> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue de l'Athénée" ;
+    ns0:name "Octopus" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.1959401" ;
+    geo1:long "6.1526634" .
 
-<https://www.openstreetmap.org/node/8829812863> a <https://www.openstreetmap.org/node/> ;
-    ns0:name "Beer O'clock" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> .
+<https://www.openstreetmap.org/node/2126273475> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Boulevard Georges-Favon" ;
+    ns0:name "Barbershop Bar" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2029568" ;
+    geo1:long "6.1398436" .
+
+<https://www.openstreetmap.org/node/2188913090> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Boulevard Carl-Vogt" ;
+    r:cuisine "Argentine",
+        "italian",
+        "pizza" ;
+    r:opening_hours "Mo-Su 11:00-14:00 18:00-22:00" ;
+    ns0:name "Routes Argentines" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.199047" ;
+    geo1:long "6.1343121" .
+
+<https://www.openstreetmap.org/node/2266023816> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue de Saint-Jean" ;
+    r:cuisine "chinese" ;
+    ns0:name "Ming Wah" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.204894" ;
+    geo1:long "6.1301509" .
+
+<https://www.openstreetmap.org/node/2337285545> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Boulevard des Philosophes" ;
+    ns0:name "Kuk" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.1964873" ;
+    geo1:long "6.1462065" .
+
+<https://www.openstreetmap.org/node/2395622178> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Avenue Alfred-Bertrand" ;
+    ns0:name "Le Pain Quotidien" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.1930901" ;
+    geo1:long "6.1545753" .
+
+<https://www.openstreetmap.org/node/3032344938> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue du Stand" ;
+    r:cuisine "brasserie" ;
+    r:opening_hours "Su-Fr 11:30-23:00; Sa 18:30-23:00" ;
+    r:postcode "1204" ;
+    ns0:name "Les Sales Gosses" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2031739" ;
+    geo1:long "6.137466" .
+
+<https://www.openstreetmap.org/node/3065602361> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue de la Coulouvrenière" ;
+    ns0:name "Le 23" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2040278" ;
+    geo1:long "6.1377475" .
+
+<https://www.openstreetmap.org/node/310347696> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Avenue Wendt" ;
+    r:cuisine "burger" ;
+    r:opening_hours "\"bâtiment condamné\"" ;
+    ns0:name "McDonald's" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2133722" ;
+    geo1:long "6.1296471" .
+
+<https://www.openstreetmap.org/node/5208357874> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue des Rois" ;
+    r:cuisine "coffee_shop",
+        "italian" ;
+    r:opening_hours "Mo-Fr 07:30-18:00; Sa 07:30-18:00" ;
+    r:postcode "1204" ;
+    ns0:name "Royal Karoma" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2038132" ;
+    geo1:long "6.1377171" .
+
+<https://www.openstreetmap.org/node/5244188907> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue de Montbrillant" ;
+    ns0:name "Coop Restaurant" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2204684" ;
+    geo1:long "6.141775" .
+
+<https://www.openstreetmap.org/node/725251865> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue du Contrat-Social" ;
+    r:cuisine "french" ;
+    r:opening_hours "Tu-Su 09:00-22:00" ;
+    r:postcode "1203" ;
+    ns0:name "Il Caminetto" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2044992" ;
+    geo1:long "6.1241628" .
 
 <https://www.openstreetmap.org/way/179543519> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue de Montbrillant" ;
     ns0:name "Montbrillant" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> .
-
-<https://www.openstreetmap.org/way/31251770> a <https://www.openstreetmap.org/node/> ;
-    ns0:name "La dispensa" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> .
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2142159" ;
+    geo1:long "6.1425386" .
 
 <https://www.openstreetmap.org/way/83247586> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue du Prince" ;
+    r:cuisine "international" ;
     ns0:name "Migros restaurant" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> .
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2028528" ;
+    geo1:long "6.1514043" .
 
 dbpedia:Bären_Twann ns0:name "Bären Twann" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;

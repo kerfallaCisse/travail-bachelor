@@ -100,18 +100,7 @@ nlu:
       - donne moi les infos du [troisième](mention) restaurant
       - le [troisième](mention) restaurant
       - [troisième](mention)
-      - donne moi toutes informations que tu possèdes sur le restaurant [Piz Gloria](rest_name)
-      - donne moi les informations que tu possèdes sur [Piz Gloria](rest_name)
-      - donne moi les informations que tu possèdes sur ce restaurant [Lily's Stomach Supplye](rest_name)
-      - donne moi les infos que tu as sur [Lily's Stomach Supplye](rest_name)
-      - donne moi les infos que tu possèdes sur [Montbrillant](rest_name)
-      - les infos sur [Montbrillant](rest_name)
-      - sur [Montbrillant](rest_name)
-      - sur le restaurant [Arnegg, Restaurant Ilge](rest_name)
-      - que possèdes-tu sur le restaurant [Arnegg, Restaurant Ilge](rest_name)
-      - que possèdes-tu sur [McDonald's](rest_name)
-      - toutes les infos sur [Hotel Restaurant Holiday](rest_name)
-      - toutes les informations sur [Johnny the Ripper](rest_name)
+
 
   - lookup: mention
     examples: |
@@ -152,6 +141,23 @@ nlu:
       - vingtième
       - 20ème
 
+  - intent: infos_rest_name
+    examples: |
+      - donne moi toutes informations que tu possèdes sur le restaurant [Piz Gloria](rest_name)
+      - donne moi les informations que tu possèdes sur [Piz Gloria](rest_name)
+      - donne moi les informations que tu possèdes sur ce restaurant [Lily's Stomach Supplye](rest_name)
+      - donne moi les infos que tu as sur [Lily's Stomach Supplye](rest_name)
+      - donne moi les infos que tu possèdes sur [Montbrillant](rest_name)
+      - les infos sur [Montbrillant](rest_name)
+      - les informations sur [Les Sales Gosses](rest_name)
+      - les informations sur le restaurant [Sonchaux](rest_name)
+      - sur [Montbrillant](rest_name)
+      - sur le restaurant [Arnegg, Restaurant Ilge](rest_name)
+      - que possèdes-tu sur le restaurant [Arnegg, Restaurant Ilge](rest_name)
+      - que possèdes-tu sur [McDonald's](rest_name)
+      - toutes les infos sur [Hotel Restaurant Holiday](rest_name)
+      - toutes les informations sur [Johnny the Ripper](rest_name)  
+
   - intent: restaurants_city
     examples: |
       - quels sont les restaurants à [Bern](city)
@@ -173,8 +179,9 @@ nlu:
       - quels sont les restaurants qui sont à [Frauenfeld](city)
       - [Bern](city)
       - à [Bern](city)
-      - resto à quels sont les restaurants qui sont à [Bulle](city)
-      - restaurants à quels sont les restaurants qui sont à [Bulle](city)
+      - resto à [Sion](city)
+      - restaurant à [Baar](city)
+      - quels sont les restaurants qui sont à [Bulle](city)
   
   - lookup: city
     examples: |
@@ -221,3 +228,5 @@ nlu:
       - Restaurant Metzg
       - Hotel Restaurant Holiday
       - Restaurant Hole in One
+      - Octopus
+      - Royal Karoma

@@ -63,6 +63,27 @@ stories:
           - mention
       - action: action_resolve_mention
 
+  - story: donner les informations concernant un restaurant lorsque l'utilisateur mentionne le nom du restaurant
+    steps:
+      - intent: salutation
+      - action: utter_salutation
+      - intent: affirmation
+      - action: utter_affrimation
+      - intent: lister_restaurants
+        entities:
+          - nom_pays
+      - action: action_set_limit_intent
+      - slot_was_set:
+        - rest_ville: false
+      - intent: query_limitation
+        entities: 
+          - query_limit 
+      - action: action_lister_restaurants 
+      - intent: infos_rest_name
+        entities:
+          - rest_name
+      - action: action_infos_rest_name
+
   - story: donner les informations concernant un restaurant lorsque l'utilisateur le mentionne avec une mention mais en passant par les restaurants d'une ville
     steps:
       - intent: salutation

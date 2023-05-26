@@ -39,6 +39,11 @@ rules:
     steps:
       - intent: mention_restaurant
       - action: action_resolve_mention
+
+  - rule: donner les informations concernant un restaurant lorsque l'utilisateur mentionne le nom du restaurant
+    steps:
+      - intent: infos_rest_name
+      - action: action_infos_rest_name
   
   - rule: demander à l'utilisateur de reformuler lorsque le bot ne comprend pas son intention
     steps:
