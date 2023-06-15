@@ -4,7 +4,6 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from SPARQLWrapper import SPARQLWrapper2
 import requests
-from functions.graph import getGraph
 from rdflib import Literal, Namespace, URIRef, Graph
 from rdflib.namespace import RDF, GEO
 

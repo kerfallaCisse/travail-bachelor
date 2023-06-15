@@ -3,6 +3,12 @@ language: fr # l'ordre des composants est important
 pipeline:
 - name: WhitespaceTokenizer
 - name: RegexFeaturizer
+- name: RegexEntityExtractor
+  case_sensitive: false
+  use_lookup_tables: true
+  use_regexes: true
+  use_word_boundaries: true
+  constrain_similarities: true
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
 - name: CountVectorsFeaturizer
@@ -12,12 +18,6 @@ pipeline:
 - name: DIETClassifier
   epochs: 100
 - name: EntitySynonymMapper
-- name: RegexEntityExtractor
-  case_sensitive: false
-  use_lookup_tables: true
-  use_regexes: true
-  use_word_boundaries: true
-  constrain_similarities: true
 - name: ResponseSelector
   epochs: 100
   constrain_similarities: true
