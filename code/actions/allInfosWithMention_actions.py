@@ -35,7 +35,7 @@ class ListerRestaurants(Action):
                                 prefix dbpedia: <http://dbpedia.org/resource/>
                                 SELECT ?rn
                                 WHERE{{
-                                    ?r ns0:name ?rn
+                                    ?r ns0:name ?rn .
                                 }} limit {limit_query}
                                 """)
         results = local_endpoint.query().bindings

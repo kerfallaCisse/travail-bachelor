@@ -1,13 +1,7 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from SPARQLWrapper import SPARQLWrapper2
 from functions.rest_infos import getRestInfos
-
-sparql_dbpedia = SPARQLWrapper2(
-    "https://dbpedia.org/sparql")  # DBpedia endpoint
-local_endpoint = SPARQLWrapper2(
-    "http://localhost:7200/repositories/POC-1")  # my local graphDB endpoint
 
 
 class ResolveMention(Action):

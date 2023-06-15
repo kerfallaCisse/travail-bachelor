@@ -1053,12 +1053,54 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "46.2044992" ;
     geo1:long "6.1241628" .
 
+<https://www.openstreetmap.org/node/7856590933> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Chemin du 23-Août" ;
+    r:cuisine "asian" ;
+    ns0:name "BAO Steam Kitchen" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2020261" ;
+    geo1:long "6.1342931" .
+
+<https://www.openstreetmap.org/node/8500037434> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Boulevard Georges-Favon" ;
+    r:cuisine "burger" ;
+    r:opening_hours "Mo-Thu 11:30-22:30; Fri-Sat 11:30-23:30" ;
+    r:postcode "1204" ;
+    ns0:name "Shiso Burger" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2032198" ;
+    geo1:long "6.1398097" .
+
+<https://www.openstreetmap.org/node/8621312506> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue de la Prairie" ;
+    ns0:name "T'as vu le bitcoin xD" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2100898" ;
+    geo1:long "6.1353441" .
+
+<https://www.openstreetmap.org/node/8818883495> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue de la Prairie" ;
+    r:cuisine "burger" ;
+    r:opening_hours "Mo-Fr 09:00-17:00" ;
+    r:postcode "1202" ;
+    ns0:name "Johnny the Ripper" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2091908" ;
+    geo1:long "6.1361728" .
+
 <https://www.openstreetmap.org/way/179543519> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de Montbrillant" ;
     ns0:name "Montbrillant" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2142159" ;
     geo1:long "6.1425386" .
+
+<https://www.openstreetmap.org/way/665498669> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Quai du Général-Guisan" ;
+    ns0:name "Le Lacustre" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.2045511" ;
+    geo1:long "6.1489083" .
 
 <https://www.openstreetmap.org/way/83247586> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue du Prince" ;

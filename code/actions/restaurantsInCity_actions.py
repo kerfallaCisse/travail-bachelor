@@ -2,7 +2,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
-from SPARQLWrapper import SPARQLWrapper2
+from SPARQLWrapper import SPARQLWrapper2, BASIC
 import requests
 from rdflib import Literal, Namespace, URIRef, Graph
 from rdflib.namespace import RDF, GEO
@@ -10,6 +10,7 @@ from rdflib.namespace import RDF, GEO
 osmap_endpoint = SPARQLWrapper2(
     "https://sophox.org/sparql")  # Open street map endpoint
 osmap_endpoint.setTimeout(60)  # query time out for the endpoint in seconde
+local_endpoint = SPARQLWrapper2("http://localhost:7200/repositories/POC-1/statements") # local endpoint to add statements in the graph
 GRAPH = Graph()
 
 
@@ -89,32 +90,25 @@ class RestaurantsInCity(Action):
                 cuisine = ""
                 opening_hours = ""
                 postcode = ""
-                triples = f"""<{osmn}> a <https://www.openstreetmap.org/node/> ; geo1:lat "{rest_lat}" ; geo1:long "{rest_long}" ; r:adresse "{rest_street}" ;"""
                 resp = str(l+1)
                 dispatcher.utter_message(
                     text=f"{resp}- Nom du restaurant: {rest_name}\n- Rue: {rest_street}")
+                
                 # On récupère les valeurs optionnelles
                 try:
                     cuisine = result["cuisine"].value
                     opening_hours = result["hours"].value
                     postcode = result["postcode"].value
                     if len(cuisine) != 0:
-                        if cuisine.find(";") > -1:
-                            all_cuisines = cuisine.split(";")
-                            for c in all_cuisines:
-                                triples += f"""r:cuisine "{c}" ;"""
-                        else:
-                            triples += f"""r:cuisine "{cuisine}" ;"""
                         dispatcher.utter_message(
                             text=f"- Type de cuisine: {cuisine}")
                     if len(opening_hours) != 0:
-                        triples += f"""r:opening_hours "{opening_hours}" ;"""
                         dispatcher.utter_message(
                             text=f"- Horaires d'ouvertures: {opening_hours}")
                     if len(postcode) != 0:
-                        triples += f"""r:postcode "{postcode}" ;"""
                         dispatcher.utter_message(
                             text=f"- Code postal: {postcode}")
+                        
                 except KeyError:
                     pass
 
@@ -123,14 +117,33 @@ class RestaurantsInCity(Action):
                         # on insère le restaurant dans le fichier pour faciliter l'extraction des entités
                         f.write(rest_name+"\n")
                         # On insère le restaurant dans le graphe de connaissance (graphe par défaut)
-                        triples += f"""ns0:name "{rest_name}"; ns0:parentCountry <https://sws.geonames.org/2658434/> ."""
-                        ret = requests.post(url="http://localhost:7200/repositories/POC-1/rdf-graphs/service?default",
-                                            data=triples,
-                                            headers={"Content-Type": "text/turtle"})
-                        # print(rest_name,ret.status_code)
-                        # print(ret.content)
-                        # print(ret.raw)
-
+                        # triples += f"""ns0:name "{rest_name}"; ns0:parentCountry <https://sws.geonames.org/2658434/> ."""
+                        # requests.post(url="http://localhost:7200/repositories/POC-1/rdf-graphs/service?default",
+                        #                     data=triples,
+                        #                     headers={"Content-Type": "text/turtle"})
+                        
+                        local_endpoint.setHTTPAuth(BASIC)
+                        local_endpoint.setCredentials("","")
+                        local_endpoint.method = "POST"
+                        local_endpoint.setReturnFormat("json")
+                        local_endpoint.queryType = "INSERT"
+                        
+                        local_endpoint.setQuery(f"""
+                                                PREFIX ns0: <http://www.geonames.org/ontology#>
+                                                PREFIX geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+                                                PREFIX r: <http://restaurant#>
+                                                INSERT DATA {{
+                                                    <{osmn}> ns0:name "{rest_name}" ;
+                                                             a <https://www.openstreetmap.org/node/> ;
+                                                             ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+                                                             geo1:lat "{rest_lat}" ;
+                                                             geo1:long "{rest_long}" ;
+                                                             r:street "{rest_street}" .
+                                                }}
+                                                """)
+                        local_endpoint.query()
+                        
+                        # Add the triple in the turtle file (avoid dumping each time)
                         OSMPNODE = URIRef(
                             "https://www.openstreetmap.org/node/")
                         OSMPOBJECT = URIRef(osmn)
@@ -155,6 +168,9 @@ class RestaurantsInCity(Action):
                         GRAPH.add((OSMPOBJECT, RDF.type, OSMPNODE))
                         GRAPH.add((OSMPOBJECT, name, Literal(rest_name)))
                         GRAPH.add((OSMPOBJECT, parent_country, PARENTCOUNTRY))
+                        GRAPH.add((OSMPOBJECT, latitude, Literal(rest_lat)))
+                        GRAPH.add((OSMPOBJECT, longitude, Literal(rest_long)))
+                        GRAPH.add((OSMPOBJECT, adresse, Literal(rest_street)))
 
                         # On ajoute les triplets dans le fichier turtle avec la même logique
                         if cuisine.find(";") > -1:
@@ -162,19 +178,48 @@ class RestaurantsInCity(Action):
                             for c in all_cuisines:
                                 GRAPH.add(
                                     (OSMPOBJECT, cuisine_type, Literal(c)))
+                                
+                                local_endpoint.setQuery(f"""
+                                                        PREFIX ns0: <http://www.geonames.org/ontology#>
+                                                        PREFIX r: <http://restaurant#>
+                                                        INSERT DATA {{
+                                                            <{osmn}> r:cuisine {c} .
+                                                        }}
+                                                        """)
+                                local_endpoint.query()
+                                
                         else:
                             if len(cuisine) != 0:
                                 GRAPH.add(
                                     (OSMPOBJECT, cuisine_type, Literal(cuisine)))
+                                local_endpoint.setQuery(f"""
+                                                        PREFIX r: <http://restaurant#>
+                                                        INSERT DATA {{
+                                                            <{osmn}> r:cuisine "{cuisine}" .
+                                                        }}
+                                                        """)
+                                local_endpoint.query()
                         if len(opening_hours) != 0:
                             GRAPH.add((OSMPOBJECT, openingHours,
                                       Literal(opening_hours)))
+                            local_endpoint.setQuery(f"""
+                                                    PREFIX r: <http://restaurant#>
+                                                    INSERT DATA {{
+                                                        <{osmn}> r:opening_hours "{opening_hours}" .
+                                                    }}
+                                                    """)
+                            local_endpoint.query()
                         if len(postcode) != 0:
                             GRAPH.add(
                                 (OSMPOBJECT, post_code, Literal(postcode)))
-                        GRAPH.add((OSMPOBJECT, latitude, Literal(rest_lat)))
-                        GRAPH.add((OSMPOBJECT, longitude, Literal(rest_long)))
-                        GRAPH.add((OSMPOBJECT, adresse, Literal(rest_street)))
+                            local_endpoint.setQuery(f"""
+                                                    PREFIX r: <http://restaurant#>
+                                                    INSERT DATA {{
+                                                        <{osmn}> r:postcode "{postcode}" .
+                                                    }}
+                                                    """)
+                            local_endpoint.query()
+
                         GRAPH.parse(source="restInswitzerland.ttl")
                         GRAPH.serialize(
                             destination="restInswitzerland.ttl", format="ttl")

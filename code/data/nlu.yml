@@ -182,6 +182,7 @@ nlu:
       - resto à [Sion](city)
       - restaurant à [Baar](city)
       - quels sont les restaurants qui sont à [Bulle](city)
+      - donne moi les restos à [Thalwil](city)
   
   - lookup: city
     examples: |
@@ -199,6 +200,39 @@ nlu:
       - Vevey
       - Onex
       - Pully
+      - Schlieren
+      - Vevey
+      - Baden
+      - Reinach
+      - Adliswil
+      - Onex
+      - Volketswil
+      - Glaris
+      - Pully
+      - Regensdorf
+      - Olten
+      - Thalwil
+      - Gossau
+      - Muttenz
+      - Monthey
+      - Ostermundigen
+      - Granges
+      - Illnau-Effretikon
+      - Wallisellen
+      - Cham
+      - Wohlen
+      - Sierre
+      - Soleure
+      - La Tour-de-Peilz
+      - Münchenstein
+      - Altstätten
+      - Bassersdorf
+      - Weinfelden
+      - Worba
+      - Belp
+      - Ittigen
+      - Männedorf
+      - Hinwil
   
   - intent: restaurant_curiosity
     examples: |

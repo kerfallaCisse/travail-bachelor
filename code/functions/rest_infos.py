@@ -37,7 +37,6 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
     nearBy_placeAndMap = ""
 
     response = local_endpoint.query().bindings
-    print(response)
     if len(response) == 0:
         dispatcher.utter_message(
             text="Désolé nous n'avons aucune information concernant ce restaurant")
