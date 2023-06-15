@@ -1095,6 +1095,20 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "46.2142159" ;
     geo1:long "6.1425386" .
 
+<https://www.openstreetmap.org/way/254851999> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Eschenstrasse" ;
+    ns0:name "Restaurant zum alten Pflüegli" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.4178968" ;
+    geo1:long "9.2691581" .
+
+<https://www.openstreetmap.org/way/255116507> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "St. Gallerstrasse" ;
+    ns0:name "Restaurant Schäfli" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.4156044" ;
+    geo1:long "9.2666765" .
+
 <https://www.openstreetmap.org/way/665498669> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Quai du Général-Guisan" ;
     ns0:name "Le Lacustre" ;

@@ -117,10 +117,6 @@ class RestaurantsInCity(Action):
                         # on insère le restaurant dans le fichier pour faciliter l'extraction des entités
                         f.write(rest_name+"\n")
                         # On insère le restaurant dans le graphe de connaissance (graphe par défaut)
-                        # triples += f"""ns0:name "{rest_name}"; ns0:parentCountry <https://sws.geonames.org/2658434/> ."""
-                        # requests.post(url="http://localhost:7200/repositories/POC-1/rdf-graphs/service?default",
-                        #                     data=triples,
-                        #                     headers={"Content-Type": "text/turtle"})
                         
                         local_endpoint.setHTTPAuth(BASIC)
                         local_endpoint.setCredentials("","")
