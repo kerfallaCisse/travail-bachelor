@@ -13,11 +13,17 @@ stories:
     intent: affirmation
   - action: utter_affrimation
   - user: |
-      donne moi les restaurants qui sont en suisse
+      donne moi les restaurants qui sont en [Suisse]{"entity":"nom_pays"}
     intent: lister_restaurants
+  - action: action_set_limit_intent
+  - slot_was_set:
+    - rest_ville: false
+  - user: |
+      j'aimerai [10]{"entity":"query_limit"} restaurants
+    intent: query_limitation  
   - action: action_lister_restaurants
 
-- story: renvoyer le restaurant correspondant quand l'utilisateur fait une mention
+- story: donner la liste des restaurants qui se trouvent dans une ville
   steps:
   - user: |
       bonjour
@@ -28,15 +34,42 @@ stories:
     intent: affirmation
   - action: utter_affrimation
   - user: |
-      donne moi les restaurants qui sont en suisse
+      donne moi les restaurants qui sont à [Genève]{"entity":"city"}
+    intent: restaurants_city
+  - action: action_set_limit_intent
+  - slot_was_set:
+    - rest_ville: true
+  - user: |
+      j'aimerai [14]{"entity":"query_limit"} restaurants
+    intent: query_limitation  
+  - action: action_restaurants_city
+
+- story: donner les informations concernant un restaurant lorsque l'utilisateur le mentionne avec une mention
+  steps:
+  - user: |
+      bonjour
+    intent: salutation
+  - action: utter_salutation
+  - user: |
+      cool je vais bien
+    intent: affirmation
+  - action: utter_affrimation
+  - user: |
+      donne moi les restaurants qui sont en [Suisse]{"entity":"nom_pays"}
     intent: lister_restaurants
+  - action: action_set_limit_intent
+  - slot_was_set:
+    - rest_ville: false
+  - user: |
+      j'aimerai [14]{"entity":"query_limit"} restaurants
+    intent: query_limitation  
   - action: action_lister_restaurants
   - user: |
-      donne moi les informations que tu possèdes sur le premier restaurant
+      donne moi les informations que tu possèdes sur le [premier]{"entity":"mention"}
     intent: mention_restaurant
   - action: action_resolve_mention
 
-- story: reformuler lorsque le chatbot n'a pas compris la question de l'utilisateur
+- story: donner les informations concernant un restaurant lorsque l'utilisateur mentionne le nom du restaurant
   steps:
   - user: |
       bonjour
@@ -47,45 +80,21 @@ stories:
     intent: affirmation
   - action: utter_affrimation
   - user: |
-      donne moi les hôtels en suisse
-    intent: out_of_scope
-  - action: action_fallback
-
-- story: donner les restaurants qui se trouvent dans une ville
-  steps:
-  - user: |
-      bonjour
-    intent: salutation
-  - action: utter_salutation
-  - user: |
-      cool je vais bien
-    intent: affirmation
-  - action: utter_affrimation
-  - user: |
-      donne moi les restaurants à [Zürich]{"entity": "city"}
-    intent: restaurants
-  - action: action_restaurants_city
-
-- story: donner les restaurants qui se trouvent dans une ville en passant par la liste des restaurants
-  steps:
-  - user: |
-      bonjour
-    intent: salutation
-  - action: utter_salutation
-  - user: |
-      cool je vais bien
-    intent: affirmation
-  - action: utter_affrimation
-  - user: |
-      donne moi la liste des restaurants en Suisse
+      donne moi les restaurants qui sont en [Suisse]{"entity":"nom_pays"}
     intent: lister_restaurants
-  - action: action_lister_restaurants       	
+  - action: action_set_limit_intent
+  - slot_was_set:
+    - rest_ville: false
   - user: |
-      donne moi les restaurants à [Zürich]{"entity": "city"}
-  - intent: restaurants_city
-  - action: action_restaurants_city
+      j'aimerai [14]{"entity":"query_limit"} restaurants
+    intent: query_limitation  
+  - action: action_lister_restaurants
+  - user: |
+      donne moi les informations que tu possèdes sur le restaurant [Piz Gloria]{"entity":"rest_name"}
+    intent: infos_rest_name
+  - action: action_infos_rest_name
 
-- story: donner les curiosités ou activités qui sont autour d'un resturant
+- story: donner les informations concernant un restaurant lorsque l'utilisateur le mentionne avec une mention mais en passant par les restaurants d'une ville
   steps:
   - user: |
       bonjour
@@ -94,14 +103,65 @@ stories:
   - user: |
       cool je vais bien
     intent: affirmation
-  - action: utter_affrimation     	
+  - action: utter_affrimation
   - user: |
-      donne moi les restaurants à [Zürich]{"entity": "city"}
-  - intent: restaurants_city
+      donne moi les restaurants qui sont à [Onex]{"entity":"city"}
+    intent: restaurants_city
+  - action: action_set_limit_intent
+  - slot_was_set:
+    - rest_ville: true
+  - user: |
+      j'aimerai [13]{"entity":"query_limit"} restaurants
+    intent: query_limitation  
   - action: action_restaurants_city
   - user: |
-      quelles sont les activités ou curiosités qui sont autour du restaurant
+      donne moi les informations que tu possèdes sur le [2ème]{"entity":"mention"}
+    intent: mention_restaurant
+  - action: action_resolve_mention
+
+- story: donner les activités ou curiosités qui sont proches d'un restaurant, précisement les terrains de jeu
+  steps:
+  - user: |
+      bonjour
+    intent: salutation
+  - action: utter_salutation
+  - user: |
+      cool je vais bien
+    intent: affirmation
+  - action: utter_affrimation
+  - user: |
+      donne moi les curiosités ou activités qui sont autour du restaurant [Piz Gloria]{"entity":"rest_name"}
     intent: restaurant_curiosity
+  - action: action_set_limit_intent
+  - slot_was_set:
+    - limit_curiosity: true
+  - user: |
+      j'aimerai [13]{"entity":"query_limit"} curiosités
+    intent: query_limitation  
   - action: action_resolve_curiosity
+
+- story: lister les restaurants dans une ville avec le type de cuisine correspondant à celui mentionné par l'utilisateur
+  steps:
+  - user: |
+      bonjour
+    intent: salutation
+  - action: utter_salutation
+  - user: |
+      cool je vais bien
+    intent: affirmation
+  - action: utter_affrimation
+  - user: |
+      donne moi les restaurants qui vendent de la nourriture [australienne]{"entity":"type_cuisine"} à [Soleure]{"entity":"city"} 
+    intent: rest_cuisine
+  - action: action_set_limit_intent
+  - slot_was_set:
+    - cuisine_type: true
+  - user: |
+      [6]{"entity":"query_limit"}
+    intent: query_limitation
+  - action: action_cuisine_type
+    
+
+
 
 

@@ -26,7 +26,7 @@ class SetQueryLimitationIntent(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
+
         question_rest = "Combien de restaurant ?"
         question_curiosity = "Combien de curiosité/activité ?"
 
@@ -40,5 +40,8 @@ class SetQueryLimitationIntent(Action):
         elif intent == "restaurant_curiosity":
             dispatcher.utter_message(text=question_curiosity)
             return [SlotSet("limit_curiosity", True)]
+        elif intent == "rest_cuisine":
+            dispatcher.utter_message(text=question_rest)
+            return [SlotSet("cuisine_type", True)]
 
         return []

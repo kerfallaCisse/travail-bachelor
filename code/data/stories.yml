@@ -121,3 +121,21 @@ stories:
         entities:
           - query_limit   
       - action: action_resolve_curiosity
+
+  - story: lister les restaurants dans une ville avec le type de cuisine correspondant à celui mentionné par l'utilisateur
+    steps:
+      - intent: salutation
+      - action: utter_salutation
+      - intent: affirmation
+      - action: utter_affrimation
+      - intent: rest_cuisine
+        entities:
+          - type_cuisine
+          - city
+      - action: action_set_limit_intent
+      - slot_was_set:
+        - cuisine_type: true
+      - intent: query_limitation
+        entities: 
+          - query_limit 
+      - action: action_cuisine_type

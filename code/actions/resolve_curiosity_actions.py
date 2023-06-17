@@ -1,15 +1,12 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-# from .allInfosWithMention_actions import local_endpoint
+from .allInfosWithMention_actions import local_endpoint
 from SPARQLWrapper import SPARQLWrapper2, BASIC
 from .restaurantsInCity_actions import osmap_endpoint
-from rdflib import Namespace, URIRef, Graph, Literal
+from rdflib import Namespace, URIRef, Graph
 
 graph = Graph()
-
-local_endpoint = SPARQLWrapper2(
-    "http://localhost:7200/repositories/POC-1")
 
 
 class ResolveCuriosity(Action):
@@ -23,10 +20,10 @@ class ResolveCuriosity(Action):
 
         rest_name = tracker.get_slot("rest_name")
         limit = tracker.get_slot("query_limit")
-        # restWithPoints: list = tracker.get_slot("curiosity") -> peut être pas besoin
-        dispatcher.utter_message(
-            text=f"Tu veux les curiosités du restaurant : {rest_name}: limit: {limit}")
-
+        if int(limit) > 20:
+            dispatcher.utter_message(response="utter_limit")
+            return []
+        
         # On récupère la longitute et la latitude du restaurant ainsi que l'uri du restaurant
         local_endpoint.setQuery(f"""
                                 PREFIX r: <http://restaurant#>
@@ -70,7 +67,7 @@ class ResolveCuriosity(Action):
                                                 SERVICE wikibase:around {{ 
                                                         ?osm_objects osmm:loc ?coordinates. 
                                                         bd:serviceParam wikibase:center "{POINT}"^^geo:wktLiteral.
-                                                        bd:serviceParam wikibase:radius "1". # kilomètre
+                                                        bd:serviceParam wikibase:radius "1". # kilomètre -> distance maximale
                                                         bd:serviceParam wikibase:distance ?distance .
                                                     }}   
                                             }} limit {limit}                                            

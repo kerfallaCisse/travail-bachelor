@@ -281,3 +281,88 @@ nlu:
       - Restaurant Grüene Aff
       - Kräiligen, Restaurant Brücke
       - Restaurant Le Carrefour
+
+
+  - intent: rest_cuisine
+    examples: |
+      - donne moi les restaurants dont le type de cuisine est [asiate](type_cuisine) dans la ville d'[Onex](city)
+      - type de cuisine [asiatique](type_cuisine) à [Vevey](city)
+      - quels sont les restaurants qui vendent de la nourriture [asiatique](type_cuisine) à [Genève](city)
+      - nourriture [américaine](type_cuisine) à [Zürich](city)
+      - type de nourriture [argentin](type_cuisine) à [Yverdon-les-Bains](city)
+      - donne moi les restaurants qui vendent de la nourriture [australienne](type_cuisine) à [Soleure](city)
+      - donne moi les restaurants qui vendent de la nourriture [chinoise](type_cuisine) dans la ville de [Cham](city)
+
+  - lookup: type_cuisine
+    examples: |
+      - asiatique
+      - asiate
+      - australien
+      - africain
+      - afghan
+      - américain
+      - arabe
+      - arabesque
+      - argentin
+      - arménien
+      - australien
+      - austrien
+      - belge
+      - bolivien
+      - brésilien
+      - britanique
+      - bulgarien
+      - chinoise
+      - colombien
+      - croate
+      - cubain
+      - égyptien
+      - éthiopien
+      - européen
+      - français
+      - allemand
+      - indien
+      - italien
+      - japonais
+      - coréen
+      - mexicain
+      - marocain
+      - pakistanais
+      - portugais
+      - russe
+      - espagnol
+      - suisse
+      - thailandais
+      - sénégalais
+      - australienne
+      - africaine
+      - afghane
+      - américaine
+      - argentine
+      - arménienne
+      - austrienne
+      - bolivienne
+      - brésilienne
+      - bulgarienne
+      - chinoise
+      - colombienne
+      - croatienne
+      - cubaine
+      - égyptienne
+      - éthiopienne
+      - européenne
+      - française
+      - allemande
+      - indienne
+      - italienne
+      - japonaise
+      - coréenne
+      - mexicaine
+      - marocaine
+      - pakistanaise
+      - portugaise
+      - thailandaise
+      - sénégalaise
+
+
+

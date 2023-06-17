@@ -179,7 +179,7 @@ class RestaurantsInCity(Action):
                                                         PREFIX ns0: <http://www.geonames.org/ontology#>
                                                         PREFIX r: <http://restaurant#>
                                                         INSERT DATA {{
-                                                            <{osmn}> r:cuisine {c} .
+                                                            <{osmn}> r:cuisine "{c}" .
                                                         }}
                                                         """)
                                 local_endpoint.query()

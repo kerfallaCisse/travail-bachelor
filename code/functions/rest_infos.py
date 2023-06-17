@@ -1,3 +1,5 @@
+import json
+from rdflib import Graph
 from rasa_sdk.executor import CollectingDispatcher
 from SPARQLWrapper import SPARQLWrapper2
 
@@ -5,8 +7,7 @@ sparql_dbpedia = SPARQLWrapper2(
     "https://dbpedia.org/sparql")  # DBpedia endpoint
 local_endpoint = SPARQLWrapper2(
     "http://localhost:7200/repositories/POC-1")  # my local graphDB endpoint
-from rdflib import Graph
-import json
+
 
 def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
     local_endpoint.setQuery(f"""
@@ -29,6 +30,7 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
     opening_hours = ""
     adresse = ""
     postcode = ""
+    curiosities = list()
     location_map = ""
     locationMap_nearby_place = list()
     dbpedia = ""
@@ -62,7 +64,7 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
                             " (Anglais)."
             else:
                 value_object = value_object.lower()
-                
+
             value_predicate = (result['p'].value).lower()
 
             if value_predicate.find("lat") > -1:
@@ -82,6 +84,9 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
 
             if value_predicate.find("postcode") > -1:
                 postcode = value_object
+
+            if value_predicate.find("curiosity") > -1:
+                curiosities.append(value_object)
 
             if value_predicate.find("locationmap") > -1:
                 location_map = value_object
@@ -103,18 +108,18 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
                     """
                 resp = g_nearby.query(q)
                 resp_js = json.loads(resp.serialize(
-                            format="json").decode("utf-8"))
+                    format="json").decode("utf-8"))
 
                 for result in resp_js['results']['bindings']:
                     for k, v in result.items():
                         if k == "s":
                             placeMap = v['value']
                         if placeMap not in locationMap_nearby_place:
-                                locationMap_nearby_place.append(placeMap)
+                            locationMap_nearby_place.append(placeMap)
 
                         if k == "o" and v['type'] == "literal":
-                                    # On récupère le nom des endroits qui sont proche du restaurant. Attention, ces endroits ne sont pas des restaurant
-                                    # Ils font partie d'une autre classe
+                            # On récupère le nom des endroits qui sont proche du restaurant. Attention, ces endroits ne sont pas des restaurant
+                            # Ils font partie d'une autre classe
                             nearby_place_name = v['value']
                             if nearby_place_name not in nearBy_placeList:
                                 nearBy_placeList.append(nearby_place_name)
@@ -144,7 +149,10 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
             dispatcher.utter_message(text=f"Code postal: {postcode}")
         if len(location_map) != 0:
             dispatcher.utter_message(
-                        text=f"Visualisation du restaurant {restaurant} sur une carte: {location_map}")
+                text=f"Visualisation du restaurant {restaurant} sur une carte: {location_map}")
         if len(nearBy_placeAndMap) != 0:
             dispatcher.utter_message(
                 text=f"Le restaurant {restaurant} est proche des lieux suivants:\n\n{nearBy_placeAndMap}")
+        if len(curiosities) != 0:
+            text = "\n".join(curiosities)
+            dispatcher.utter_message(text=f"Le restaurant {restaurant} est proche des terrains de jeu suivant:\n{text}")

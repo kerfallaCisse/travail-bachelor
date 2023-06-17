@@ -19,6 +19,8 @@ intents:
       use_entities: true
   - infos_rest_name:
       use_entities: true
+  - rest_cuisine:
+      use_entities: true
 
 responses:
   utter_salutation:
@@ -47,6 +49,7 @@ actions:
   - action_resolve_curiosity
   - action_set_limit_intent
   - action_infos_rest_name
+  - action_cuisine_type
 
 
 entities:
@@ -55,6 +58,7 @@ entities:
   - city
   - rest_name
   - query_limit
+  - type_cuisine
 
 slots:
   nom_pays:
@@ -118,6 +122,20 @@ slots:
     mappings:
       - type: custom
         action: action_set_limit_intent 
+  type_cuisine:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: type_cuisine
+        action: action_cuisine_type
+  cuisine_type:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings:
+      - type: custom
+        action: action_set_limit_intent
   
 session_config:
   session_expiration_time: 60
