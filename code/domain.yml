@@ -88,7 +88,7 @@ slots:
     influence_conversation: false
     mappings: 
       - type: custom
-        action: action_resolve_curiosity
+        action: action_restaurants_city
   rest_name:
     type: text
     influence_conversation: false
@@ -117,7 +117,7 @@ slots:
     influence_conversation: true
     mappings:
       - type: custom
-        action: action_set_limit_intent    
+        action: action_set_limit_intent 
   
 session_config:
   session_expiration_time: 60

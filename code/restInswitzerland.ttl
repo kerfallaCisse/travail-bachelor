@@ -954,6 +954,14 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/1637895109> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de l'Athénée" ;
+    r:curiosity <https://www.openstreetmap.org/node/8622838849>,
+        <https://www.openstreetmap.org/node/8622838850>,
+        <https://www.openstreetmap.org/node/8622838851>,
+        <https://www.openstreetmap.org/node/8622838852>,
+        <https://www.openstreetmap.org/node/8622838905>,
+        <https://www.openstreetmap.org/node/8622838906>,
+        <https://www.openstreetmap.org/node/8635710243>,
+        <https://www.openstreetmap.org/node/8635710244> ;
     ns0:name "Octopus" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.1959401" ;
