@@ -22,7 +22,7 @@ pipeline:
   epochs: 100
   constrain_similarities: true
 - name: FallbackClassifier
-  threshold: 0.3 #0.7
+  threshold:  0.7 #0.3
   ambiguity_threshold: 0.1
 # When the chatbot  can't predict the next action with a confidence >= core_fallback_threshold
 policies: 

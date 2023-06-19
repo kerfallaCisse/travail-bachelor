@@ -156,7 +156,8 @@ nlu:
       - que possèdes-tu sur le restaurant [Arnegg, Restaurant Ilge](rest_name)
       - que possèdes-tu sur [McDonald's](rest_name)
       - toutes les infos sur [Hotel Restaurant Holiday](rest_name)
-      - toutes les informations sur [Johnny the Ripper](rest_name)  
+      - toutes les informations sur [Johnny the Ripper](rest_name)
+      - donne moi toutes les infos du restaurant [Restaurant Anker](rest_name)
 
   - intent: restaurants_city
     examples: |
@@ -164,6 +165,7 @@ nlu:
       - donne moi la liste des restaurants à [Genève](city)
       - donne moi les restaurants à [Bern](city)
       - donne moi les restaurants que tu possèdes à [Bern](city)
+      - donne moi les restaurants qui se trouvent dans la ville de [Lausanne](city)
       - les restaurants à [Bern](city)
       - restaurants à [Zürich](city)
       - donne moi les restaurants à [zürich](city)
@@ -281,6 +283,7 @@ nlu:
       - Restaurant Grüene Aff
       - Kräiligen, Restaurant Brücke
       - Restaurant Le Carrefour
+      - Restaurant Anker
 
 
   - intent: rest_cuisine
@@ -299,6 +302,7 @@ nlu:
       - type de cuisine [brésilien](type_cuisine)
       - cuisine [française](type_cuisine) à [Belp](city)
       - [française](type_cuisine) [Hinwil](city)
+      - donne moi les restaurants [chinois](type_cuisine) à [Bulle](city)
 
   - lookup: type_cuisine
     examples: |

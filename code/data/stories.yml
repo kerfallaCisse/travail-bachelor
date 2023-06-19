@@ -4,7 +4,7 @@ stories:
   - story: début de conversation
     steps:
       - intent: salutation
-      - action: utter_salutation
+      - action: utter_salutation # Toutes les histoires doivent commencer par sa
       - intent: affirmation
       - action: utter_affrimation    
 

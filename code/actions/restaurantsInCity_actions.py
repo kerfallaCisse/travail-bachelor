@@ -3,7 +3,6 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from SPARQLWrapper import SPARQLWrapper2, BASIC
-#import requests
 from rdflib import Literal, Namespace, URIRef, Graph
 from rdflib.namespace import RDF, GEO
 

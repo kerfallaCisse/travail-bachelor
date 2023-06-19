@@ -945,12 +945,42 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "46.84708" ;
     geo1:long "9.51014" .
 
+<https://www.openstreetmap.org/node/1052078790> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Nansenstrasse" ;
+    r:cuisine "burger" ;
+    r:opening_hours "Mo-Sa 08:00-23:00; Su 11:30-21:00" ;
+    r:postcode "8050" ;
+    ns0:name "Burgermeister" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.4109887" ;
+    geo1:long "8.5459625" .
+
 <https://www.openstreetmap.org/node/1454894922> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue des Etuves" ;
     ns0:name "Black Sheep" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2063362" ;
     geo1:long "6.1435471" .
+
+<https://www.openstreetmap.org/node/1536879938> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Seestrasse" ;
+    r:cuisine "asian" ;
+    r:opening_hours "Mo-Sa 11:00-23:00, Su 10:00-23:00" ;
+    r:postcode "8038" ;
+    ns0:name "Peking Garden" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3474258" ;
+    geo1:long "8.5334884" .
+
+<https://www.openstreetmap.org/node/1600176022> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Ankerstrasse" ;
+    r:cuisine "italian" ;
+    r:opening_hours "Mo-Th 11:00-21:00; Fr 11:00-22:00; Sa 12:00-17:00; PH closed" ;
+    r:postcode "8004" ;
+    ns0:name "La Penisola" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3739605" ;
+    geo1:long "8.5249794" .
 
 <https://www.openstreetmap.org/node/1637895109> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de l'Athénée" ;
@@ -966,6 +996,63 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.1959401" ;
     geo1:long "6.1526634" .
+
+<https://www.openstreetmap.org/node/1686097911> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Stationsstraat" ;
+    ns0:name "Eetcafé Groothuis" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "52.7898231" ;
+    geo1:long "6.8976497" .
+
+<https://www.openstreetmap.org/node/1815839613> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Freyastrasse" ;
+    ns0:name "Freya" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3715341" ;
+    geo1:long "8.5245733" .
+
+<https://www.openstreetmap.org/node/1937286216> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Regensbergstrasse" ;
+    r:cuisine "kebab",
+        "pizza",
+        "turkish" ;
+    r:opening_hours "Mo-Su, 10:00-24:00" ;
+    r:postcode "8050" ;
+    ns0:name "My Kebap" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.40925" ;
+    geo1:long "8.538226" .
+
+<https://www.openstreetmap.org/node/1937429078> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Pfingstweidstrasse" ;
+    r:cuisine "Southern_BBQ",
+        "american" ;
+    r:opening_hours "Tu-Fr 11:30-13:30,17:00-23:00; Sa 16:00-23:00" ;
+    r:postcode "8005" ;
+    ns0:name "Brisket" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3878313" ;
+    geo1:long "8.5189366" .
+
+<https://www.openstreetmap.org/node/1937429085> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Zahnradstrasse" ;
+    r:cuisine "asian" ;
+    r:opening_hours "Sa 17:00-24:00; Su-Fr 11:00-15:00,17:00-24:00" ;
+    r:postcode "8005" ;
+    ns0:name "LY'S Asia" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3863155" ;
+    geo1:long "8.5167264" .
+
+<https://www.openstreetmap.org/node/1975523704> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Katzenseestrasse" ;
+    r:cuisine "regional" ;
+    r:opening_hours "Tu-Su 10:30-19:00" ;
+    r:postcode "8046" ;
+    ns0:name "Wirtschaft Unterdorf" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.4262082" ;
+    geo1:long "8.5054134" .
 
 <https://www.openstreetmap.org/node/2126273475> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Boulevard Georges-Favon" ;
@@ -1000,12 +1087,47 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "46.1964873" ;
     geo1:long "6.1462065" .
 
+<https://www.openstreetmap.org/node/2355693108> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Birchstrasse" ;
+    r:cuisine "kebab",
+        "pizza" ;
+    r:opening_hours "Mo-Su 10:00-23:00" ;
+    r:postcode "8050" ;
+    ns0:name "Lemon" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.4092114" ;
+    geo1:long "8.5377071" .
+
 <https://www.openstreetmap.org/node/2395622178> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Avenue Alfred-Bertrand" ;
     ns0:name "Le Pain Quotidien" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.1930901" ;
     geo1:long "6.1545753" .
+
+<https://www.openstreetmap.org/node/266630294> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Badenerstrasse" ;
+    ns0:name "Légère" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3763377" ;
+    geo1:long "8.5143811" .
+
+<https://www.openstreetmap.org/node/2817482601> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Grand-Rue" ;
+    ns0:name "Melocoton Club" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.6189295" ;
+    geo1:long "7.0576978" .
+
+<https://www.openstreetmap.org/node/288340413> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Zähringerplatz" ;
+    r:cuisine "regional" ;
+    r:opening_hours "Mo 18:00-24:00; Tu-Su 09:00-24:00" ;
+    r:postcode "8001" ;
+    ns0:name "Café Zähringer" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3735998" ;
+    geo1:long "8.5447955" .
 
 <https://www.openstreetmap.org/node/3032344938> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue du Stand" ;
@@ -1032,6 +1154,91 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2133722" ;
     geo1:long "6.1296471" .
+
+<https://www.openstreetmap.org/node/315862440> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Stauffacherstrasse" ;
+    ns0:name "EquiTable im Sankt Meinrad" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3778609" ;
+    geo1:long "8.5211491" .
+
+<https://www.openstreetmap.org/node/3163049463> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Morgartenstrasse" ;
+    r:cuisine "greek" ;
+    r:opening_hours "Mo-Fr 11:00-14:00, 16:00-24:00; Sa 17:00-24:00" ;
+    r:postcode "8004" ;
+    ns0:name "MAZI im Morgarten" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3714815" ;
+    geo1:long "8.5278588" .
+
+<https://www.openstreetmap.org/node/3193583426> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Turbinenstrasse" ;
+    r:cuisine "coffee_shop",
+        "sandwich" ;
+    r:opening_hours "Mo-Fr 06:30-19:00; Sa 07:00-15:00; Su 08:00-16:00" ;
+    r:postcode "8005" ;
+    ns0:name "Steiner Flughafebeck" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3875211" ;
+    geo1:long "8.5147311" .
+
+<https://www.openstreetmap.org/node/321346779> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Wolfgang-Pauli-Strasse" ;
+    r:cuisine "asian" ;
+    r:opening_hours "Mo-Fr 10:30-14:30" ;
+    r:postcode "8093" ;
+    ns0:name "Rice Up!" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.4103225" ;
+    geo1:long "8.508553" .
+
+<https://www.openstreetmap.org/node/3250788311> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Schaffhauserstrasse" ;
+    ns0:name "Kafi Freud" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3959666" ;
+    geo1:long "8.5406154" .
+
+<https://www.openstreetmap.org/node/370840605> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Niederdorfstrasse" ;
+    r:cuisine "italian" ;
+    r:opening_hours "11:30-23:00; Fr,Sa 11:30-23:30" ;
+    r:postcode "8001" ;
+    ns0:name "Trattoria Sempre" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3729877" ;
+    geo1:long "8.5436586" .
+
+<https://www.openstreetmap.org/node/386002566> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Limmattalstrasse" ;
+    r:cuisine "pizza" ;
+    r:opening_hours "Mo 17:00-22:30, Tu-Fr 11:00-22:30, Sa 17:00-23:30, Su 15:00-22:30" ;
+    r:postcode "8049" ;
+    ns0:name "Del Sole Pizzakurier" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.4004328" ;
+    geo1:long "8.5036259" .
+
+<https://www.openstreetmap.org/node/428548525> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Seestrasse" ;
+    r:cuisine "regional" ;
+    r:opening_hours "Mo-Sa 08:30-23:30; Su 08:30-22:00" ;
+    r:postcode "3600" ;
+    ns0:name "Schloss Schadau" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.7460775" ;
+    geo1:long "7.6373887" .
+
+<https://www.openstreetmap.org/node/482763846> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Binzmühlestrasse" ;
+    r:cuisine "asian" ;
+    r:opening_hours "Mo-Fr 10:30-14:30,17:30-22:00" ;
+    r:postcode "8050" ;
+    ns0:name "Hong-Kong Food Paradise" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.4135291" ;
+    geo1:long "8.5387892" .
 
 <https://www.openstreetmap.org/node/5208357874> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue des Rois" ;
@@ -1061,6 +1268,17 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "46.2044992" ;
     geo1:long "6.1241628" .
 
+<https://www.openstreetmap.org/node/75025846> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Widmerstrasse" ;
+    r:cuisine "italian",
+        "pizza" ;
+    r:opening_hours "Tu-Fr 11:00-14:00,17:00-22:00; Sa 17:00-22:00; Su 11:00-14:00,17:00-22:00" ;
+    r:postcode "8038" ;
+    ns0:name "Il Grappolo" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3361381" ;
+    geo1:long "8.5322408" .
+
 <https://www.openstreetmap.org/node/7856590933> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Chemin du 23-Août" ;
     r:cuisine "asian" ;
@@ -1079,12 +1297,40 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "46.2032198" ;
     geo1:long "6.1398097" .
 
+<https://www.openstreetmap.org/node/8507872904> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Burgstrasse" ;
+    r:cuisine "afghan",
+        "coffee_shop",
+        "persian",
+        "tea" ;
+    r:opening_hours "Tu-Sa 17:00-22:00" ;
+    r:postcode "3600" ;
+    ns0:name "Restaurant und Take Away Ariana" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.7597595" ;
+    geo1:long "7.6314857" .
+
+<https://www.openstreetmap.org/node/855341140> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Badenerstrasse" ;
+    r:cuisine "lebanese" ;
+    ns0:name "Les délices d'orient" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3738088" ;
+    geo1:long "8.5260395" .
+
 <https://www.openstreetmap.org/node/8621312506> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de la Prairie" ;
     ns0:name "T'as vu le bitcoin xD" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2100898" ;
     geo1:long "6.1353441" .
+
+<https://www.openstreetmap.org/node/866541138> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Schaffhauserstrasse" ;
+    ns0:name "Café Frieda" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3921165" ;
+    geo1:long "8.5386272" .
 
 <https://www.openstreetmap.org/node/8818883495> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de la Prairie" ;
@@ -1103,6 +1349,51 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "46.2142159" ;
     geo1:long "6.1425386" .
 
+<https://www.openstreetmap.org/way/210365414> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Allmendstrasse" ;
+    ns0:name "Mokka" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.7597527" ;
+    geo1:long "7.6239177" .
+
+<https://www.openstreetmap.org/way/210893734> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Militärstrasse" ;
+    ns0:name "Soldatenstube" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.7590966" ;
+    geo1:long "7.6173411" .
+
+<https://www.openstreetmap.org/way/211170769> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Kasernenstrasse" ;
+    ns0:name "Militärgarten" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.7585676" ;
+    geo1:long "7.6172076" .
+
+<https://www.openstreetmap.org/way/213454122> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Seestrasse" ;
+    r:cuisine "kebab",
+        "pizza" ;
+    ns0:name "Dönerbude Casablanca" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.7419282" ;
+    geo1:long "7.6282475" .
+
+<https://www.openstreetmap.org/way/215480113> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Freienhofgasse" ;
+    r:cuisine "italian" ;
+    ns0:name "Al Ponte" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.7575817" ;
+    geo1:long "7.6306903" .
+
+<https://www.openstreetmap.org/way/217478287> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Gwattstrasse" ;
+    ns0:name "Alpha" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.7406104" ;
+    geo1:long "7.6272144" .
+
 <https://www.openstreetmap.org/way/254851999> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Eschenstrasse" ;
     ns0:name "Restaurant zum alten Pflüegli" ;
@@ -1116,6 +1407,75 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "47.4156044" ;
     geo1:long "9.2666765" .
+
+<https://www.openstreetmap.org/way/315021086> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Sandurdreef" ;
+    r:cuisine "pizza,_pannekoeken,_a_la_carte_plates" ;
+    r:opening_hours "Mo-Su 17:00+" ;
+    r:postcode "7828AA" ;
+    ns0:name "De Brigantijn" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "52.7305266" ;
+    geo1:long "6.9042438" .
+
+<https://www.openstreetmap.org/way/315021087> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Sandurdreef" ;
+    r:cuisine "international" ;
+    r:opening_hours "Sa,Su,Tu 17:30+" ;
+    r:postcode "7828AA" ;
+    ns0:name "Buffetrestaurant Sandur" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "52.7309587" ;
+    geo1:long "6.9045806" .
+
+<https://www.openstreetmap.org/way/327991721> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Sandurdreef" ;
+    ns0:name "Schipperscafé" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "52.7303326" ;
+    geo1:long "6.9042155" .
+
+<https://www.openstreetmap.org/way/328256832> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Sandurdreef" ;
+    r:cuisine "regional" ;
+    ns0:name "Parc Plaza" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "52.7302882" ;
+    geo1:long "6.904457" .
+
+<https://www.openstreetmap.org/way/38098975> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Stadthausquai" ;
+    r:cuisine "sausage",
+        "swiss" ;
+    ns0:name "Bauschänzli" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3679074" ;
+    geo1:long "8.5425505" .
+
+<https://www.openstreetmap.org/way/51391815> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Badenerstrasse" ;
+    r:cuisine "regional" ;
+    r:opening_hours "Mo-Fr 08:00-23:00; Sa 10:00-23:00; Su 14:00-23:00" ;
+    r:postcode "8048" ;
+    ns0:name "Restaurant Farbhof Cordon Bleu Haus" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3910339" ;
+    geo1:long "8.4784321" .
+
+<https://www.openstreetmap.org/way/55484473> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Winterthurerstrasse" ;
+    ns0:name "Wild West Steakhouse Texas" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3968595" ;
+    geo1:long "8.545537" .
+
+<https://www.openstreetmap.org/way/61587926> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Allmendstrasse" ;
+    r:cuisine "regional" ;
+    ns0:name "Fork & Bottle" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3522896" ;
+    geo1:long "8.5243992" .
 
 <https://www.openstreetmap.org/way/665498669> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Quai du Général-Guisan" ;

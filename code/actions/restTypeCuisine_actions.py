@@ -33,10 +33,7 @@ class RestTypeCuisine(Action):
 
         city = tracker.get_slot("city")
         type_cuisine = tracker.get_slot("type_cuisine")
-        mention_list = List[str]
-
-        dispatcher.utter_message(
-            text=f"Type de cuisine: {type_cuisine}; Ville: {city}")
+        mention_list = set()
 
         cuisine_english = CUISINE.get(type_cuisine, None)
         if cuisine_english is None:
@@ -106,10 +103,10 @@ class RestTypeCuisine(Action):
                 hours = ""
                 postcode = ""
                 OSMN = URIRef(osmn)
-                mention_list.append(rest_name)
+                mention_list.add(rest_name)
 
                 try:
-                    hours = rest["hours"].value
+                    hours = rest["hours"].value 
                     postcode = rest["postcode"].value
                 except KeyError:
                     pass
@@ -175,12 +172,15 @@ class RestTypeCuisine(Action):
             g.serialize(destination="restInswitzerland.ttl", format="ttl")
 
         else:
-            # On met à jour les slots
-            for i in range(len(resp)):
-                rests = resp[i]
-                restName = rests["rn"].value
+            for r in resp:
+                restName = r["rn"].value    
+                mention_list.add(restName)
+        mention_list_size = len(mention_list)
+        mention_list = list(mention_list)        
+        if mention_list_size != 0:
+            for i in range(mention_list_size):
+                corresponding_rest = mention_list[i]
                 i += 1
-                dispatcher.utter_message(text=f"{i}- {restName}")
-                mention_list.append(restName)
-
-        return [SlotSet("mention_list", mention_list)]
+                dispatcher.utter_message(text=f"{i}- {corresponding_rest}")
+            return [SlotSet("mention_list", list(mention_list))]
+        return []
