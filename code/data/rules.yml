@@ -87,9 +87,17 @@ rules:
     - action: action_resolve_curiosity 
 
   - rule: lister les restaurants avec le type de cuisine correspondant dans une ville après que l'utilisateur est mentionné le nombre de restaurant
-    condition:
-    - slot_was_set:
-      - cuisine_type: true
+    # condition:
+    # - slot_was_set:
+    #   - cuisine_type: true
     steps:
-      - intent: query_limitation
+      - intent: rest_cuisine
       - action: action_cuisine_type
+
+  # - rule: lister les restaurants avec le type de cuisine correspondant dans une ville après que l'utilisateur est mentionné le nombre de restaurant
+  #   condition:
+  #   - slot_was_set:
+  #     - cuisine_type: true
+  #   steps:
+  #     - intent: query_limitation
+  #     - action: action_cuisine_type

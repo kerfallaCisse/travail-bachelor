@@ -351,3 +351,4 @@ MigrationBackup/
 rasa_venv/
 models/
 .rasa/
+results/

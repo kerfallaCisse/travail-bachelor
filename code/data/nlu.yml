@@ -286,12 +286,19 @@ nlu:
   - intent: rest_cuisine
     examples: |
       - donne moi les restaurants dont le type de cuisine est [asiate](type_cuisine) dans la ville d'[Onex](city)
+      - donne moi les restaurants dont le type de cuisine est [africain](type_cuisine) dans la ville de [Neuchâtel](city)
       - type de cuisine [asiatique](type_cuisine) à [Vevey](city)
+      - type de cuisine [asiatique](type_cuisine) à [Thun](city)
       - quels sont les restaurants qui vendent de la nourriture [asiatique](type_cuisine) à [Genève](city)
+      - quels sont les restaurants qui vendent de la nourriture [arabe](type_cuisine) au [Lancy](city)
       - nourriture [américaine](type_cuisine) à [Zürich](city)
       - type de nourriture [argentin](type_cuisine) à [Yverdon-les-Bains](city)
       - donne moi les restaurants qui vendent de la nourriture [australienne](type_cuisine) à [Soleure](city)
       - donne moi les restaurants qui vendent de la nourriture [chinoise](type_cuisine) dans la ville de [Cham](city)
+      - nourriture [argentin](type_cuisine)
+      - type de cuisine [brésilien](type_cuisine)
+      - cuisine [française](type_cuisine) à [Belp](city)
+      - [française](type_cuisine) [Hinwil](city)
 
   - lookup: type_cuisine
     examples: |

@@ -2,9 +2,9 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from .allInfosWithMention_actions import local_endpoint
-from SPARQLWrapper import SPARQLWrapper2, BASIC
-from .restaurantsInCity_actions import osmap_endpoint
+from .restaurantsInCity_actions import osmap_endpoint, local_endpoint_add_stmnt
 from rdflib import Namespace, URIRef, Graph
+
 
 graph = Graph()
 
@@ -59,7 +59,6 @@ class ResolveCuriosity(Action):
                 longitude = response["long"].value
                 POINT = f"Point({longitude} {latitude})"
                 try:
-                    osmap_endpoint.setTimeout(120)
                     osmap_endpoint.setQuery(f"""
                                             SELECT * 
                                             WHERE {{
@@ -81,25 +80,19 @@ class ResolveCuriosity(Action):
                     for rep_endpt in response_endpoint:
                         curiosities.append(rep_endpt["osm_objects"].value)
                     if len(curiosities) != 0:
-                        local_endpointAddStmnt = SPARQLWrapper2(
-                            "http://localhost:7200/repositories/POC-1/statements")
-                        local_endpointAddStmnt.setHTTPAuth(BASIC)
-                        local_endpointAddStmnt.queryType = "INSERT"
-                        local_endpointAddStmnt.setCredentials("", "")
-                        local_endpointAddStmnt.method = "POST"
-                        local_endpointAddStmnt.setReturnFormat("json")
+
                         R = Namespace("http://restaurant#")
                         curiosity_ressource = R.curiosity
                         restRessource = URIRef(rest_ressource)
                         graph.bind("r", R)
                         for cu in curiosities:
-                            local_endpointAddStmnt.setQuery(f"""
+                            local_endpoint_add_stmnt.setQuery(f"""
                                                             PREFIX r: <http://restaurant#>
                                                             INSERT DATA {{
                                                                 <{rest_ressource}> r:curiosity <{cu}> .
                                                             }}
                                                             """)
-                            local_endpointAddStmnt.query()
+                            local_endpoint_add_stmnt.query()
                             correspondingCuriosity = URIRef(cu)
                         # On ajoute dans le fichier turtle
                             graph.add(

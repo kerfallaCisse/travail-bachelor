@@ -132,10 +132,10 @@ stories:
         entities:
           - type_cuisine
           - city
-      - action: action_set_limit_intent
-      - slot_was_set:
-        - cuisine_type: true
-      - intent: query_limitation
-        entities: 
-          - query_limit 
+      # - action: action_set_limit_intent
+      # - slot_was_set:
+      #   - cuisine_type: true
+      # - intent: query_limitation
+      #   entities: 
+      #     - query_limit 
       - action: action_cuisine_type

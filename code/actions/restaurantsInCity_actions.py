@@ -10,7 +10,7 @@ from rdflib.namespace import RDF, GEO
 osmap_endpoint = SPARQLWrapper2(
     "https://sophox.org/sparql")  # Open street map endpoint
 osmap_endpoint.setTimeout(60)  # query time out for the endpoint in seconde
-local_endpoint = SPARQLWrapper2("http://localhost:7200/repositories/POC-1/statements") # local endpoint to add statements in the graph
+local_endpoint_add_stmnt = SPARQLWrapper2("http://localhost:7200/repositories/POC-1/statements") # local endpoint to add statements in the graph
 GRAPH = Graph()
 
 
@@ -118,13 +118,13 @@ class RestaurantsInCity(Action):
                         f.write(rest_name+"\n")
                         # On insère le restaurant dans le graphe de connaissance (graphe par défaut)
                         
-                        local_endpoint.setHTTPAuth(BASIC)
-                        local_endpoint.setCredentials("","")
-                        local_endpoint.method = "POST"
-                        local_endpoint.setReturnFormat("json")
-                        local_endpoint.queryType = "INSERT"
+                        local_endpoint_add_stmnt.setHTTPAuth(BASIC)
+                        local_endpoint_add_stmnt.setCredentials("","")
+                        local_endpoint_add_stmnt.method = "POST"
+                        local_endpoint_add_stmnt.setReturnFormat("json")
+                        local_endpoint_add_stmnt.queryType = "INSERT"
                         
-                        local_endpoint.setQuery(f"""
+                        local_endpoint_add_stmnt.setQuery(f"""
                                                 PREFIX ns0: <http://www.geonames.org/ontology#>
                                                 PREFIX geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#>
                                                 PREFIX r: <http://restaurant#>
@@ -134,10 +134,10 @@ class RestaurantsInCity(Action):
                                                              ns0:parentCountry <https://sws.geonames.org/2658434/> ;
                                                              geo1:lat "{rest_lat}" ;
                                                              geo1:long "{rest_long}" ;
-                                                             r:street "{rest_street}" .
+                                                             r:adresse "{rest_street}" .
                                                 }}
                                                 """)
-                        local_endpoint.query()
+                        local_endpoint_add_stmnt.query()
                         
                         # Add the triple in the turtle file (avoid dumping each time)
                         OSMPNODE = URIRef(
@@ -175,46 +175,46 @@ class RestaurantsInCity(Action):
                                 GRAPH.add(
                                     (OSMPOBJECT, cuisine_type, Literal(c)))
                                 
-                                local_endpoint.setQuery(f"""
+                                local_endpoint_add_stmnt.setQuery(f"""
                                                         PREFIX ns0: <http://www.geonames.org/ontology#>
                                                         PREFIX r: <http://restaurant#>
                                                         INSERT DATA {{
                                                             <{osmn}> r:cuisine "{c}" .
                                                         }}
                                                         """)
-                                local_endpoint.query()
+                                local_endpoint_add_stmnt.query()
                                 
                         else:
                             if len(cuisine) != 0:
                                 GRAPH.add(
                                     (OSMPOBJECT, cuisine_type, Literal(cuisine)))
-                                local_endpoint.setQuery(f"""
+                                local_endpoint_add_stmnt.setQuery(f"""
                                                         PREFIX r: <http://restaurant#>
                                                         INSERT DATA {{
                                                             <{osmn}> r:cuisine "{cuisine}" .
                                                         }}
                                                         """)
-                                local_endpoint.query()
+                                local_endpoint_add_stmnt.query()
                         if len(opening_hours) != 0:
                             GRAPH.add((OSMPOBJECT, openingHours,
                                       Literal(opening_hours)))
-                            local_endpoint.setQuery(f"""
+                            local_endpoint_add_stmnt.setQuery(f"""
                                                     PREFIX r: <http://restaurant#>
                                                     INSERT DATA {{
                                                         <{osmn}> r:opening_hours "{opening_hours}" .
                                                     }}
                                                     """)
-                            local_endpoint.query()
+                            local_endpoint_add_stmnt.query()
                         if len(postcode) != 0:
                             GRAPH.add(
                                 (OSMPOBJECT, post_code, Literal(postcode)))
-                            local_endpoint.setQuery(f"""
+                            local_endpoint_add_stmnt.setQuery(f"""
                                                     PREFIX r: <http://restaurant#>
                                                     INSERT DATA {{
                                                         <{osmn}> r:postcode "{postcode}" .
                                                     }}
                                                     """)
-                            local_endpoint.query()
+                            local_endpoint_add_stmnt.query()
 
                         GRAPH.parse(source="restInswitzerland.ttl")
                         GRAPH.serialize(

@@ -153,12 +153,12 @@ stories:
   - user: |
       donne moi les restaurants qui vendent de la nourriture [australienne]{"entity":"type_cuisine"} à [Soleure]{"entity":"city"} 
     intent: rest_cuisine
-  - action: action_set_limit_intent
-  - slot_was_set:
-    - cuisine_type: true
-  - user: |
-      [6]{"entity":"query_limit"}
-    intent: query_limitation
+  # - action: action_set_limit_intent
+  # - slot_was_set:
+  #   - cuisine_type: true
+  # - user: |
+  #     [6]{"entity":"query_limit"}
+  #   intent: query_limitation
   - action: action_cuisine_type
     
 
