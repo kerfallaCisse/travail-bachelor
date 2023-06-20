@@ -4,8 +4,9 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from SPARQLWrapper import SPARQLWrapper2, BASIC
 from rdflib import Literal, Namespace, URIRef, Graph
-from rdflib.namespace import RDF, GEO
-
+from rdflib.namespace import RDF
+from .allInfosWithMention_actions import local_endpoint
+# from googletrans import Translator
 osmap_endpoint = SPARQLWrapper2(
     "https://sophox.org/sparql")  # Open street map endpoint
 osmap_endpoint.setTimeout(60)  # query time out for the endpoint in seconde
@@ -25,6 +26,9 @@ class RestaurantsInCity(Action):
         city = tracker.get_slot("city")
         limit_query = tracker.get_slot("query_limit")
         limit = int(limit_query)
+        
+        # translator = Translator () on ne peut pas utiliser google translate, car le nom de certaines villes en français sont réutilisés dans l'endpoint d'open street map
+        
 
         if limit > 20:
             dispatcher.utter_message(
@@ -32,8 +36,6 @@ class RestaurantsInCity(Action):
             return []
 
         cities = process_file("data/city.txt")  # pour la liste des villes
-        # pour la liste des restaurants
-        rest_names = process_file("data/rest_name.txt")
 
         if city not in cities:
             dispatcher.utter_message(
@@ -110,8 +112,14 @@ class RestaurantsInCity(Action):
                         
                 except KeyError:
                     pass
-
-                if rest_name not in rest_names:
+                # On vérifie si les URI sont différents. On peut avoir des restaurants qui ont le même nom
+                local_endpoint.setQuery(f"""
+                                        SELECT *
+                                        WHERE {{
+                                            <{osmn}> ?p ?o .
+                                        }}
+                                        """)
+                if len(local_endpoint.query().bindings) == 0:
                     with open("data/rest_name.txt", "a", encoding="utf-8") as f:
                         # on insère le restaurant dans le fichier pour faciliter l'extraction des entités
                         f.write(rest_name+"\n")
@@ -133,7 +141,8 @@ class RestaurantsInCity(Action):
                                                              ns0:parentCountry <https://sws.geonames.org/2658434/> ;
                                                              geo1:lat "{rest_lat}" ;
                                                              geo1:long "{rest_long}" ;
-                                                             r:adresse "{rest_street}" .
+                                                             r:adresse "{rest_street}" ;
+                                                             r:city "{city}" .
                                                 }}
                                                 """)
                         local_endpoint_add_stmnt.query()
@@ -149,10 +158,11 @@ class RestaurantsInCity(Action):
                             "http://www.w3.org/2003/01/geo/wgs84_pos#")
                         R = Namespace("http://restaurant#")
                         GRAPH.bind("ns0", NS0)
-                        GRAPH.bind("geo", GEO)
+                        GRAPH.bind("geo1", GEO1)
                         GRAPH.bind("r", R)
                         cuisine_type = R.cuisine
                         openingHours = R.opening_hours
+                        r_city = R.city
                         post_code = R.postcode
                         adresse = R.adresse
                         latitude = GEO1.lat
@@ -166,6 +176,7 @@ class RestaurantsInCity(Action):
                         GRAPH.add((OSMPOBJECT, latitude, Literal(rest_lat)))
                         GRAPH.add((OSMPOBJECT, longitude, Literal(rest_long)))
                         GRAPH.add((OSMPOBJECT, adresse, Literal(rest_street)))
+                        GRAPH.add((OSMPOBJECT, r_city, Literal(city)))
 
                         # On ajoute les triplets dans le fichier turtle avec la même logique
                         if cuisine.find(";") > -1:
@@ -214,13 +225,12 @@ class RestaurantsInCity(Action):
                                                     }}
                                                     """)
                             local_endpoint_add_stmnt.query()
-
-                        GRAPH.parse(source="restInswitzerland.ttl")
-                        GRAPH.serialize(
-                            destination="restInswitzerland.ttl", format="ttl")
-
                 dispatcher.utter_message(text=">>>>>>>>")
                 l += 1
+
+            GRAPH.parse(source="restInswitzerland.ttl")
+            GRAPH.serialize(
+                            destination="restInswitzerland.ttl", format="ttl")
         except TimeoutError:
             dispatcher.utter_message(
                 text="Désolé, la requête prend plus de temps que prévu. Reposez votre question.")

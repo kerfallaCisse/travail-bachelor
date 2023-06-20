@@ -14,6 +14,5 @@ class ResolveMention(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         rest_name = tracker.get_slot("rest_name")
-        print(rest_name)
         getRestInfos(dispatcher, rest_name)
         return []

@@ -947,6 +947,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/1052078790> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Nansenstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "burger" ;
     r:opening_hours "Mo-Sa 08:00-23:00; Su 11:30-21:00" ;
     r:postcode "8050" ;
@@ -957,6 +958,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/1454894922> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue des Etuves" ;
+    r:city "Genève" ;
     ns0:name "Black Sheep" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2063362" ;
@@ -964,6 +966,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/1536879938> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Seestrasse" ;
+    r:city "Zürich" ;
     r:cuisine "asian" ;
     r:opening_hours "Mo-Sa 11:00-23:00, Su 10:00-23:00" ;
     r:postcode "8038" ;
@@ -974,6 +977,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/1600176022> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Ankerstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "italian" ;
     r:opening_hours "Mo-Th 11:00-21:00; Fr 11:00-22:00; Sa 12:00-17:00; PH closed" ;
     r:postcode "8004" ;
@@ -984,28 +988,15 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/1637895109> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de l'Athénée" ;
-    r:curiosity <https://www.openstreetmap.org/node/8622838849>,
-        <https://www.openstreetmap.org/node/8622838850>,
-        <https://www.openstreetmap.org/node/8622838851>,
-        <https://www.openstreetmap.org/node/8622838852>,
-        <https://www.openstreetmap.org/node/8622838905>,
-        <https://www.openstreetmap.org/node/8622838906>,
-        <https://www.openstreetmap.org/node/8635710243>,
-        <https://www.openstreetmap.org/node/8635710244> ;
+    r:city "Genève" ;
     ns0:name "Octopus" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.1959401" ;
     geo1:long "6.1526634" .
 
-<https://www.openstreetmap.org/node/1686097911> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Stationsstraat" ;
-    ns0:name "Eetcafé Groothuis" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "52.7898231" ;
-    geo1:long "6.8976497" .
-
 <https://www.openstreetmap.org/node/1815839613> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Freyastrasse" ;
+    r:city "Zürich" ;
     ns0:name "Freya" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "47.3715341" ;
@@ -1013,6 +1004,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/1937286216> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Regensbergstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "kebab",
         "pizza",
         "turkish" ;
@@ -1025,6 +1017,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/1937429078> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Pfingstweidstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "Southern_BBQ",
         "american" ;
     r:opening_hours "Tu-Fr 11:30-13:30,17:00-23:00; Sa 16:00-23:00" ;
@@ -1036,6 +1029,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/1937429085> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Zahnradstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "asian" ;
     r:opening_hours "Sa 17:00-24:00; Su-Fr 11:00-15:00,17:00-24:00" ;
     r:postcode "8005" ;
@@ -1046,6 +1040,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/1975523704> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Katzenseestrasse" ;
+    r:city "Zürich" ;
     r:cuisine "regional" ;
     r:opening_hours "Tu-Su 10:30-19:00" ;
     r:postcode "8046" ;
@@ -1056,6 +1051,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/2126273475> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Boulevard Georges-Favon" ;
+    r:city "Genève" ;
     ns0:name "Barbershop Bar" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2029568" ;
@@ -1063,6 +1059,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/2188913090> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Boulevard Carl-Vogt" ;
+    r:city "Genève" ;
     r:cuisine "Argentine",
         "italian",
         "pizza" ;
@@ -1074,6 +1071,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/2266023816> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de Saint-Jean" ;
+    r:city "Genève" ;
     r:cuisine "chinese" ;
     ns0:name "Ming Wah" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
@@ -1082,6 +1080,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/2337285545> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Boulevard des Philosophes" ;
+    r:city "Genève" ;
     ns0:name "Kuk" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.1964873" ;
@@ -1089,6 +1088,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/2355693108> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Birchstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "kebab",
         "pizza" ;
     r:opening_hours "Mo-Su 10:00-23:00" ;
@@ -1100,27 +1100,34 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/2395622178> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Avenue Alfred-Bertrand" ;
+    r:city "Genève" ;
     ns0:name "Le Pain Quotidien" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.1930901" ;
     geo1:long "6.1545753" .
 
+<https://www.openstreetmap.org/node/2523233081> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Wyssgasse" ;
+    r:city "Zürich" ;
+    r:cuisine "thai" ;
+    r:opening_hours "Mo-Fr 09:00-17:00" ;
+    r:postcode "8004" ;
+    ns0:name "Ruenthai 3" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3734083" ;
+    geo1:long "8.525345" .
+
 <https://www.openstreetmap.org/node/266630294> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Badenerstrasse" ;
+    r:city "Zürich" ;
     ns0:name "Légère" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "47.3763377" ;
     geo1:long "8.5143811" .
 
-<https://www.openstreetmap.org/node/2817482601> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Grand-Rue" ;
-    ns0:name "Melocoton Club" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "46.6189295" ;
-    geo1:long "7.0576978" .
-
 <https://www.openstreetmap.org/node/288340413> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Zähringerplatz" ;
+    r:city "Zürich" ;
     r:cuisine "regional" ;
     r:opening_hours "Mo 18:00-24:00; Tu-Su 09:00-24:00" ;
     r:postcode "8001" ;
@@ -1129,8 +1136,17 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "47.3735998" ;
     geo1:long "8.5447955" .
 
+<https://www.openstreetmap.org/node/2995524935> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Pfingstweidstrasse" ;
+    r:city "Zürich" ;
+    ns0:name "Bistro Chez Toni" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3901929" ;
+    geo1:long "8.511288" .
+
 <https://www.openstreetmap.org/node/3032344938> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue du Stand" ;
+    r:city "Genève" ;
     r:cuisine "brasserie" ;
     r:opening_hours "Su-Fr 11:30-23:00; Sa 18:30-23:00" ;
     r:postcode "1204" ;
@@ -1141,6 +1157,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/3065602361> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de la Coulouvrenière" ;
+    r:city "Genève" ;
     ns0:name "Le 23" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2040278" ;
@@ -1148,6 +1165,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/310347696> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Avenue Wendt" ;
+    r:city "Genève" ;
     r:cuisine "burger" ;
     r:opening_hours "\"bâtiment condamné\"" ;
     ns0:name "McDonald's" ;
@@ -1157,6 +1175,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/315862440> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Stauffacherstrasse" ;
+    r:city "Zürich" ;
     ns0:name "EquiTable im Sankt Meinrad" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "47.3778609" ;
@@ -1164,6 +1183,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/3163049463> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Morgartenstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "greek" ;
     r:opening_hours "Mo-Fr 11:00-14:00, 16:00-24:00; Sa 17:00-24:00" ;
     r:postcode "8004" ;
@@ -1174,6 +1194,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/3193583426> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Turbinenstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "coffee_shop",
         "sandwich" ;
     r:opening_hours "Mo-Fr 06:30-19:00; Sa 07:00-15:00; Su 08:00-16:00" ;
@@ -1185,6 +1206,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/321346779> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Wolfgang-Pauli-Strasse" ;
+    r:city "Zürich" ;
     r:cuisine "asian" ;
     r:opening_hours "Mo-Fr 10:30-14:30" ;
     r:postcode "8093" ;
@@ -1195,13 +1217,25 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/3250788311> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Schaffhauserstrasse" ;
+    r:city "Zürich" ;
     ns0:name "Kafi Freud" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "47.3959666" ;
     geo1:long "8.5406154" .
 
+<https://www.openstreetmap.org/node/3556713581> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Hagenholzstrasse" ;
+    r:city "Zürich" ;
+    r:cuisine "japanese",
+        "salad" ;
+    ns0:name "kaisin" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.414369" ;
+    geo1:long "8.5567666" .
+
 <https://www.openstreetmap.org/node/370840605> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Niederdorfstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "italian" ;
     r:opening_hours "11:30-23:00; Fr,Sa 11:30-23:30" ;
     r:postcode "8001" ;
@@ -1210,8 +1244,18 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "47.3729877" ;
     geo1:long "8.5436586" .
 
+<https://www.openstreetmap.org/node/3715926139> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Thurgauerstrasse" ;
+    r:city "Zürich" ;
+    r:cuisine "pizza" ;
+    ns0:name "Lalina" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.4124689" ;
+    geo1:long "8.5501786" .
+
 <https://www.openstreetmap.org/node/386002566> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Limmattalstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "pizza" ;
     r:opening_hours "Mo 17:00-22:30, Tu-Fr 11:00-22:30, Sa 17:00-23:30, Su 15:00-22:30" ;
     r:postcode "8049" ;
@@ -1220,18 +1264,9 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "47.4004328" ;
     geo1:long "8.5036259" .
 
-<https://www.openstreetmap.org/node/428548525> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Seestrasse" ;
-    r:cuisine "regional" ;
-    r:opening_hours "Mo-Sa 08:30-23:30; Su 08:30-22:00" ;
-    r:postcode "3600" ;
-    ns0:name "Schloss Schadau" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "46.7460775" ;
-    geo1:long "7.6373887" .
-
 <https://www.openstreetmap.org/node/482763846> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Binzmühlestrasse" ;
+    r:city "Zürich" ;
     r:cuisine "asian" ;
     r:opening_hours "Mo-Fr 10:30-14:30,17:30-22:00" ;
     r:postcode "8050" ;
@@ -1242,6 +1277,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/5208357874> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue des Rois" ;
+    r:city "Genève" ;
     r:cuisine "coffee_shop",
         "italian" ;
     r:opening_hours "Mo-Fr 07:30-18:00; Sa 07:30-18:00" ;
@@ -1253,6 +1289,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/5244188907> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de Montbrillant" ;
+    r:city "Genève" ;
     ns0:name "Coop Restaurant" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2204684" ;
@@ -1260,6 +1297,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/725251865> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue du Contrat-Social" ;
+    r:city "Genève" ;
     r:cuisine "french" ;
     r:opening_hours "Tu-Su 09:00-22:00" ;
     r:postcode "1203" ;
@@ -1270,6 +1308,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/75025846> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Widmerstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "italian",
         "pizza" ;
     r:opening_hours "Tu-Fr 11:00-14:00,17:00-22:00; Sa 17:00-22:00; Su 11:00-14:00,17:00-22:00" ;
@@ -1281,6 +1320,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/7856590933> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Chemin du 23-Août" ;
+    r:city "Genève" ;
     r:cuisine "asian" ;
     ns0:name "BAO Steam Kitchen" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
@@ -1289,6 +1329,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/8500037434> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Boulevard Georges-Favon" ;
+    r:city "Genève" ;
     r:cuisine "burger" ;
     r:opening_hours "Mo-Thu 11:30-22:30; Fri-Sat 11:30-23:30" ;
     r:postcode "1204" ;
@@ -1297,21 +1338,9 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "46.2032198" ;
     geo1:long "6.1398097" .
 
-<https://www.openstreetmap.org/node/8507872904> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Burgstrasse" ;
-    r:cuisine "afghan",
-        "coffee_shop",
-        "persian",
-        "tea" ;
-    r:opening_hours "Tu-Sa 17:00-22:00" ;
-    r:postcode "3600" ;
-    ns0:name "Restaurant und Take Away Ariana" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "46.7597595" ;
-    geo1:long "7.6314857" .
-
 <https://www.openstreetmap.org/node/855341140> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Badenerstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "lebanese" ;
     ns0:name "Les délices d'orient" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
@@ -1320,6 +1349,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/8621312506> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de la Prairie" ;
+    r:city "Genève" ;
     ns0:name "T'as vu le bitcoin xD" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2100898" ;
@@ -1327,6 +1357,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/866541138> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Schaffhauserstrasse" ;
+    r:city "Zürich" ;
     ns0:name "Café Frieda" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "47.3921165" ;
@@ -1334,6 +1365,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/node/8818883495> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de la Prairie" ;
+    r:city "Genève" ;
     r:cuisine "burger" ;
     r:opening_hours "Mo-Fr 09:00-17:00" ;
     r:postcode "1202" ;
@@ -1344,107 +1376,15 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/way/179543519> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de Montbrillant" ;
+    r:city "Genève" ;
     ns0:name "Montbrillant" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2142159" ;
     geo1:long "6.1425386" .
 
-<https://www.openstreetmap.org/way/210365414> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Allmendstrasse" ;
-    ns0:name "Mokka" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "46.7597527" ;
-    geo1:long "7.6239177" .
-
-<https://www.openstreetmap.org/way/210893734> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Militärstrasse" ;
-    ns0:name "Soldatenstube" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "46.7590966" ;
-    geo1:long "7.6173411" .
-
-<https://www.openstreetmap.org/way/211170769> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Kasernenstrasse" ;
-    ns0:name "Militärgarten" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "46.7585676" ;
-    geo1:long "7.6172076" .
-
-<https://www.openstreetmap.org/way/213454122> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Seestrasse" ;
-    r:cuisine "kebab",
-        "pizza" ;
-    ns0:name "Dönerbude Casablanca" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "46.7419282" ;
-    geo1:long "7.6282475" .
-
-<https://www.openstreetmap.org/way/215480113> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Freienhofgasse" ;
-    r:cuisine "italian" ;
-    ns0:name "Al Ponte" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "46.7575817" ;
-    geo1:long "7.6306903" .
-
-<https://www.openstreetmap.org/way/217478287> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Gwattstrasse" ;
-    ns0:name "Alpha" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "46.7406104" ;
-    geo1:long "7.6272144" .
-
-<https://www.openstreetmap.org/way/254851999> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Eschenstrasse" ;
-    ns0:name "Restaurant zum alten Pflüegli" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "47.4178968" ;
-    geo1:long "9.2691581" .
-
-<https://www.openstreetmap.org/way/255116507> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "St. Gallerstrasse" ;
-    ns0:name "Restaurant Schäfli" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "47.4156044" ;
-    geo1:long "9.2666765" .
-
-<https://www.openstreetmap.org/way/315021086> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Sandurdreef" ;
-    r:cuisine "pizza,_pannekoeken,_a_la_carte_plates" ;
-    r:opening_hours "Mo-Su 17:00+" ;
-    r:postcode "7828AA" ;
-    ns0:name "De Brigantijn" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "52.7305266" ;
-    geo1:long "6.9042438" .
-
-<https://www.openstreetmap.org/way/315021087> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Sandurdreef" ;
-    r:cuisine "international" ;
-    r:opening_hours "Sa,Su,Tu 17:30+" ;
-    r:postcode "7828AA" ;
-    ns0:name "Buffetrestaurant Sandur" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "52.7309587" ;
-    geo1:long "6.9045806" .
-
-<https://www.openstreetmap.org/way/327991721> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Sandurdreef" ;
-    ns0:name "Schipperscafé" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "52.7303326" ;
-    geo1:long "6.9042155" .
-
-<https://www.openstreetmap.org/way/328256832> a <https://www.openstreetmap.org/node/> ;
-    r:adresse "Sandurdreef" ;
-    r:cuisine "regional" ;
-    ns0:name "Parc Plaza" ;
-    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-    geo1:lat "52.7302882" ;
-    geo1:long "6.904457" .
-
 <https://www.openstreetmap.org/way/38098975> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Stadthausquai" ;
+    r:city "Zürich" ;
     r:cuisine "sausage",
         "swiss" ;
     ns0:name "Bauschänzli" ;
@@ -1454,6 +1394,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/way/51391815> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Badenerstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "regional" ;
     r:opening_hours "Mo-Fr 08:00-23:00; Sa 10:00-23:00; Su 14:00-23:00" ;
     r:postcode "8048" ;
@@ -1464,6 +1405,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/way/55484473> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Winterthurerstrasse" ;
+    r:city "Zürich" ;
     ns0:name "Wild West Steakhouse Texas" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "47.3968595" ;
@@ -1471,6 +1413,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/way/61587926> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Allmendstrasse" ;
+    r:city "Zürich" ;
     r:cuisine "regional" ;
     ns0:name "Fork & Bottle" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
@@ -1479,6 +1422,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/way/665498669> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Quai du Général-Guisan" ;
+    r:city "Genève" ;
     ns0:name "Le Lacustre" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2045511" ;
@@ -1486,6 +1430,7 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
 
 <https://www.openstreetmap.org/way/83247586> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue du Prince" ;
+    r:city "Genève" ;
     r:cuisine "international" ;
     ns0:name "Migros restaurant" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;

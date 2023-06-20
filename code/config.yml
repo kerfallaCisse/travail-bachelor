@@ -1,14 +1,16 @@
 recipe: default.v1
-language: fr # l'ordre des composants est important
+language: fr
 pipeline:
 - name: WhitespaceTokenizer
 - name: RegexFeaturizer
+  case_sensitive: False
+  use_word_boundaries: True
 - name: RegexEntityExtractor
-  case_sensitive: false
-  use_lookup_tables: true
-  use_regexes: true
-  use_word_boundaries: true
-  constrain_similarities: true
+  case_sensitive: False
+  use_lookup_tables: True
+  use_regexes: True
+  use_word_boundaries: True
+  constrain_similarities: True
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
 - name: CountVectorsFeaturizer
@@ -20,14 +22,13 @@ pipeline:
 - name: EntitySynonymMapper
 - name: ResponseSelector
   epochs: 100
-  constrain_similarities: true
+  constrain_similarities: True
 - name: FallbackClassifier
-  threshold:  0.7 #0.3
+  threshold: 0.7
   ambiguity_threshold: 0.1
-# When the chatbot  can't predict the next action with a confidence >= core_fallback_threshold
-policies: 
+policies:
 - name: RulePolicy
   core_fallback_threshold: 0.3
-  core_fallback_action_name: "action_fallback"
+  core_fallback_action_name: action_fallback
   enable_fallback_prediction: True
-assistant_id: 20230412-001416-sluggish-fleet
+assistant_id: 20230620-184713-horizontal-acacia

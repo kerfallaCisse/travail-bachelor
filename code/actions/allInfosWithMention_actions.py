@@ -30,9 +30,7 @@ class ListerRestaurants(Action):
             return []
 
         local_endpoint.setQuery(f"""
-                                prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                                 prefix ns0: <http://www.geonames.org/ontology#>
-                                prefix dbpedia: <http://dbpedia.org/resource/>
                                 SELECT ?rn
                                 WHERE{{
                                     ?r ns0:name ?rn .
@@ -67,7 +65,7 @@ class ResolveMention(Action):
         try:
             mention_list = tracker.get_slot('mention_list')
             if mention_list == None:
-                return
+                return []
         except Exception:
             return []
 
@@ -79,8 +77,6 @@ class ResolveMention(Action):
         try:
             restaurant = mention_list[index]
             getRestInfos(dispatcher, restaurant)
-
-
         except IndexError:
             return []
 

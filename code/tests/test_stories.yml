@@ -4,6 +4,7 @@
 stories:
 - story: lister les restaurants dans un pays en l'occurence en  Suisse
   steps:
+  - action: utter_presentation
   - user: |
       bonjour
     intent: salutation
@@ -17,7 +18,7 @@ stories:
     intent: lister_restaurants
   - action: action_set_limit_intent
   - slot_was_set:
-    - rest_ville: false
+    - rest_ville: False
   - user: |
       j'aimerai [10]{"entity":"query_limit"} restaurants
     intent: query_limitation  
@@ -25,6 +26,7 @@ stories:
 
 - story: donner la liste des restaurants qui se trouvent dans une ville
   steps:
+  - action: utter_presentation
   - user: |
       bonjour
     intent: salutation
@@ -38,7 +40,7 @@ stories:
     intent: restaurants_city
   - action: action_set_limit_intent
   - slot_was_set:
-    - rest_ville: true
+    - rest_ville: True
   - user: |
       j'aimerai [14]{"entity":"query_limit"} restaurants
     intent: query_limitation  
@@ -59,7 +61,7 @@ stories:
     intent: lister_restaurants
   - action: action_set_limit_intent
   - slot_was_set:
-    - rest_ville: false
+    - rest_ville: False
   - user: |
       j'aimerai [14]{"entity":"query_limit"} restaurants
     intent: query_limitation  
@@ -84,7 +86,7 @@ stories:
     intent: lister_restaurants
   - action: action_set_limit_intent
   - slot_was_set:
-    - rest_ville: false
+    - rest_ville: False
   - user: |
       j'aimerai [14]{"entity":"query_limit"} restaurants
     intent: query_limitation  
@@ -109,7 +111,7 @@ stories:
     intent: restaurants_city
   - action: action_set_limit_intent
   - slot_was_set:
-    - rest_ville: true
+    - rest_ville: True
   - user: |
       j'aimerai [13]{"entity":"query_limit"} restaurants
     intent: query_limitation  
@@ -134,7 +136,7 @@ stories:
     intent: restaurant_curiosity
   - action: action_set_limit_intent
   - slot_was_set:
-    - limit_curiosity: true
+    - limit_curiosity: True
   - user: |
       j'aimerai [13]{"entity":"query_limit"} curiosités
     intent: query_limitation  
@@ -153,12 +155,12 @@ stories:
   - user: |
       donne moi les restaurants qui vendent de la nourriture [australienne]{"entity":"type_cuisine"} à [Soleure]{"entity":"city"} 
     intent: rest_cuisine
-  # - action: action_set_limit_intent
-  # - slot_was_set:
-  #   - cuisine_type: true
-  # - user: |
-  #     [6]{"entity":"query_limit"}
-  #   intent: query_limitation
+  - action: action_set_limit_intent
+  - slot_was_set:
+    - cuisine_type: True
+  - user: |
+      [6]{"entity":"query_limit"}
+    intent: query_limitation
   - action: action_cuisine_type
     
 

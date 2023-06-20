@@ -8,23 +8,23 @@ intents:
   - nlu_fallback
   - out_of_scope
   - query_limitation:
-      use_entities: true
+      use_entities: True
   - restaurant_curiosity:
-      use_entities: true
+      use_entities: True
   - lister_restaurants:
-      use_entities: true
+      use_entities: True
   - mention_restaurant:
-      use_entities: true
+      use_entities: True
   - restaurants_city:
-      use_entities: true
+      use_entities: True
   - infos_rest_name:
-      use_entities: true
+      use_entities: True
   - rest_cuisine:
-      use_entities: true
+      use_entities: True
 
 responses:
   utter_salutation:
-    - text: "Hello comment vas-tu ?\nJe suis un chatbot spécialiser dans le domaine des restaurants en Suisse"
+    - text: "Hello comment vas-tu ?\nBienvenue dans notre chatbot dédié aux restaurants en Suisse. \nCe chatbot est conçu pour faciliter votre recherche de restaurants. Il peut vous fournir des informations détaillées sur chaque établissement, telles que les horaires d'ouverture, le type de cuisine, l'adresse, etc.\n Ce chatbot est connecté à plusieurs graphes de connaissances afin de répondre à vos questions. Il devient intelligent à travers les questions que vous lui posez."
 
   utter_aurevoir:
     - text: "aurevoir :)"
@@ -63,39 +63,39 @@ entities:
 slots:
   nom_pays:
     type: text
-    influence_conversation: false
+    influence_conversation: False
     mappings:
       - type: from_entity
         entity: nom_pays
         action: utter_nbr_restaurant
   mention:
     type: text
-    influence_conversation: false
+    influence_conversation: False
     mappings:
       - type: from_entity
         entity: mention
   mention_list:
     type: list
-    influence_conversation: false
+    influence_conversation: False
     mappings:
       - type: custom
         action: action_resolve_mention
   city:
     type: text
-    influence_conversation: false
+    influence_conversation: False
     mappings:
       - type: from_entity
         entity: city
         action: utter_nbr_restaurant
   curiosity:
     type: list
-    influence_conversation: false
+    influence_conversation: False
     mappings: 
       - type: custom
         action: action_restaurants_city
   rest_name:
     type: text
-    influence_conversation: false
+    influence_conversation: False
     mappings: 
       - type: from_entity
         entity: rest_name
@@ -104,39 +104,39 @@ slots:
     min_value: 1
     max_value: 20
     initial_value: 10
-    influence_conversation: false
+    influence_conversation: False
     mappings: 
       - type: from_entity
         entity: query_limit
   rest_ville:
     type: bool
-    initial_value: true
-    influence_conversation: true
+    initial_value: True
+    influence_conversation: True
     mappings:
       - type: custom
         action: action_set_limit_intent
   limit_curiosity:
     type: bool
-    initial_value: false
-    influence_conversation: true
+    initial_value: False
+    influence_conversation: True
     mappings:
       - type: custom
         action: action_set_limit_intent 
   type_cuisine:
     type: text
-    influence_conversation: false
+    influence_conversation: False
     mappings:
       - type: from_entity
         entity: type_cuisine
         action: action_cuisine_type
   cuisine_type:
     type: bool
-    initial_value: false
-    influence_conversation: true
+    initial_value: False
+    influence_conversation: True
     mappings:
       - type: custom
         action: action_set_limit_intent
   
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: True

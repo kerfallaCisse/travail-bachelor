@@ -18,7 +18,8 @@ CUISINE = {
     "espagnol": "spanish", "suisse": "swiss", "thailandais": "thai", "sénégalais": "senegalese",
     "australienne": "australian", "africaine": "african", "afghane": "afghan", "américaine": "american", "argentine": "argentinian", "arménienne": "armenian", "austrienne": "austrian", "bolivienne": "bolivian", "brésilienne": "brazilian",
     "bulgarienne": "bulgarian", "chinoise": "chinese", "colombienne": "colombian", "croatienne": "croatian", "cubaine": "cuban", "égyptienne": "egyptian", "éthiopienne": "ethiopian", "européenne": "european", "française": "french", "allemande": "german",
-    "indienne": "indian", "italienne": "italian", "japonaise": "japanese", "coréenne": "corean", "mexicaine": "mexican", "marocaine": "maroccan", "pakistanaise": "pakistan", "portugaise": "portuguese", "thailandaise": "thai", "sénégalaise": "senegalese"
+    "indienne": "indian", "italienne": "italian", "japonaise": "japanese", "coréenne": "corean", "mexicaine": "mexican", "marocaine": "maroccan", "pakistanaise": "pakistan", "portugaise": "portuguese", "thailandaise": "thai", "sénégalaise": "senegalese",
+    "libanaise":"lebanese", "libanais":"lebanese"
 }
 
 
@@ -33,7 +34,12 @@ class RestTypeCuisine(Action):
 
         city = tracker.get_slot("city")
         type_cuisine = tracker.get_slot("type_cuisine")
+        limit = tracker.get_slot("query_limit")
         mention_list = set()
+        
+        if int(limit) > 20:
+            dispatcher.utter_message(response="utter_limit")
+            return []
 
         cuisine_english = CUISINE.get(type_cuisine, None)
         if cuisine_english is None:
@@ -47,10 +53,10 @@ class RestTypeCuisine(Action):
                                 PREFIX ns0: <http://www.geonames.org/ontology#>
                                 SELECT ?rn
                                 WHERE {{
-                                    ?r r:cuisine "{cuisine_english}";
-                                       ns0:name ?rn .
-                                    ?r ?p ?o .      
-                                }} limit 20
+                                    ?r r:cuisine "{cuisine_english}" ;
+                                       r:city "{city}" ;
+                                       ns0:name ?rn .     
+                                }} limit {limit}
                                 """)
 
         resp = local_endpoint.query().bindings
@@ -87,6 +93,7 @@ class RestTypeCuisine(Action):
             opening_hours = R_NAMESPACE.opening_hours
             postal_code = R_NAMESPACE.postcode
             adresse = R_NAMESPACE.adresse
+            r_city = R_NAMESPACE.city
             GE01_NAMESPACE = Namespace(
                 "http://www.w3.org/2003/01/geo/wgs84_pos#")
             geo_lat = GE01_NAMESPACE.lat
@@ -141,7 +148,8 @@ class RestTypeCuisine(Action):
                                                                    geo1:lat "{latitude}" ;
                                                                    geo1:long "{longitude}" ;
                                                                    r:cuisine "{type_cuisine}" ;
-                                                                   r:adresse "{rue}" .
+                                                                   r:adresse "{rue}" ;
+                                                                   r:city "{city}" .
                                                       }}
                                                       """)
                     local_endpoint_add_stmnt.query()
@@ -150,6 +158,7 @@ class RestTypeCuisine(Action):
                     g.add((OSMN, geo_long, Literal(longitude)))
                     g.add((OSMN, cuisine, Literal(type_cuisine)))
                     g.add((OSMN, adresse, Literal(rue)))
+                    g.add((OSMN, r_city, Literal(city)))
                     if len(hours) != 0:
                         local_endpoint_add_stmnt.setQuery(f"""
                                                           PREFIX r: <http://restaurant#>
@@ -182,5 +191,5 @@ class RestTypeCuisine(Action):
                 corresponding_rest = mention_list[i]
                 i += 1
                 dispatcher.utter_message(text=f"{i}- {corresponding_rest}")
-            return [SlotSet("mention_list", list(mention_list))]
+            return [SlotSet("mention_list", mention_list)]
         return []

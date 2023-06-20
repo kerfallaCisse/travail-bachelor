@@ -2,6 +2,7 @@ import json
 from rdflib import Graph
 from rasa_sdk.executor import CollectingDispatcher
 from SPARQLWrapper import SPARQLWrapper2
+from deep_translator import GoogleTranslator
 
 sparql_dbpedia = SPARQLWrapper2(
     "https://dbpedia.org/sparql")  # DBpedia endpoint
@@ -22,7 +23,7 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
                         FILTER (?p != rdfs:isDefinedBy && ?p != ns0:featureClass && ?p != ns0:featureCode && ?p != ns0:countryCode && ?p != ns0:parentCountry && ?p != ns0:name && ?p != rdf:type)
                     }}
                     """)
-
+    
     lat = ""
     long = ""
     more_infos = ""
@@ -34,6 +35,7 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
     location_map = ""
     locationMap_nearby_place = list()
     dbpedia = ""
+    city = ""
     nearBy_placeList = list()
     # pour stocker les endroits proche d'un restaurant et la ressource vers la carte pour le lieu correspondant
     nearBy_placeAndMap = ""
@@ -60,8 +62,7 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
                 resp = sparql_dbpedia.query().bindings
                 if len(resp) != 0:
                     for r in resp:
-                        more_infos += r['abstract'].value + \
-                            " (Anglais)."
+                        more_infos += r['abstract'].value
             else:
                 value_object = value_object.lower()
 
@@ -90,6 +91,9 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
 
             if value_predicate.find("locationmap") > -1:
                 location_map = value_object
+            
+            if value_predicate.find("city") > -1:
+                city = value_object
 
             if value_predicate.find("nearby") > -1:
                 nearBy_rdf = value_object
@@ -132,7 +136,12 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
 
         # On vérifie qu'on possède les données
         if len(more_infos) != 0:
-            dispatcher.utter_message(text=more_infos)
+            # On traduit l'abstract
+            text_translated = translate_to_french(more_infos)
+            if len(text_translated) > 0:
+                dispatcher.utter_message(text=text_translated)
+            else:    
+                dispatcher.utter_message(text=more_infos)    
         if len(lat) != 0 and len(long) != 0:
             text = f"""Sa latitude est de {lat} et sa longitude est de {long}."""
             dispatcher.utter_message(text=text)
@@ -147,6 +156,8 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
             dispatcher.utter_message(text=text)
         if len(postcode) != 0:
             dispatcher.utter_message(text=f"Code postal: {postcode}")
+        if len(city) != 0:
+            dispatcher.utter_message(text=f"Ville: {city}")
         if len(location_map) != 0:
             dispatcher.utter_message(
                 text=f"Visualisation du restaurant {restaurant} sur une carte: {location_map}")
@@ -155,4 +166,14 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
                 text=f"Le restaurant {restaurant} est proche des lieux suivants:\n\n{nearBy_placeAndMap}")
         if len(curiosities) != 0:
             text = "\n".join(curiosities)
-            dispatcher.utter_message(text=f"Le restaurant {restaurant} est proche des terrains de jeu suivant:\n{text}")
+            dispatcher.utter_message(
+                text=f"Le restaurant {restaurant} est proche des terrains de jeu suivant:\n{text}")
+
+def translate_to_french(src_text: str) -> str:
+    text_translated = ""
+    try:
+        text_translated = GoogleTranslator(source="auto",target="fr").translate(src_text)
+    except Exception:
+        pass    
+    return text_translated
+    

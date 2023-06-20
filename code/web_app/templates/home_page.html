@@ -37,10 +37,12 @@
       (e.onload = () => {
         window.WebChat.default(
           {
-            initPayload: "/utter_salutation",
+            initPayload: "Salut ! Bienvenue dans notre chatbot dédié aux restaurants en Suisse. \nCe chatbot est conçu pour faciliter votre recherche de restaurants. Il peut vous fournir des informations détaillées sur chaque établissement, telles que les horaires d'ouverture, le type de cuisine, l'adresse, etc.\n Ce chatbot est connecté à plusieurs graphes de connaissances afin de répondre à vos questions. Il devient intelligent à travers les questions que vous lui posez.",
             customData: { language: "fr" },
             socketUrl: "http://localhost:5005",
-            title: "Rasa restaurant bot"
+            title: "Restaurants suisses bot",
+            profileAvatar: "../static/chatbot_avatar.png",
+            showFullScreenButton: true
           },
           null
         );

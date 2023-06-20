@@ -60,7 +60,7 @@ nlu:
       - donne moi la liste des restaurants
       - donne moi la liste de tous les restaurants
 
-  - intent: query_limitation
+  - intent: query_limitation # un seul example pour éviter l'interférence avec DIETClassifier
     examples: |
       - j'aimerai la liste de [10](query_limit) restaurants
       - [10](query_limit) restaurants
@@ -75,7 +75,6 @@ nlu:
       - donne moi [1](query_limit) curiosité
       - donne moi [1](query_limit) activité
       - [10](query_limit)
-    
   - regex: query_limit
     examples: |
       - \d+   
@@ -158,6 +157,9 @@ nlu:
       - toutes les infos sur [Hotel Restaurant Holiday](rest_name)
       - toutes les informations sur [Johnny the Ripper](rest_name)
       - donne moi toutes les infos du restaurant [Restaurant Anker](rest_name)
+      - quels sont les infos du resto [Hotel Krone, Solothurn](rest_name)
+      - donne moi les infos de ce restaurant [LY'S Asia](rest_name)
+      - toutes les infos du resto [Octopus](rest_name)
 
   - intent: restaurants_city
     examples: |
@@ -167,6 +169,7 @@ nlu:
       - donne moi les restaurants que tu possèdes à [Bern](city)
       - donne moi les restaurants qui se trouvent dans la ville de [Lausanne](city)
       - les restaurants à [Bern](city)
+      - donne moi la liste des restaurants dans la ville de [Nyon](city)
       - restaurants à [Zürich](city)
       - donne moi les restaurants à [zürich](city)
       - restaurants à [Neuchâtel](city)
@@ -284,6 +287,14 @@ nlu:
       - Kräiligen, Restaurant Brücke
       - Restaurant Le Carrefour
       - Restaurant Anker
+      - Fork & Bottle
+      - Restaurant und Take Away Ariana
+      - Linden Treff
+      - Popeyes
+      - kaisin
+      - Lalina
+      - LY'S Asia
+      - Légère
 
 
   - intent: rest_cuisine
@@ -374,6 +385,3 @@ nlu:
       - portugaise
       - thailandaise
       - sénégalaise
-
-
-
