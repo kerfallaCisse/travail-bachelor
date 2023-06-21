@@ -139,3 +139,18 @@ stories:
         entities: 
           - query_limit 
       - action: action_cuisine_type
+
+  - story: résolution de l'ambiguïté dans le cas des restaurants qui ont le même le nom
+    steps:
+      - intent: salutation
+      - action: utter_salutation
+      - intent: affirmation
+      - action: utter_affrimation
+      - intent: infos_rest_name
+        entities:
+          - rest_name
+      - action: action_infos_rest_name
+      - intent: type_cuisine_ambiguity
+        entities:
+          - type_cuisine
+      - action: action_ramb_cuisine

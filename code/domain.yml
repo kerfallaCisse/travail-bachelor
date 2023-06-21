@@ -21,6 +21,8 @@ intents:
       use_entities: True
   - rest_cuisine:
       use_entities: True
+  - type_cuisine_ambiguity:
+      use_entities: True    
 
 responses:
   utter_salutation:
@@ -50,6 +52,7 @@ actions:
   - action_set_limit_intent
   - action_infos_rest_name
   - action_cuisine_type
+  - action_ramb_cuisine
 
 
 entities:
@@ -123,7 +126,7 @@ slots:
       - type: custom
         action: action_set_limit_intent 
   type_cuisine:
-    type: text
+    type: list
     influence_conversation: False
     mappings:
       - type: from_entity

@@ -162,6 +162,25 @@ stories:
       [6]{"entity":"query_limit"}
     intent: query_limitation
   - action: action_cuisine_type
+
+- story: résolution de l'ambiguïté dans le cas des restaurants qui ont le même le nom
+  steps:
+  - user: |
+      bonjour
+    intent: salutation
+  - action: utter_salutation
+  - user: |
+      cool je vais bien
+    intent: affirmation
+  - action: utter_affrimation
+  - user: |
+      donne moi toutes les informations que tu possèdes sur le restaurant [Restaurant Anker]{"entity":"rest_name"}
+    intent: infos_rest_name
+  - action: action_infos_rest_name
+  - user: |
+      les spécialités du restaurant sont sont [asiatique]{"entity":"type_cuisine"}, [africain]{"entity":"type_cuisine"}, [libanais]{"entity":"type_cuisine"}
+    intent: type_cuisine_ambiguity
+  - action: action_ramb_cuisine
     
 
 

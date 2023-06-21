@@ -41,11 +41,22 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
     nearBy_placeAndMap = ""
 
     response = local_endpoint.query().bindings
-    if len(response) == 0:
+    response_size = len(response)
+    if response_size == 0:
         dispatcher.utter_message(
             text="Désolé nous n'avons aucune information concernant ce restaurant")
-
     else:
+        local_endpoint.setQuery(f"""
+                                PREFIX ns0: <http://www.geonames.org/ontology#>
+                                SELECT *
+                                WHERE {{
+                                    ?r ns0:name "{restaurant}" .
+                                }}
+                                """)
+        response_size = len(local_endpoint.query().bindings)
+        if response_size > 1:
+            dispatcher.utter_message(text=f"Il existe {response_size} restaurants avec ce même nom.\nVeuillez affiner votre recherche afin que je puisse trouver le bon restaurant.\nQuelles sont les spécialités du restaurant (type de cuisine) que vous cherchez ?")
+            return []
         for result in response:
             value_object = result['o'].value
             if value_object.find("dbpedia") > -1:

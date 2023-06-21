@@ -309,10 +309,10 @@ nlu:
       - type de nourriture [argentin](type_cuisine) à [Yverdon-les-Bains](city)
       - donne moi les restaurants qui vendent de la nourriture [australienne](type_cuisine) à [Soleure](city)
       - donne moi les restaurants qui vendent de la nourriture [chinoise](type_cuisine) dans la ville de [Cham](city)
-      - nourriture [argentin](type_cuisine)
-      - type de cuisine [brésilien](type_cuisine)
+      - nourriture [argentin](type_cuisine) à [Bern](city)
+      - type de cuisine [brésilien](type_cuisine) à [Köniz](city)
       - cuisine [française](type_cuisine) à [Belp](city)
-      - [française](type_cuisine) [Hinwil](city)
+      - [française](type_cuisine) à [Hinwil](city)
       - donne moi les restaurants [chinois](type_cuisine) à [Bulle](city)
 
   - lookup: type_cuisine
@@ -385,3 +385,10 @@ nlu:
       - portugaise
       - thailandaise
       - sénégalaise
+
+  - intent: type_cuisine_ambiguity  
+    examples: |
+      - le type de cuisine de ce restaurant est [chinois] (type_cuisine)
+      - dans ce restaurant on vend de la nourriture [française](type_cuisine)
+      - les spécialités du restaurant sont [asiatique](type_cuisine), [africain](type_cuisine), [libanais](type_cuisine)
+      - spécialités [africaine](type_cuisine)

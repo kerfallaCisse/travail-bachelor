@@ -33,13 +33,21 @@ class RestTypeCuisine(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         city = tracker.get_slot("city")
-        type_cuisine = tracker.get_slot("type_cuisine")
+        cuisine_slot = tracker.get_slot("type_cuisine")
+        type_cuisine = ""
         limit = tracker.get_slot("query_limit")
         mention_list = set()
         
         if int(limit) > 20:
             dispatcher.utter_message(response="utter_limit")
             return []
+        
+        try:
+            type_cuisine = cuisine_slot[0]
+        except Exception:
+            return []
+        
+        print(type_cuisine)    
 
         cuisine_english = CUISINE.get(type_cuisine, None)
         if cuisine_english is None:
