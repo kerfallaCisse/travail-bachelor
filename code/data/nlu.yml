@@ -160,6 +160,7 @@ nlu:
       - quels sont les infos du resto [Hotel Krone, Solothurn](rest_name)
       - donne moi les infos de ce restaurant [LY'S Asia](rest_name)
       - toutes les infos du resto [Octopus](rest_name)
+      - donne moi les infos du resto [Restaurant test](rest_name)
 
   - intent: restaurants_city
     examples: |
@@ -295,6 +296,7 @@ nlu:
       - Lalina
       - LY'S Asia
       - Légère
+      - Restaurant test
 
 
   - intent: rest_cuisine
@@ -392,3 +394,8 @@ nlu:
       - dans ce restaurant on vend de la nourriture [française](type_cuisine)
       - les spécialités du restaurant sont [asiatique](type_cuisine), [africain](type_cuisine), [libanais](type_cuisine)
       - spécialités [africaine](type_cuisine)
+      - spécialités
+      - spécialité
+      - dans ce restaurant on peut trouver les spécialités suivantes: [belge](type_cuisine), [marocaine](type_cuisine). 
+      - dans ce restaurant on vend les spécialités suivantes: [mexicaine](type_cuisine), [éthiopienne](type_cuisine).
+      - Le restaurant que je cherche propose une spécialité [japonaise](type_cuisine) et [japonaise](type_cuisine)

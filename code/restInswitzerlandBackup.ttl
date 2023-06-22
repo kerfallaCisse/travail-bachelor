@@ -1113,4 +1113,20 @@ dbpedia:Wörth_Castle
   ns0:nearbyFeatures <https://sws.geonames.org/10388063/nearby.rdf> ;
   ns0:locationMap <https://www.geonames.org/10388063/muriaux-restaurants.html> .
 
+<http://restaurant#test1> ns0:name "Restaurant test" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  r:cuisine "african","french" ;
+  r:city "Genève" .
+
+<http://restaurant#test2> ns0:name "Restaurant test" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  r:cuisine "african" ;
+  r:city "Genève" .
+
+<http://restaurant#test3> ns0:name "Restaurant test" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  r:cuisine "bulgarian" ;
+  r:city "Genève" .
+
+
 

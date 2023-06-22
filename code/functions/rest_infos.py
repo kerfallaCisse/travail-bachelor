@@ -3,6 +3,9 @@ from rdflib import Graph
 from rasa_sdk.executor import CollectingDispatcher
 from SPARQLWrapper import SPARQLWrapper2
 from deep_translator import GoogleTranslator
+# import sys
+# from actions.restTypeCuisine_actions import CUISINE
+# sys.path.insert(0, "/code/actions")
 
 sparql_dbpedia = SPARQLWrapper2(
     "https://dbpedia.org/sparql")  # DBpedia endpoint
@@ -10,20 +13,46 @@ local_endpoint = SPARQLWrapper2(
     "http://localhost:7200/repositories/POC-1")  # my local graphDB endpoint
 
 
-def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
-    local_endpoint.setQuery(f"""
-                    prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-                    prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-                    prefix ns0: <http://www.geonames.org/ontology#>
-                    prefix dbpedia: <http://dbpedia.org/resource/>
-                    SELECT ?p ?o
-                    WHERE {{
-                        ?r ns0:name "{restaurant}" .
-                        ?r ?p ?o .
-                        FILTER (?p != rdfs:isDefinedBy && ?p != ns0:featureClass && ?p != ns0:featureCode && ?p != ns0:countryCode && ?p != ns0:parentCountry && ?p != ns0:name && ?p != rdf:type)
-                    }}
-                    """)
-    
+def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str, **kwargs):
+    QUERY = f"prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nprefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nprefix ns0: <http://www.geonames.org/ontology#>\nprefix dbpedia: <http://dbpedia.org/resource/>\nprefix r: <http://restaurant#>\n"
+    QUERY += "SELECT ?p ?o\nWHERE { ?r ns0:name "
+
+    # Le cas où on a des restaurants avec le même nom -> résolution de l'ambiguïté
+    kwargs_len = len(kwargs)
+    if kwargs_len == 0:
+        QUERY += f"'{restaurant}' ; ?p ?o .\n"
+    else:
+        CUISINE = kwargs["cuisine_mapping"]
+        type_cuisines: list = kwargs["cuisine"]
+        type_cuisines_size = len(type_cuisines)
+        QUERY += f"'{restaurant}' ; r:cuisine "
+        for i in range(type_cuisines_size):
+            cne = CUISINE.get(type_cuisines[i], None)
+            if cne is None:
+                dispatcher.utter_message(text="Nous n'avons trouvé aucun restaurant avec cette spécialité")
+                return
+            if i == type_cuisines_size - 1:
+                QUERY += f"'{cne}' ; ?p ?o.\n"
+            else:
+                QUERY += f"'{cne}' , "
+
+    QUERY += "FILTER (?p != rdfs:isDefinedBy && ?p != ns0:featureClass && ?p != ns0:featureCode && ?p != ns0:countryCode && ?p != ns0:parentCountry && ?p != ns0:name && ?p != rdf:type)\n}"
+
+    # local_endpoint.setQuery(f"""
+    #                 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    #                 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    #                 prefix ns0: <http://www.geonames.org/ontology#>
+    #                 prefix dbpedia: <http://dbpedia.org/resource/>
+    #                 SELECT ?p ?o
+    #                 WHERE {{
+    #                     ?r ns0:name "{restaurant}" .
+    #                     ?r ?p ?o .
+    #                     FILTER (?p != rdfs:isDefinedBy && ?p != ns0:featureClass && ?p != ns0:featureCode && ?p != ns0:countryCode && ?p != ns0:parentCountry && ?p != ns0:name && ?p != rdf:type)
+    #                 }}
+    #                 """)
+    local_endpoint.setQuery(query=QUERY)
+    # print(f"Resto: {restaurant}\nRequête:\n"+QUERY)
+
     lat = ""
     long = ""
     more_infos = ""
@@ -46,17 +75,23 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
         dispatcher.utter_message(
             text="Désolé nous n'avons aucune information concernant ce restaurant")
     else:
-        local_endpoint.setQuery(f"""
-                                PREFIX ns0: <http://www.geonames.org/ontology#>
-                                SELECT *
-                                WHERE {{
-                                    ?r ns0:name "{restaurant}" .
-                                }}
-                                """)
-        response_size = len(local_endpoint.query().bindings)
-        if response_size > 1:
-            dispatcher.utter_message(text=f"Il existe {response_size} restaurants avec ce même nom.\nVeuillez affiner votre recherche afin que je puisse trouver le bon restaurant.\nQuelles sont les spécialités du restaurant (type de cuisine) que vous cherchez ?")
-            return []
+        # détection de l'ambiguïté
+        try:
+            if kwargs_len == 0:
+                local_endpoint.setQuery(f"""
+                                        PREFIX ns0: <http://www.geonames.org/ontology#>
+                                        SELECT *
+                                        WHERE {{
+                                            ?r ns0:name "{restaurant}" .
+                                        }}
+                                        """)
+                response_size = len(local_endpoint.query().bindings)
+                if response_size > 1:
+                    dispatcher.utter_message(
+                        text=f"Il existe {response_size} restaurants avec ce même nom.\nVeuillez affiner votre recherche afin que je puisse trouver le bon restaurant.\nQuelles sont les spécialités du restaurant que vous cherchez ?")
+                    return []
+        except KeyError:
+            pass
         for result in response:
             value_object = result['o'].value
             if value_object.find("dbpedia") > -1:
@@ -102,7 +137,7 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
 
             if value_predicate.find("locationmap") > -1:
                 location_map = value_object
-            
+
             if value_predicate.find("city") > -1:
                 city = value_object
 
@@ -151,13 +186,13 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
             text_translated = translate_to_french(more_infos)
             if len(text_translated) > 0:
                 dispatcher.utter_message(text=text_translated)
-            else:    
-                dispatcher.utter_message(text=more_infos)    
+            else:
+                dispatcher.utter_message(text=more_infos)
         if len(lat) != 0 and len(long) != 0:
             text = f"""Sa latitude est de {lat} et sa longitude est de {long}."""
             dispatcher.utter_message(text=text)
         if len(cuisine) != 0:
-            text = f"Type de cuisine du restaruant: {cuisine}"
+            text = f"Type de cuisine du restaurant: {cuisine}"
             dispatcher.utter_message(text=text)
         if len(opening_hours) != 0:
             text = f"Horaires d'ouverture: {opening_hours}"
@@ -180,11 +215,12 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str):
             dispatcher.utter_message(
                 text=f"Le restaurant {restaurant} est proche des terrains de jeu suivant:\n{text}")
 
+
 def translate_to_french(src_text: str) -> str:
     text_translated = ""
     try:
-        text_translated = GoogleTranslator(source="auto",target="fr").translate(src_text)
+        text_translated = GoogleTranslator(
+            source="auto", target="fr").translate(src_text)
     except Exception:
-        pass    
+        pass
     return text_translated
-    

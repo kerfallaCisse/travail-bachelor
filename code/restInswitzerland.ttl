@@ -1506,3 +1506,17 @@ dbpedia:Wörth_Castle ns0:name "Wörth Castle" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     rdfs:seeAlso dbpedia:Wörth_Castle .
 
+<http://restaurant#test1> ns0:name "Restaurant test" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  r:cuisine "african","french" ;
+  r:city "Genève" .
+
+<http://restaurant#test2> ns0:name "Restaurant test" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  r:cuisine "african" ;
+  r:city "Genève" .
+
+<http://restaurant#test3> ns0:name "Restaurant test" ;
+  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+  r:cuisine "bulgarian" ;
+  r:city "Genève" .
