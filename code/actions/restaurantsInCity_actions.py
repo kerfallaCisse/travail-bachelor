@@ -27,8 +27,6 @@ class RestaurantsInCity(Action):
         limit_query = tracker.get_slot("query_limit")
         limit = int(limit_query)
         
-        # translator = Translator () on ne peut pas utiliser google translate, car le nom de certaines villes en français sont réutilisés dans l'endpoint d'open street map
-        
 
         if limit > 20:
             dispatcher.utter_message(

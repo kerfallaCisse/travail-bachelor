@@ -3,9 +3,6 @@ from rdflib import Graph
 from rasa_sdk.executor import CollectingDispatcher
 from SPARQLWrapper import SPARQLWrapper2
 from deep_translator import GoogleTranslator
-# import sys
-# from actions.restTypeCuisine_actions import CUISINE
-# sys.path.insert(0, "/code/actions")
 
 sparql_dbpedia = SPARQLWrapper2(
     "https://dbpedia.org/sparql")  # DBpedia endpoint
@@ -38,20 +35,7 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str, **kwargs):
 
     QUERY += "FILTER (?p != rdfs:isDefinedBy && ?p != ns0:featureClass && ?p != ns0:featureCode && ?p != ns0:countryCode && ?p != ns0:parentCountry && ?p != ns0:name && ?p != rdf:type)\n}"
 
-    # local_endpoint.setQuery(f"""
-    #                 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    #                 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    #                 prefix ns0: <http://www.geonames.org/ontology#>
-    #                 prefix dbpedia: <http://dbpedia.org/resource/>
-    #                 SELECT ?p ?o
-    #                 WHERE {{
-    #                     ?r ns0:name "{restaurant}" .
-    #                     ?r ?p ?o .
-    #                     FILTER (?p != rdfs:isDefinedBy && ?p != ns0:featureClass && ?p != ns0:featureCode && ?p != ns0:countryCode && ?p != ns0:parentCountry && ?p != ns0:name && ?p != rdf:type)
-    #                 }}
-    #                 """)
     local_endpoint.setQuery(query=QUERY)
-    # print(f"Resto: {restaurant}\nRequête:\n"+QUERY)
 
     lat = ""
     long = ""
