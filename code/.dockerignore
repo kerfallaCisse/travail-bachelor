@@ -4,5 +4,4 @@ actions/*
 functions/*
 web_app/*
 flask_command.txt
-restInswitzerland.ttl
 restInswitzerlandBackup.ttl
