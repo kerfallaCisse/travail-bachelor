@@ -6,10 +6,9 @@ from SPARQLWrapper import SPARQLWrapper2, BASIC
 from rdflib import Literal, Namespace, URIRef, Graph
 from rdflib.namespace import RDF
 from .allInfosWithMention_actions import local_endpoint
-# from googletrans import Translator
 osmap_endpoint = SPARQLWrapper2(
     "https://sophox.org/sparql")  # Open street map endpoint
-osmap_endpoint.setTimeout(60)  # query time out for the endpoint in seconde
+osmap_endpoint.setTimeout(60)  # query time out for the endpoint in second
 local_endpoint_add_stmnt = SPARQLWrapper2("http://localhost:7200/repositories/POC-1/statements") # local endpoint to add statements in the graph
 GRAPH = Graph()
 
