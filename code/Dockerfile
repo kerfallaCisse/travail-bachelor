@@ -10,6 +10,8 @@ COPY . .
 
 RUN rasa train nlu
 
+RUN chmod -R 775 /app_rasa
+
 # We set the user to run, ro avoid runing the application with the root user
 USER 1001
 
