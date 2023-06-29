@@ -97,9 +97,9 @@ class ResolveCuriosity(Action):
                         # On ajoute dans le fichier turtle
                             graph.add(
                                 (restRessource, curiosity_ressource, correspondingCuriosity))
-                        graph.parse(source="restInswitzerland.ttl")
+                        graph.parse(source="data/restInswitzerland.ttl")
                         graph.serialize(
-                            destination="restInswitzerland.ttl", format="ttl")    
+                            destination="data/restInswitzerland.ttl", format="ttl")    
 
                 except TimeoutError:
                     dispatcher.utter_message(

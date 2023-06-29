@@ -24,6 +24,22 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     rdfs:seeAlso <http://dbpedia.org/resource/L'Entrecôte> .
 
+r:test1 r:city "Genève" ;
+    r:cuisine "african",
+        "french" ;
+    ns0:name "Restaurant test" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> .
+
+r:test2 r:city "Genève" ;
+    r:cuisine "african" ;
+    ns0:name "Restaurant test" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> .
+
+r:test3 r:city "Genève" ;
+    r:cuisine "bulgarian" ;
+    ns0:name "Restaurant test" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> .
+
 <https://sws.geonames.org/10227508/> a ns0:Feature ;
     ns0:countryCode "CH" ;
     ns0:featureClass <https://www.geonames.org/ontology#S> ;
@@ -986,6 +1002,17 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "47.3739605" ;
     geo1:long "8.5249794" .
 
+<https://www.openstreetmap.org/node/1637560333> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Avenue Bois-de-la-Chapelle" ;
+    r:city "Onex" ;
+    r:cuisine "kebab" ;
+    r:opening_hours "PH,Mo-Su 09:30-24:00" ;
+    r:postcode "1213" ;
+    ns0:name "Onex Kebap" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "46.1850114" ;
+    geo1:long "6.100581" .
+
 <https://www.openstreetmap.org/node/1637895109> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de l'Athénée" ;
     r:city "Genève" ;
@@ -1117,6 +1144,16 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "47.3734083" ;
     geo1:long "8.525345" .
 
+<https://www.openstreetmap.org/node/265444996> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue du Progrès" ;
+    r:city "La Chaux-de-Fonds" ;
+    r:cuisine "coffee_shop",
+        "regional" ;
+    ns0:name "La Différence" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.1070124" ;
+    geo1:long "6.8296598" .
+
 <https://www.openstreetmap.org/node/266630294> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Badenerstrasse" ;
     r:city "Zürich" ;
@@ -1124,6 +1161,18 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "47.3763377" ;
     geo1:long "8.5143811" .
+
+<https://www.openstreetmap.org/node/271082991> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue Alexis-Marie Piaget" ;
+    r:city "La Chaux-de-Fonds" ;
+    r:cuisine "italian",
+        "pizza" ;
+    r:opening_hours "Mo-Fr 08:30-14:00,16:30-23:00; We 08:30-14:00; Sa 10:00-14:00, 17:00-23:00, Su 17:00-23:00" ;
+    r:postcode "2300" ;
+    ns0:name "Pizza Rapido" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.1094844" ;
+    geo1:long "6.8294306" .
 
 <https://www.openstreetmap.org/node/288340413> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Zähringerplatz" ;
@@ -1172,6 +1221,14 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.2133722" ;
     geo1:long "6.1296471" .
+
+<https://www.openstreetmap.org/node/312452030> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue Fritz-Courvoisier" ;
+    r:city "La Chaux-de-Fonds" ;
+    ns0:name "Bière Shop" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.1035567" ;
+    geo1:long "6.8328326" .
 
 <https://www.openstreetmap.org/node/315862440> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Stauffacherstrasse" ;
@@ -1263,6 +1320,29 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "47.4004328" ;
     geo1:long "8.5036259" .
+
+<https://www.openstreetmap.org/node/3983115822> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Badenerstrasse" ;
+    r:city "Zürich" ;
+    r:cuisine "burger",
+        "kebab" ;
+    r:opening_hours "Mo-Th 09:00-24:00; Fr-Sa 09:00-04:00; Su 10:00-24:00" ;
+    r:postcode "8048" ;
+    ns0:name "Linden Treff" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.3881706" ;
+    geo1:long "8.4851611" .
+
+<https://www.openstreetmap.org/node/4154316389> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Hofwiesenstrasse" ;
+    r:city "Zürich" ;
+    r:cuisine "chicken" ;
+    r:opening_hours "Mo-Sa 11:00-22:00, 10:00-21:00 off" ;
+    r:postcode "8050" ;
+    ns0:name "Popeyes" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.4112942" ;
+    geo1:long "8.5448958" .
 
 <https://www.openstreetmap.org/node/482763846> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Binzmühlestrasse" ;
@@ -1392,6 +1472,14 @@ dbpedia:LEntrecôte ns0:name "L'Entrecôte" ;
     geo1:lat "47.3679074" ;
     geo1:long "8.5425505" .
 
+<https://www.openstreetmap.org/way/46992146> a <https://www.openstreetmap.org/node/> ;
+    r:adresse "Rue Alexis-Marie Piaget" ;
+    r:city "La Chaux-de-Fonds" ;
+    ns0:name "Ancien Stand" ;
+    ns0:parentCountry <https://sws.geonames.org/2658434/> ;
+    geo1:lat "47.1055612" ;
+    geo1:long "6.8237839" .
+
 <https://www.openstreetmap.org/way/51391815> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Badenerstrasse" ;
     r:city "Zürich" ;
@@ -1506,17 +1594,3 @@ dbpedia:Wörth_Castle ns0:name "Wörth Castle" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     rdfs:seeAlso dbpedia:Wörth_Castle .
 
-<http://restaurant#test1> ns0:name "Restaurant test" ;
-  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-  r:cuisine "african","french" ;
-  r:city "Genève" .
-
-<http://restaurant#test2> ns0:name "Restaurant test" ;
-  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-  r:cuisine "african" ;
-  r:city "Genève" .
-
-<http://restaurant#test3> ns0:name "Restaurant test" ;
-  ns0:parentCountry <https://sws.geonames.org/2658434/> ;
-  r:cuisine "bulgarian" ;
-  r:city "Genève" .

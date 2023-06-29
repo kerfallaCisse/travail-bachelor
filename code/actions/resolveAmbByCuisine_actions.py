@@ -29,7 +29,7 @@ class ResolveAmbByTypeCuisine(Action):
         QUERY = "PREFIX ns0: <http://www.geonames.org/ontology#>\nPREFIX r: <http://restaurant#>\nSELECT ?rn WHERE { ?r r:cuisine "
         QUERY_ALL_INFOS = f"prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nprefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nprefix ns0: <http://www.geonames.org/ontology#>\nprefix dbpedia: <http://dbpedia.org/resource/>\nprefix r: <http://restaurant#>\n"
         QUERY_ALL_INFOS += "SELECT ?r ?p ?o\nWHERE { ?r ns0:name " + \
-            f"'{rest_name}' ; r:cuisine "
+            f""""{rest_name}" ; r:cuisine """
         type_cuisines_size = len(type_cuisines)
         for i in range(type_cuisines_size):
             cuisine = type_cuisines[i]
@@ -39,12 +39,12 @@ class ResolveAmbByTypeCuisine(Action):
                     text="Oups, désolé, nous n'avons pas trouvé les spécialités mentionnées")
                 return []
             if i == type_cuisines_size - 1:
-                QUERY += f"'{cuisine_english}' ; ns0:name ?rn . FILTER(?rn = '{rest_name}') ." + "\n}"
-                QUERY_ALL_INFOS += f"'{cuisine_english}' ; ?p ?o . \n" + \
+                QUERY += f""""{cuisine_english}" ; ns0:name ?rn . FILTER(?rn = "{rest_name}") .""" + "\n}"
+                QUERY_ALL_INFOS += f""""{cuisine_english}" ; ?p ?o . \n""" + \
                     "FILTER (?p != rdfs:isDefinedBy && ?p != ns0:featureClass && ?p != ns0:featureCode && ?p != ns0:countryCode && ?p != ns0:parentCountry && ?p != ns0:name && ?p != rdf:type)\n}"
             else:
-                QUERY += f"'{cuisine_english}' , "
-                QUERY_ALL_INFOS += f"'{cuisine_english}' , "
+                QUERY += f""""{cuisine_english}" , """
+                QUERY_ALL_INFOS += f""""{cuisine_english}" , """
         local_endpoint.setQuery(query=QUERY)
         response = local_endpoint.query().bindings
         response_size = len(response)

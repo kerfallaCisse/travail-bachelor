@@ -225,9 +225,9 @@ class RestaurantsInCity(Action):
                 dispatcher.utter_message(text=">>>>>>>>")
                 l += 1
 
-            GRAPH.parse(source="restInswitzerland.ttl")
+            GRAPH.parse(source="data/restInswitzerland.ttl")
             GRAPH.serialize(
-                            destination="restInswitzerland.ttl", format="ttl")
+                            destination="data/restInswitzerland.ttl", format="ttl")
         except TimeoutError:
             dispatcher.utter_message(
                 text="Désolé, la requête prend plus de temps que prévu. Reposez votre question.")

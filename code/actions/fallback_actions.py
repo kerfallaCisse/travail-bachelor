@@ -42,7 +42,6 @@ class SetQueryLimitationIntent(Action):
             return [SlotSet("limit_curiosity", True)]
         elif intent == "rest_cuisine":
             dispatcher.utter_message(text=question_rest)
-            # print("Rest cuisine intent")
             return [SlotSet("cuisine_type", True)]
 
         return []

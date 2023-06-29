@@ -1,8 +1,9 @@
 tests/*
-models/*
 actions/*
 functions/*
 web_app/*
+graphdb/*
 flask_command.txt
 restInswitzerland.ttl
+requirements.txt
 restInswitzerlandBackup.ttl

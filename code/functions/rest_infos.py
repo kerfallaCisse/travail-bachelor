@@ -17,21 +17,21 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str, **kwargs):
     # Le cas où on a des restaurants avec le même nom -> résolution de l'ambiguïté
     kwargs_len = len(kwargs)
     if kwargs_len == 0:
-        QUERY += f"'{restaurant}' ; ?p ?o .\n"
+        QUERY += f""""{restaurant}" ; ?p ?o .\n"""
     else:
         CUISINE = kwargs["cuisine_mapping"]
         type_cuisines: list = kwargs["cuisine"]
         type_cuisines_size = len(type_cuisines)
-        QUERY += f"'{restaurant}' ; r:cuisine "
+        QUERY += f""""{restaurant}" ; r:cuisine """
         for i in range(type_cuisines_size):
             cne = CUISINE.get(type_cuisines[i], None)
             if cne is None:
                 dispatcher.utter_message(text="Nous n'avons trouvé aucun restaurant avec cette spécialité")
                 return
             if i == type_cuisines_size - 1:
-                QUERY += f"'{cne}' ; ?p ?o.\n"
+                QUERY += f""""{cne}" ; ?p ?o.\n"""
             else:
-                QUERY += f"'{cne}' , "
+                QUERY += f""""{cne}" , """
 
     QUERY += "FILTER (?p != rdfs:isDefinedBy && ?p != ns0:featureClass && ?p != ns0:featureCode && ?p != ns0:countryCode && ?p != ns0:parentCountry && ?p != ns0:name && ?p != rdf:type)\n}"
 
@@ -128,7 +128,7 @@ def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str, **kwargs):
             if value_predicate.find("nearby") > -1:
                 nearBy_rdf = value_object
                 # On parse le graph et on le parcours
-                g_nearby = Graph().parse(nearBy_rdf)
+                g_nearby = Graph().parse(nearBy_rdf,format="xml")
 
                 q = """
                         prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>

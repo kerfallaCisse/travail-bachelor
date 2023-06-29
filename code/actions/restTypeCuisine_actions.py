@@ -45,9 +45,7 @@ class RestTypeCuisine(Action):
         try:
             type_cuisine = cuisine_slot[0]
         except Exception:
-            return []
-        
-        print(type_cuisine)    
+            return []   
 
         cuisine_english = CUISINE.get(type_cuisine, None)
         if cuisine_english is None:
@@ -88,7 +86,7 @@ class RestTypeCuisine(Action):
                                         OPTIONAL {{
                                             ?osmn osmt:addr:postcode ?postcode .
                                         }}       
-                                    }} limit 20
+                                    }} limit {limit}
                                     """)
             resp_osmap = osmap_endpoint.query().bindings
             if len(resp_osmap) == 0:
@@ -185,8 +183,8 @@ class RestTypeCuisine(Action):
                                                           """)
                         local_endpoint_add_stmnt.query()
                         g.add((OSMN, postal_code, Literal(postcode)))
-            g.parse(source="restInswitzerland.ttl")
-            g.serialize(destination="restInswitzerland.ttl", format="ttl")
+            g.parse(source="data/restInswitzerland.ttl")
+            g.serialize(destination="data/restInswitzerland.ttl", format="ttl")
 
         else:
             for r in resp:
