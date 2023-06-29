@@ -1,8 +1,8 @@
 FROM python:3.10.12-slim
 
-WORKDIR /flask_app
+WORKDIR /app
 
-COPY ./app.py .
+COPY . .
 
 
 RUN pip install Flask

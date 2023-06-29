@@ -24,3 +24,10 @@ services:
         - ./graphdb:/opt/graphdb/home
       ports:
         - 7200:7200
+    web_app:    
+      image: kerfmeliodas/flask-app-tb
+      container_name: flask_app_tb
+      ports:
+        - 5001:5001
+      links:
+        - "rasa"
