@@ -9,9 +9,11 @@ COPY . .
 
 USER 1001
 
+EXPOSE 5005
+
 ENTRYPOINT [ "rasa" ]
 
-CMD [ "run", "--enable-api", "--cors='*'", "--port", "5005"]
+CMD [ "run", "--enable-api", "--cors='*'"]
 
 
 

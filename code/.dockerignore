@@ -3,7 +3,5 @@ actions/*
 functions/*
 web_app/*
 graphdb/*
-flask_command.txt
-restInswitzerland.ttl
-requirements.txt
+global-requirements.txt
 restInswitzerlandBackup.ttl

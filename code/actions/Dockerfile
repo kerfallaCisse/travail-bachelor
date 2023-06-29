@@ -8,8 +8,6 @@ USER root
 
 RUN pip install -r requirements-actions.txt
 
-COPY . /app/actions
-COPY ../data /app/data
-COPY ../funtions /app/functions
+EXPOSE 5055
 
 USER 1001

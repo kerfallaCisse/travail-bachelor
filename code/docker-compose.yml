@@ -1,20 +1,26 @@
 version: '3'
 services:
     rasa:
+      image: kerfmeliodas/rasa-server-tb
       container_name: "rasa_server"
       user: root
-      build: 
-        context:  .
       volumes:
       - "./:/app"
       ports: 
         - "5005:5005"
     action_server:
+      image: kerfmeliodas/rasa-action-server-tb
       container_name: "action_server"
-      build: 
-        context: actions
       volumes:
         - ./actions:/app/actions
         - ./data:/app/data
+        - ./functions:/app/functions
       ports:
         - 5055:5055
+    graphdb:
+      image: ontotext/graphdb:10.2.2
+      container_name: "graphdb-server"
+      volumes:
+        - ./graphdb:/opt/graphdb/home
+      ports:
+        - 7200:7200

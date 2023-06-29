@@ -352,3 +352,6 @@ rasa_venv/
 models/
 .rasa/
 results/
+.config/
+.keras/
+graphdb/
