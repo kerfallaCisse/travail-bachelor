@@ -60,7 +60,7 @@ nlu:
       - donne moi la liste des restaurants
       - donne moi la liste de tous les restaurants
 
-  - intent: query_limitation # un seul example pour éviter l'interférence avec DIETClassifier
+  - intent: query_limitation
     examples: |
       - j'aimerai la liste de [10](query_limit) restaurants
       - [10](query_limit) restaurants
@@ -147,6 +147,8 @@ nlu:
       - donne moi les informations que tu possèdes sur ce restaurant [Lily's Stomach Supplye](rest_name)
       - donne moi les infos que tu as sur [Lily's Stomach Supplye](rest_name)
       - donne moi les infos que tu possèdes sur [Montbrillant](rest_name)
+      - donne moi les infos du resto [Hotel Interlaken](rest_name)
+      - donne moi les infos du restaurant [Hotel Interlaken](rest_name)
       - les infos sur [Montbrillant](rest_name)
       - les informations sur [Les Sales Gosses](rest_name)
       - les informations sur le restaurant [Sonchaux](rest_name)

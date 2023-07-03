@@ -1016,6 +1016,10 @@ r:test3 r:city "Genève" ;
 <https://www.openstreetmap.org/node/1637895109> a <https://www.openstreetmap.org/node/> ;
     r:adresse "Rue de l'Athénée" ;
     r:city "Genève" ;
+    r:curiosity <https://www.openstreetmap.org/node/8622838849>,
+        <https://www.openstreetmap.org/node/8622838850>,
+        <https://www.openstreetmap.org/node/8622838905>,
+        <https://www.openstreetmap.org/node/8622838906> ;
     ns0:name "Octopus" ;
     ns0:parentCountry <https://sws.geonames.org/2658434/> ;
     geo1:lat "46.1959401" ;

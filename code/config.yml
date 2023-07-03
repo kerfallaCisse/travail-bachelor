@@ -2,6 +2,12 @@ recipe: default.v1
 language: fr
 pipeline:
 - name: WhitespaceTokenizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
 - name: RegexFeaturizer
   case_sensitive: False
   use_word_boundaries: True
@@ -11,12 +17,6 @@ pipeline:
   use_regexes: True
   use_word_boundaries: True
   constrain_similarities: True
-- name: LexicalSyntacticFeaturizer
-- name: CountVectorsFeaturizer
-- name: CountVectorsFeaturizer
-  analyzer: char_wb
-  min_ngram: 1
-  max_ngram: 4
 - name: DIETClassifier
   epochs: 100
 - name: EntitySynonymMapper

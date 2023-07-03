@@ -2,55 +2,72 @@
 
 {% block content %}
 
-<h3>Les données récoltées par le chatbot proviennent de <a href="https://fr.wikipedia.org/wiki/DBpedia">DBpedia</a>, <a
-        href="https://www.geonames.org/">Geonames</a> et <a
-        href="https://wiki.openstreetmap.org/wiki/SPARQL_examples">openStreetMap</a> </h3>
+<main style="text-align: justify;">
+    <h3>Les données récoltées par le chatbot proviennent de <a href="https://fr.wikipedia.org/wiki/DBpedia">DBpedia</a>,
+        <a href="https://www.geonames.org/">Geonames</a> et <a
+            href="https://wiki.openstreetmap.org/wiki/SPARQL_examples">openStreetMap</a>
+    </h3>
 
-<a href="#type_question">Types de questions</a><br>
-<a href="#architecture">Architecture</a><br>
-<a href="#implementation">Implémentation du chatbot</a><br><br>
+    <a href="#type_question">Types de questions</a><br>
+    <a href="#architecture">Architecture</a><br>
 
-<h3 id="type_question">Les types de questions auxquelles le chatbot peut répondre sont les suivantes :</h3>
-<ul>
-    <li>Donner la liste des restaurants en Suisse.</li>
-    <li>Lister les restaraunts qui se trouvent dans une ville.</li>
-    <li>Donner toutes les informations concernant un restaurant en mentionnant son nom ou en utilisant des mentions tels
-        que le <em>premier</em>, le <em>deuxième</em>, etc. Le chatbot donne éventuellement les lieux qui sont proches
-        d'un restaurant.</li>
-    <li>Lister quelques curiosités qui sont autour d'un restaurant (précisement les terrains de jeux) se trouvant à une
-        distance maximale de <em>1km</em>.</li>
-    <li>Lister les restaurants par type de cuisine dans une ville.</li>
-    <li>Le chatbot peut éventuellement résoudre quelques ambiguïtés, par exemple lorsque plusieurs restaurants ont le
-        même nom.</li>
-</ul>
+    <h3 id="type_question">Les types de questions auxquelles le chatbot peut répondre sont les suivantes :</h3>
+    <ul>
+        <li>Donner la liste des restaurants en Suisse.</li>
+        <samp>Exemple : </samp><kbd>Donne moi la liste des restaurants en Suisse</kbd>
+        <li>Lister les restaraunts qui se trouvent dans une ville.</li>
+        <samp>Exemple : </samp><kbd>Donne moi la liste des restaurants dans la ville de Zürich</kbd>
+        <li>Donner toutes les informations concernant un restaurant en mentionnant son nom ou en utilisant des mentions
+            tels
+            que le <em>premier</em>, le <em>deuxième</em>, etc. Le chatbot donne éventuellement les lieux qui sont
+            proches
+            d'un restaurant.</li>
+        <samp>Exemple : </samp><kbd>Donne moi les informations que tu possèdes sur le restaurant Piz Gloria</kbd><br>
+        <samp>Après que le chatbot ait donné une liste de restaurants : </samp><kbd>Donne moi les informations que tu
+            possèdes sur le premier restaurant</kbd>
+        <li>Lister quelques curiosités qui sont autour d'un restaurant (précisement les terrains de jeux) se trouvant à
+            une
+            distance maximale de <em>1km</em>.</li>
+        <samp>Exemple : </samp><kbd>Donne moi les activités ou curiosités qui sont autour du restaurant Octopus</kbd>
+        <li>Lister les restaurants par type de cuisine dans une ville.</li>
+        <samp>Exemple : </samp><kbd>Donne moi les restaurants qui vendent de la nourriture française à Genève</kbd>
+        <li>Le chatbot peut éventuellement résoudre quelques ambiguïtés, par exemple lorsque plusieurs restaurants ont
+            le
+            même nom.</li>
+    </ul>
 
-<strong>Important: <em>Le chatbot devient intélligent à travers les questions posées par l'utilisateur. Par exemple
-        lorsqu'il n'a pas encore parcouru les restaurants d'une ville ou les restaurants qui offrent certaines
-        spécialités dans une ville.</em></strong><br>
+    <strong>NB:</strong> utiliser des chiffres lorsque le chatbot utilise l'adverbe <kbd>Combien</kbd><br>
 
-<h3 id="architecture">Architecture</h3>
+    <strong>Important: <em>le chatbot devient intélligent à travers les questions posées par l'utilisateur. Par exemple
+            lorsqu'il n'a pas encore parcouru les restaurants d'une ville ou les restaurants qui offrent certaines
+            spécialités dans une ville.</em></strong><br>
 
-<p>Insérer une image de l'architecture du chatbot</p>
-
-
-<h3 id="implementation">Implémentation</h3>
-<h6>Lister les restaurants en Suisse</h6>
-<section>
-    <kbd>Donne moi la liste des restaurants en Suisse</kbd><br>
-    <samp>Combien ?</samp><br>
-    <kbd>12 restaurants</kbd><br>
-
-    <pre class="pre-scrollable">
-        <code>
-            SELECT *
-            WHERE {
-                ?r ns0:name 'Restaurant Anker' ; ?p ?o .
-            }
-        </code>
-    </pre>
-</section>
-
-<a href="https://getbootstrap.com/docs/4.0/content/code/">Voir bootstrap code</a>
-
+    <h3 id="architecture">Architecture</h3>
+    <p>Architecture de premier niveau du chatbot.</p>
+    <img src="../static/components_diagram.svg" alt="Architecture du chatbot" width="800" height="800"><br>
+    <p>
+        La figure ci-dessus illustre de manière simpliste, l’architecture du chatbot divisé en 3 modules : analyse de
+        phrases, retrait des données et construction de la réponse à retourner à l'utilisateur. Chaque module est
+        constitué d’uns ou plusieurs composants représentant chacun un sous-ensemble du programme global destiné à
+        accomplir des tâches bien précises.
+        Le premier module consiste à analyser la question posée par l'utilisateur afin de prédire et de classifier ces
+        intentions par le biais d’un classifieur. Une ou plusieurs entités représentant le contexte de chacune des
+        intentions est extraite et utilisée par le second module.</p><br>
+    <p>
+        Le second module quant à lui se charge de prendre des décisions sur la base des intentions détectées et
+        classifiés.
+        Les décisions/actions entreprises consistent à explorer le graphe de connaissances local, pour récupérer les
+        informations nécessaires à la résolution de la question. Lorsqu'aucune information ne peut être dans le graphe
+        de connaissance local, d'autres graphes de connaissances sont explorés afin de les informations utiles à la
+        question puis les insérées dans le graphe de connaissance local. De cette manière, lorsque la question est
+        reposée , le chatbot tout parcourir le graphe connaissance pour obtenir la réponse.
+    </p><br>
+    <p>
+        Le dernier module consiste à analyser et à traiter les données récupérées du graphe afin de construire la réponse à
+        retourner à l'utilisateur en langage naturel.
+    </p>
+    <p>Voici un exemple du fonctionnement du chatbot lorsqu'un utilisateur pose une question.</p>
+    <img src="../static/poc.svg" alt="Exemple d'interaction avec le chatbot" width="800" height="800"><br><br>
+</main>
 
 {% endblock content %}

@@ -8,7 +8,7 @@ COPY . .
 RUN pip install Flask
 RUN pip install Flask-Bootstrap
 
-EXPOSE 5001
+EXPOSE 5000
 
 CMD ["flask", "--app", "app", "run", "--host=0.0.0.0" ]
 
