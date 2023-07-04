@@ -8,6 +8,11 @@ services:
       - "./:/app"
       ports: 
         - "5005:5005"
+      command:
+        - run
+        - --enable-api
+        - --cors
+        - "*"
     action_server:
       image: kerfmeliodas/rasa-action-server-tb
       container_name: "action_server"
@@ -28,6 +33,6 @@ services:
       image: kerfmeliodas/flask-app-tb
       container_name: flask_app_tb
       ports:
-        - 5001:5001
+        - 5000:5000
       links:
         - "rasa"

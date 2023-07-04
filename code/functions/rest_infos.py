@@ -7,7 +7,7 @@ from deep_translator import GoogleTranslator
 sparql_dbpedia = SPARQLWrapper2(
     "https://dbpedia.org/sparql")  # DBpedia endpoint
 local_endpoint = SPARQLWrapper2(
-    "http://localhost:7200/repositories/POC-1")  # my local graphDB endpoint
+    "http://graphdb-server:7200/repositories/POC-1")  # my local graphDB endpoint
 
 
 def getRestInfos(dispatcher: CollectingDispatcher, restaurant: str, **kwargs):
