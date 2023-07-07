@@ -20,23 +20,23 @@ build_action_server_job:
   stage: build-action-server
   script:
     - cd code/actions/
-    - docker build -t $CI_REGISTRY/action-server .
+    - docker build -t $CI_REGISTRY_IMAGE/action-server .
 
 build_flask_job:
   stage: build-flask-app
   script:
     - cd code/web_app/
-    - docker build -t $CI_REGISTRY/flask_app .
+    - docker build -t $CI_REGISTRY_IMAGE/flask_app .
 
 push_action_server_job:
   stage: push-action-server
   script:
-    - docker push --all-tags $CI_REGISTRY/action-server 
+    - docker push --all-tags $CI_REGISTRY_IMAGE/action-server
 
 push_flask_app_job:
   stage: push-flask-app
   script:
-    - docker push --all-tags $CI_REGISTRY/flask_app 
+    - docker push --all-tags $CI_REGISTRY_IMAGE/flask_app
 
 logout_job:
   stage: logout
