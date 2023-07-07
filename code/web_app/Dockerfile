@@ -6,7 +6,6 @@ COPY . .
 
 
 RUN pip install Flask
-RUN pip install Flask-Bootstrap
 
 EXPOSE 5000
 
