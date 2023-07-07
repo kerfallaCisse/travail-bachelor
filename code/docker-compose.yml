@@ -30,7 +30,7 @@ services:
       ports:
         - 7200:7200
     web_app:    
-      image: kerfmeliodas/flask-app-tb
+      image: kerfmeliodas/flask-app-tb:latest2
       container_name: flask_app_tb
       ports:
         - 5000:5000
