@@ -2,17 +2,13 @@ default:
   image: docker:24.0.2-git
   services:
     - docker:24.0.2-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
 
 stages:
-  - login
   - build-action-server
   - build-flask-app
   - logout
-
-login_job:
-  stage: login
-  script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
 
 build_action_server:
   stage: build-action-server
