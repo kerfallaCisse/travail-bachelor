@@ -20,13 +20,13 @@ build_action_server_job:
   stage: build-action-server
   script:
     - cd code/actions/
-    - docker build -t action-server .
+    - docker build -t $CI_REGISTRY/action-server .
 
 build_flask_job:
   stage: build-flask-app
   script:
     - cd code/web_app/
-    - docker build -t flask_app .
+    - docker build -t $CI_REGISTRY/flask_app .
 
 push_action_server_job:
   stage: push-action-server
