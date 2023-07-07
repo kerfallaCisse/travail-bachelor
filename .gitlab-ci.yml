@@ -31,12 +31,12 @@ build_flask_job:
 push_action_server_job:
   stage: push-action-server
   script:
-    - docker push action-server 
+    - docker push --all-tags action-server 
 
 push_flask_app_job:
   stage: push-flask-app
   script:
-    - docker push flask_app 
+    - docker push --all-tags flask_app 
 
 logout_job:
   stage: logout
