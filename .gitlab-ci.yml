@@ -19,12 +19,12 @@ login_job:
 build_action_server_job:
   stage: build-action-server
   script:
-    - docker build -t action-server code/ .
+    - docker build . -t action-server -f code/actions/Dockerfile
 
 build_flask_job:
   stage: build-flask-app
   script:
-    - docker build -t flask_app code/web_app .
+    - docker build . -t flask_app -f code/web_app/Dockerfile
 
 push_action_server_job:
   stage: push-action-server
