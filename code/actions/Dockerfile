@@ -2,7 +2,7 @@ FROM rasa/rasa-sdk:2.8.11
 
 WORKDIR /app
 
-COPY ./requirements-actions.txt ./
+COPY ./requirements-actions.txt .
 
 USER root
 

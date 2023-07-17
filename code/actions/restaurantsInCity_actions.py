@@ -9,7 +9,7 @@ from .allInfosWithMention_actions import local_endpoint
 osmap_endpoint = SPARQLWrapper2(
     "https://sophox.org/sparql")  # Open street map endpoint
 osmap_endpoint.setTimeout(60)  # query time out for the endpoint in second
-local_endpoint_add_stmnt = SPARQLWrapper2("http://localhost:7200/repositories/POC-1/statements") # local endpoint to add statements in the graph
+local_endpoint_add_stmnt = SPARQLWrapper2("http://graphdb-server:7200/repositories/POC-1/statements") # local endpoint to add statements in the graph
 GRAPH = Graph()
 
 

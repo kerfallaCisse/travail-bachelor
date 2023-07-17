@@ -3,8 +3,10 @@ services:
   - docker:24.0.2-dind
 stages:
   - login
+  - build-rasa-server
   - build-action-server
   - build-flask-app
+  - push-rasa-server
   - push-action-server
   - push-flask-app
   - logout
@@ -16,12 +18,18 @@ login_job:
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
 
+build_rasa_server_job:
+  stage: build-rasa-server
+  tags:
+    - docker
+  script:
+    - docker build -t rasa-server code/ .
 build_action_server_job:
   stage: build-action-server
   tags:
     - docker
   script:
-    - docker build -t action-server code/ .
+    - docker build -t action-server code/actions .
 
 build_flask_job:
   stage: build-flask-app
@@ -30,19 +38,26 @@ build_flask_job:
   script:
     - docker build -t flask_app code/web_app .
 
+push_rasa_server_job:
+  stage: push-rasa-server
+  tags:
+    - docker
+  script:
+    - docker push rasa-server
+
 push_action_server_job:
   stage: push-action-server
   tags:
     - docker
   script:
-    - docker push action-server 
+    - docker push action-server
 
 push_flask_app_job:
   stage: push-flask-app
   tags:
     - docker
   script:
-    - docker push flask_app 
+    - docker push flask_app
 
 logout_job:
   stage: logout
@@ -50,9 +65,6 @@ logout_job:
     - docker
   script:
     - docker logout $CI_REGISTRY
-
-
-
 # build:
 #   image: docker:24.0.2-git
 #   stage: build
