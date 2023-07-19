@@ -1,7 +1,7 @@
 version: '3'
 services:
     rasa:
-      image: kerfmeliodas/rasa-server-tb
+      image: kerfmeliodas/rasa-server-tb:latest2
       container_name: "rasa_server"
       user: root
       volumes:

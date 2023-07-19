@@ -1,5 +1,5 @@
 # premade rasa container
-FROM rasa/rasa 
+FROM rasa/rasa:3.6.2-full
 
 USER root
 

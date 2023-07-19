@@ -1018,6 +1018,8 @@ r:test3 r:city "Genève" ;
     r:city "Genève" ;
     r:curiosity <https://www.openstreetmap.org/node/8622838849>,
         <https://www.openstreetmap.org/node/8622838850>,
+        <https://www.openstreetmap.org/node/8622838851>,
+        <https://www.openstreetmap.org/node/8622838852>,
         <https://www.openstreetmap.org/node/8622838905>,
         <https://www.openstreetmap.org/node/8622838906> ;
     ns0:name "Octopus" ;
