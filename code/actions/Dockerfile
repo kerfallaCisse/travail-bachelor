@@ -11,3 +11,7 @@ RUN pip install -r requirements-actions.txt
 EXPOSE 5055
 
 USER 1001
+
+ENTRYPOINT [ "rasa" ]
+
+CMD [ "run", "actions" ]

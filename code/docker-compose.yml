@@ -1,7 +1,7 @@
 version: '3'
 services:
-    rasa:
-      image: kerfmeliodas/rasa-server-tb:latest2
+    rasa_server:
+      image: kerfmeliodas/rasa-server-tb:latest
       container_name: "rasa_server"
       user: root
       volumes:
@@ -22,17 +22,18 @@ services:
         - ./functions:/app/functions
       ports:
         - 5055:5055
-    graphdb:
+      restart: always  
+    graphdb_server:
       image: ontotext/graphdb:10.2.2
       container_name: "graphdb-server"
       volumes:
         - ./graphdb:/opt/graphdb/home
       ports:
         - 7200:7200
+      restart: always   
     web_app:    
       image: kerfmeliodas/flask-app-tb:latest2
       container_name: flask_app_tb
       ports:
         - 5000:5000
-      links:
-        - "rasa"
+      restart: always  
