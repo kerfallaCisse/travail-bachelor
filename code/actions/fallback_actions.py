@@ -13,7 +13,7 @@ class FallBackAction(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         """On exécute le fallback action et on revient l'état précédent de la conversation"""
-        linkOfdocumentation = "http://127.0.0.1:5000/documentation"
+        linkOfdocumentation = "clique sur l'onglet documentation" #"http://127.0.0.1:5000/documentation"
         dispatcher.utter_message(
             response="utter_please_rephrase", link=linkOfdocumentation)
         return [UserUtteranceReverted()]
