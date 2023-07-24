@@ -5,7 +5,7 @@ services:
       container_name: "rasa_server"
       user: root
       volumes:
-      - "./:/app"
+      - "./data:/app/data"
       ports: 
         - 5005:5005
       command:
@@ -14,12 +14,10 @@ services:
         - --cors
         - "*"
     action_server:
-      image: kerfmeliodas/rasa-action-server-tb:latest
+      image: kerfmeliodas/rasa-action-server-tb:test
       container_name: "action_server"
       volumes:
-        - ./actions:/app/actions
-        - ./data:/app/data
-        - ./functions:/app/functions
+        - ./data:/app/data # le folder data sera ajouté au container du serveur d'action
       ports:
         - 5055:5055
       restart: always  
@@ -32,7 +30,7 @@ services:
         - 7200:7200
       restart: always   
     web_app:    
-      image: kerfmeliodas/flask-app-tb:latest
+      image: kerfmeliodas/flask-app-tb:do #  tag "do" pour digital ocean
       container_name: flask_app_tb
       ports:
         - 5000:5000
