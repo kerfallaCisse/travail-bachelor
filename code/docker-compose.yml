@@ -7,14 +7,14 @@ services:
       volumes:
       - "./:/app"
       ports: 
-        - "5005:5005"
+        - 5005:5005
       command:
         - run
         - --enable-api
         - --cors
         - "*"
     action_server:
-      image: kerfmeliodas/rasa-action-server-tb
+      image: kerfmeliodas/rasa-action-server-tb:latest
       container_name: "action_server"
       volumes:
         - ./actions:/app/actions
@@ -32,8 +32,10 @@ services:
         - 7200:7200
       restart: always   
     web_app:    
-      image: kerfmeliodas/flask-app-tb:latest2
+      image: kerfmeliodas/flask-app-tb:latest
       container_name: flask_app_tb
       ports:
         - 5000:5000
+      links:
+        - rasa_server  
       restart: always  

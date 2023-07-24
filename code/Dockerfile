@@ -1,12 +1,13 @@
 # premade rasa container
 # FROM rasa/rasa:3.6.2-full
-FROM rasa/rasa:3.5.4-full
+# FROM rasa/rasa:3.5.4-full
+FROM rasa/rasa
 
 USER root
 
 WORKDIR /app
 
-RUN pip install sanic
+# RUN pip install sanic
 
 COPY . .
 
