@@ -6,3 +6,5 @@ graphdb/*
 global-requirements.txt
 restInswitzerlandBackup.ttl
 Dockerfile
+docker-compose.yml
+models/*
